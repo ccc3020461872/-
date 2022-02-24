@@ -1,0 +1,52 @@
+/* pages/index/machina/machmodel/machmodel.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+/* 下面的类目开始 */
+.iconList {
+  padding: 0 43rpx;
+  margin: 30rpx 0 47rpx 0;
+}
+
+.iconList .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110rpx;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  color: #333;
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.iconList .item:last-child {
+  border-bottom: none;
+}
+
+.iconList .item .left {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.iconList .item .next {
+  width: 89rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  border-radius: 19rpx;
+  text-align: center;
+  opacity: 1;
+  border: 1rpx solid #E0E0E0;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #333333;
+
+
+}

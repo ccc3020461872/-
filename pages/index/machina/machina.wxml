@@ -1,0 +1,33 @@
+<!--pages/index/machina/machina.wxml-->
+<view class="cont">
+  <view class="VerticalBox">
+    <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation>
+      <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{typelist}}" wx:key bindtap='tabSelect'
+        data-id="{{index}}">
+        {{item}}
+      </view>
+    </scroll-view>
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)">
+      <view class="scroll-title">{{typelist[TabCur].text}}打票机</view>
+      <view class="padding-top padding-lr" bindtap="toDetail">
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <image src="{{goodlist[TabCur].img}}"></image>
+            <view class="content">
+              <view class="text-grey">
+                <view>{{goodlist[TabCur].text}}</view>
+                <image src="/img/right.png"></image>
+              </view>
+              <view class="text-sm flex">
+                {{goodlist[TabCur].note}}
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="formBtn" bindtap="tomodel">小票模板</view>

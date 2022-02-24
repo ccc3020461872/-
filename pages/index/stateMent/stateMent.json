@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "common-data":"/component/con-data/con-data",
+    "common-detail":"/component/con-detail/con-detail",
+    "common-effect":"/component/con-effect/con-effect",
+    "common-targets":"/component/con-targets/con-targets"
+  }
+}

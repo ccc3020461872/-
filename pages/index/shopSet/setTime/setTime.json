@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "resttime":"../setTime/cpnsChilds/resttime/resttime",
+    "timeset":"../setTime/cpnsChilds/timeset/timeset"
+  },
+  "navigationBarBackgroundColor": "#1E5051",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "堂食营业时间设置"
+}

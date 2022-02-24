@@ -1,0 +1,48 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+  <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 按订单按商品收费 -->
+      <view class="tollType">
+        <view class="type {{currentType === 'shop' ? 'selected' : ''}}" style="{{currentType === 'shop' ? selectedClass : ''}}" bindtap="typeChoose" data-type="shop">
+          <view class="title">按商品收费</view>
+          <view class="tip">
+            <view class="text">没笔打包订单将按商品中设置的打包费，累计收费</view>
+            <image class="checkImg" src=" {{currentType === 'shop' ? '/images/selected1.png' : '/images/selecte1.png'}}" mode="widthFix" ></image>
+            <!-- 选择商品 -->
+          </view>
+          <view class="chooseGoods" wx:if="{{currentType === 'shop'}}">
+             <view class="ps">选择商品</view>
+             <view class="shopName">
+               <text>酸汤面</text>
+               <image src="/images/chooseWhite.png" mode="widthFix" class="chooseImg"></image>
+             </view>
+            </view>
+        </view>
+        <view class="type {{currentType === 'order' ? 'selected' : ''}}" bindtap="typeChoose" data-type="order" style="{{currentType === 'order' ? selectedClass : ''}}">
+          <view class="title">按订单收费</view>
+          <view class="tip">
+            <view class="text">每笔打包订单将按商品中设置的打包费</view>
+            <image class="checkImg" src="{{currentType === 'order' ? '/images/selected1.png' : '/images/selecte1.png'}}" mode="widthFix"></image>
+          </view>
+          <!-- 打包费金额 -->
+          <view class="price" wx:if="{{currentType === 'order'}}">
+           <text>打包费金额</text>
+           <view class="set-price">
+           <input type="number" placeholder="请输入金额" focus="{{currentType === 'order'}}" placeholder-class="placeholder"/>
+           元
+           </view>
+          </view>
+        </view>
+      </view>
+      <!-- 保存 -->
+      <view class="built cc-center" style="background-color: {{color}};">保存</view>
+    </view>
+
+  </view>
+</view>

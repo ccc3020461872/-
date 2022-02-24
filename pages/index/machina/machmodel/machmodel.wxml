@@ -1,0 +1,17 @@
+<!--pages/index/machina/machmodel/machmodel.wxml-->
+<view class="cont">
+  <view class="page-text">店内打票机</view>
+  <view class="page-text-1">小票模板对当前所有云打票机生效</view>
+  <view class="iconList shadow">
+  <block wx:for="{{iconList}}" wx:key="li">
+    <view class="item" id="{{index}}" bindtap="toPage">
+      <view class="left">
+        <view class="item-title">{{item}}</view>
+      </view>
+      <view class="next">查看</view>
+    </view>
+  </block>
+
+</view>
+</view>
+

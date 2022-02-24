@@ -1,0 +1,31 @@
+/* component/con-title/con-title.wxss */
+.commimgCon{
+  width: 87rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.commimg{
+  width: 21rpx;
+  height: 35rpx;
+}
+.slotContent{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  /* align-items: center; */
+}
+.commtitle{
+  text-align: center;
+  font-size: 36rpx !important;
+  width: 76%;
+}
+.white{
+  color: #fff;
+}
+.balck{
+  color: #333;
+}

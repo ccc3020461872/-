@@ -1,0 +1,191 @@
+/**app.wxss**/
+
+view {
+  box-sizing: border-box;
+}
+/* switch 样式*/
+.wx-switch-input {
+  width: 100rpx !important;
+  height: 54rpx !important;
+}
+.wx-switch-input::before {
+  width: 50rpx !important;
+  height: 50rpx !important;
+}
+.wx-switch-input::after {
+  width: 50rpx !important;
+  height: 50rpx !important;
+}
+.cc-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+image {
+  height: auto;
+}
+.placeholder {
+  color: #D0D0D0 ;
+}
+.request-enter::after {
+  content: "*";
+  color: #ff4a4a;
+}
+
+/* ZXY */
+
+
+/**app.wxss**/
+/* 主题色 */
+
+/**app.wxss**/
+/* 主题色 */
+page {
+  --themecolor: #1E5051;
+  --themecolorfirst: #1E5051;
+  --themecolorbg: rgba(245, 121, 004, 0.77);
+  --themecolorsecond: #fdf0f2;
+
+}
+
+.cont {
+  width: 90%;
+  padding: 50rpx 5%;
+  background-color: #fff;
+  border-radius: 80rpx 80rpx 0 0;
+  min-height: 1000rpx;
+}
+
+.cont-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cont-item {
+  width: 94%;
+  padding: 20rpx 3% 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.formBtn {
+  position: fixed;
+  bottom: 30rpx;
+  width: 300rpx;
+  height: 90rpx;
+  border-radius: 50rpx;
+  background: #1E5051;
+  color: #fff;
+  line-height: 90rpx;
+  text-align: center;
+  margin: 0 225rpx;
+}
+
+/*  */
+
+.cont-bott {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.cont-bott label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont-bott label text {
+  display: block;
+}
+
+.cont-bott label text:first-child {
+  letter-spacing: 3rpx;
+  display: block;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.cont-bott label text:last-child {
+  font-size: 26rpx;
+  background-color: #f4f4f4;
+  color: #666;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+}
+
+
+/* 选择未选中样式 */
+.check-cont image {
+  width: 31rpx;
+  height: 31rpx;
+  margin-right: 10rpx;
+}
+
+.check-cont .label view {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+
+.check-cont .radio {
+  display: flex;
+  align-items: center;
+}
+view::-webkit-scrollbar {
+  width: 0;
+}
+/* 蒙版 */
+.menban {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(102, 102, 102, .5);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+}
+
+/* 页面文字标题 */
+.page-text {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 56rpx;
+}
+
+/* 页面文字提示小号文字 */
+.page-text-1 {
+  font-size: 26rpx;
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-weight: 400;
+  color: #666;
+}
+
+/* 最小号提示文字 */
+.page-text-2 {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 右箭头 */
+.right-img image {
+  width: 16rpx;
+  height: 26rpx;
+}
+
+.del-img {
+  width: 33rpx;
+  height: 33rpx;
+}

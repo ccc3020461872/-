@@ -1,0 +1,87 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+.box {
+  min-height: 10vh;
+}
+.box .tips {
+  font-size: 28rpx;
+  color: #595959;
+  margin-bottom: 100rpx;
+}
+.empty {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #808080;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+/* 排序 */
+.goodsList {
+  padding: 0 40rpx;
+}
+.goodsList .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.upDown image{
+  height: 36rpx;
+}
+.upDown image:first-child {
+  margin-right: 44rpx;
+}
+/* 输入分类名称 */
+.inputClassify {
+  margin-top: 100rpx;
+  padding-bottom: 8rpx;
+  border-bottom: 1px solid #CECECE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputClassify input {
+  font-size: 36rpx;
+  max-width: 70%;
+}
+.inputClassify image{
+  height: 90rpx;
+}
+.placeholder {
+  color: #D0D0D0;
+}
+/* 新建商品 */
+.built {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  bottom: 140rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 128rpx;
+  box-sizing: border-box;
+  width: 300rpx;
+  height: 108rpx;
+}

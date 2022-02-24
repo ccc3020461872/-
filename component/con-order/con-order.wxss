@@ -1,0 +1,116 @@
+page {}
+
+.top-time {
+  width: 90%;
+  margin: 20rpx 5%;
+  height: 81rpx;
+  line-height: 81rpx;
+  background: #FAFAFA;
+  border-radius: 41rpx;
+  text-align: center;
+}
+
+/* 右箭头 */
+.right-img image {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+  transform: rotate(90deg);
+}
+
+.cont-top {
+  width: 94%;
+  padding: 30rpx 3%;
+  background: #FFFFFF;
+  box-shadow: 0px 3rpx 7rpx 0px rgba(0, 0, 0, 0.05);
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont-top label text:first-child {
+  color: #9B9B9B;
+}
+
+.list {
+  width: 90%;
+  padding: 20rpx 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  border: 1rpx solid #f4f4f4;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.label {
+  color: #666;
+  margin-right: 70rpx;
+}
+
+.label .text {
+  color: #333;
+}
+
+.pay-list {
+  display: flex;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #9B9B9B;
+}
+
+.list .img {
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.top {
+  background: black;
+  color: #fff;
+  padding: 100rpx 0;
+}
+
+.but {
+  display: flex;
+  align-items: center;
+  width: 122rpx;
+  height: 46rpx;
+  background: #FFFFFF;
+  opacity: 0.28;
+  border-radius: 23rpx;
+  background: #f45060;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.but image {
+  width: 13rpx;
+  height: 21rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 400;
+  color: #0E0B0E;
+  line-height: 90rpx;
+  margin-left: 30rpx;
+}
+
+.money {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}

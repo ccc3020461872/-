@@ -1,0 +1,32 @@
+.addGoods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40rpx;
+  border-bottom: 1rpx solid #CECECE;
+}
+
+.titleText {
+  font-size: 37rpx;
+  color: #333333;
+  font-weight: 700;
+}
+.left .title{
+  margin-bottom: 48rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.placeholder,
+.choose {
+  color: #D0D0D0;
+}
+.tips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.example {
+  font-size: 28rpx;
+  color: #333333;
+}

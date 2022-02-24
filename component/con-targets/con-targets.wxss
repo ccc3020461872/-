@@ -1,0 +1,435 @@
+.page {
+  background-color: rgba(255, 255, 255, 1.000000);
+  position: relative;
+  width: 750rpx;
+  height: 1839rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 7rpx;
+}
+
+.bg-cont {
+  width: 100%;
+  height: 140rpx;
+  background-image: url(https://dh-1309046484.cos.ap-chengdu.myqcloud.com/20220216/images/g73ql7nyud.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin-top: 40rpx;
+
+}
+
+.mod1 {
+  width: 750rpx;
+  height: 1765rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.pic1 {
+  width: 727rpx;
+  height: 27rpx;
+  margin-left: 9rpx;
+}
+
+.box1 {
+  background-color: rgba(255, 255, 255, 1.000000);
+  height: 88rpx;
+  margin-top: 9rpx;
+  display: flex;
+  flex-direction: column;
+  width: 749rpx;
+  justify-content: center;
+}
+
+.section1 {
+  width: 720rpx;
+  height: 72rpx;
+  flex-direction: row;
+  display: flex;
+}
+
+.outer1 {
+  width: 90rpx;
+  height: 72rpx;
+  background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/ps3buhlxw0bw1illf1lumrreos9c480wuh0990560c-ddbb-4088-967d-86134094d02d) -1rpx 0rpx no-repeat;
+  background-size: 91rpx 72rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.word1 {
+  width: 234rpx;
+  height: 32rpx;
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-size: 34rpx;
+  font-family: PingFang-SC-Medium;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 34rpx;
+  display: block;
+  margin: 21rpx 0 0 163rpx;
+}
+
+.outer2 {
+  width: 163rpx;
+  height: 54rpx;
+  background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/psdaow2uo8m8hr9rqyb2zw7ys3jb4e93ka1564257-0700-4f31-99d4-ff23e471b2d6) 0rpx -1rpx no-repeat;
+  background-size: 164rpx 55rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 9rpx 0 0 70rpx;
+}
+
+.box2 {
+  background-color: rgba(255, 255, 255, 1.000000);
+  border-radius: 80rpx;
+  z-index: 2;
+  height: 1498rpx;
+  margin-top: 7rpx;
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  position: relative;
+  padding: 16rpx 0 0 29rpx;
+}
+
+.bd1 {
+  width: 688rpx;
+  height: 1465rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.group1 {
+  width: 551rpx;
+  height: 46rpx;
+  margin-left: 79rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.layer1 {
+  border-radius: 23rpx;
+  height: 46rpx;
+  border: 1px solid rgba(189, 189, 189, 1);
+  display: flex;
+  flex-direction: column;
+  width: 120rpx;
+  justify-content: center;
+  align-items: center;
+  color: rgba(51, 51, 51, 1);
+}
+
+.word2 {
+  width: 54rpx;
+  height: 28rpx;
+  overflow-wrap: break-word;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 30rpx;
+  display: block;
+}
+.active{
+  background-color: var(--themecolor);
+  color: #fff;
+}
+.info2 {
+  width: 84rpx;
+  height: 28rpx;
+  overflow-wrap: break-word;
+  color: rgba(51, 51, 51, 1);
+  font-size: 30rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 30rpx;
+  display: block;
+}
+
+.group2 {
+  width: 617rpx;
+  height: 53rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 52rpx 0 0 36rpx;
+}
+
+.mod2 {
+  border-radius: NaNrpx;
+  height: 53rpx;
+  border: 1px solid rgba(30, 80, 81, 1);
+  display: flex;
+  flex-direction: column;
+  width: 145rpx;
+  padding: 15rpx 0 0 19rpx;
+}
+
+.word4 {
+  width: 97rpx;
+  height: 23rpx;
+  overflow-wrap: break-word;
+  color: rgba(51, 51, 51, 1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 24rpx;
+  display: block;
+}
+
+.mod3 {
+  background-color: rgba(30, 80, 81, 1.000000);
+  border-radius: NaNrpx;
+  height: 53rpx;
+  border: 1px solid rgba(30, 80, 81, 1);
+  display: flex;
+  flex-direction: column;
+  width: 191rpx;
+  padding: 15rpx 0 0 9rpx;
+}
+
+.txt1 {
+  width: 171rpx;
+  height: 23rpx;
+  overflow-wrap: break-word;
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 24rpx;
+  display: block;
+}
+
+.group3 {
+  height: 142rpx;
+  background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/ps3dvqg557ptzsenwentie9jqq1kgcj87p06fbcee4-c626-4976-92e4-4a3ed38eb739) 100% no-repeat;
+  width: 355rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.block1 {
+  width: 307rpx;
+  height: 33rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rpx 0 0 1rpx;
+  text-align: right;
+}
+
+.block2 {
+  background-color: rgba(255, 91, 1, 1.000000);
+  border-radius: NaNrpx;
+  height: 33rpx;
+  display: flex;
+  flex-direction: column;
+  padding-left: 13rpx;
+  width: 70rpx;
+  justify-content: center;
+}
+
+.info3 {
+  width: 45rpx;
+  height: 23rpx;
+  overflow-wrap: break-word;
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 24rpx;
+  display: block;
+}
+
+.info4 {
+  width: 42rpx;
+  height: 23rpx;
+  overflow-wrap: break-word;
+  color: rgba(51, 51, 51, 1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 24rpx;
+  margin-top: 5rpx;
+  display: block;
+}
+
+.block3 {
+  width: 270rpx;
+  height: 30rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 26rpx 0 43rpx 21rpx;
+}
+
+.icon1 {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(180deg);
+}
+
+.word5 {
+  width: 139rpx;
+  overflow-wrap: break-word;
+  color: rgba(1, 1, 1, 1);
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 30rpx;
+  margin-top: 2rpx;
+  display: block;
+}
+
+.label1 {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.group4 {
+  width: 686rpx;
+  height: 28rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 36rpx 0 0 1rpx;
+}
+
+
+
+.txt2 {
+  width: 118rpx;
+  height: 23rpx;
+  overflow-wrap: break-word;
+  color: rgba(102, 102, 102, 1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 24rpx;
+  margin-top: 5rpx;
+  display: block;
+}
+
+.group5 {
+  width: 685rpx;
+  height: 27rpx;
+  flex-direction: row;
+  display: flex;
+  margin: 50rpx 0 0 2rpx;
+}
+
+.word7 {
+  width: 148rpx;
+  height: 27rpx;
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-size: 28rpx;
+  font-family: PingFang-SC-Heavy;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 28rpx;
+  display: block;
+}
+
+.layer5 {
+  width: 14rpx;
+  height: 21rpx;
+  background: url(https://dh-1309046484.cos.ap-chengdu.myqcloud.com/20220216/images/g73r2kc0k9.png) -1rpx 0rpx no-repeat;
+  background-size: 16rpx 22rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 3rpx 0 0 401rpx;
+}
+
+.word8 {
+  width: 116rpx;
+  overflow-wrap: break-word;
+  color: rgba(255, 131, 31, 1);
+  font-size: 28rpx;
+  font-family: PingFang-SC-Heavy;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 28rpx;
+  display: block;
+  margin: 3rpx 0 0 6rpx;
+}
+
+.group6 {
+  width: 683rpx;
+  height: 26rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 23rpx 0 0 2rpx;
+}
+
+.word9 {
+  width: 416rpx;
+  height: 26rpx;
+  overflow-wrap: break-word;
+  color: rgba(153, 153, 153, 1);
+  font-size: 26rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 26rpx;
+  display: block;
+}
+
+.txt3 {
+  width: 136rpx;
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 1);
+  font-size: 26rpx;
+  font-family: PingFang-SC-Regular;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 26rpx;
+  margin-top: 3rpx;
+  display: block;
+}
+
+.pic2 {
+  width: 688rpx;
+  height: 1rpx;
+  margin-top: 33rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img1 {
+  width: 688rpx;
+  height: 1rpx;
+  margin-top: 33rpx;
+}
+
+
+
+

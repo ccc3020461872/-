@@ -1,0 +1,73 @@
+<!--component/con-food/con-food.wxml-->
+<view class="summary">
+  <view class="boxContent">
+    <view class="search">
+      <view class="search-input placeholder" bindtap="handleInputChange">
+        <image src="/agentpages/images/search_for.png" mode="widthFix" class="sach"></image>
+        请输入商品名称
+      </view>
+      <view class="search-btn" bindtap="packset">打包费设置</view>
+    </view>
+    <scroll-view scroll-x="true">
+      <view class="boxItem {{currenIndex==index?'boxItemAcitity':''}}" wx:for="{{goodsCategoryData}}"
+        wx:key="CATEGORY_NAME" bindtap="selectBox" data-index="{{index}}" data-kindid="{{item.GOODS_CATEGORY_ID}}">
+        {{item.CATEGORY_NAME}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <block wx:for="{{goodsCategoryData}}" wx:key="info">
+    <block wx:if="{{kindid==item.GOODS_CATEGORY_ID}}">
+      <view style="margin-top:240rpx;">
+        <block wx:for="{{item.goodsList}}" wx:key="goodsList">
+          <view class="item">
+            <image src="{{item.GOODS_IMG}}" bindtap="toedit" data-goodsid="{{item.GOODS_ID}}" class="foodImg"
+              mode="aspectFill"></image>
+            <view class="productInfo" bindtap="toedit" data-goodsid="{{item.GOODS_ID}}">
+              <view class="productName ellipsis">{{item.GOODS_NAME}}</view>
+              <view class="price"><text>￥</text>{{item.GOODS_PRICE}}</view>
+            </view>
+            <block wx:if="{{!gotopState}}">
+              <view wx:if="{{item.VALID==1}}" class="tableTe">已上架</view>
+              <view wx:else>已下架</view>
+            </block>
+
+            <!-- <block wx:if="{{!gotopState}}">
+              <image src="/agentpages/images/up.png" class="operate" wx:if="{{item.VALID==1}}"
+                data-value="{{item.VALID}}" data-goodsid="{{item.GOODS_ID}}"></image>
+              <image src="/agentpages/images/down.png" class="operate" wx:else data-value="{{item.VALID}}"
+                data-goodsid="{{item.GOODS_ID}}"></image>
+            </block> -->
+            <block wx:else>
+              <view class="top" bindtap="goodsTop" data-goodsid="{{item.GOODS_ID}}" data-index="{{index}}">置顶</view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+  <view style="height:120rpx"></view>
+  <view class="bottom">
+    <view bindtap="goCate">分类设置</view>
+    <span>|</span>
+    <view bindtap="goSort">商品排序</view>
+    <span>|</span>
+    <view bindtap="goPatch">批量操作</view>
+    <span>|</span>
+    <view class="add" bindtap="openIOS">+新增上传</view>
+  </view>
+  <view wx:if="{{showIOSDialog}}" class="fadeIn" bindtap="close">
+    <view class="weui-mask"></view>
+    <view class="weui-actionsheet weui-actionsheet_toggle">
+      <view class="weui-actionsheet__menu">
+        <view class="weui-actionsheet__cell" bindtap="addguige">添加规格组</view>
+        <view class="weui-actionsheet__cell" bindtap="addlabel">添加标签</view>
+        <view class="weui-actionsheet__cell" bindtap="addaces">添加辅料</view>
+        <view class="weui-actionsheet__cell" bindtap="addgoods">添加商品</view>
+      </view>
+      <view class="weui-actionsheet__action">
+        <view class="weui-actionsheet__cell">取消</view>
+      </view>
+    </view>
+  </view>
+</view>

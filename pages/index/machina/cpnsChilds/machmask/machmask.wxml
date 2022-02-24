@@ -1,0 +1,36 @@
+<!-- 添加打票机弹窗 -->
+<view class="menban" hidden="{{isHidd}}">
+  <view class="menban-cont">
+    <view>添加打票机</view>
+    <image class="menban-cont-img" src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg"></image>
+    <view class="menban-section">
+      <text>编号（SN）</text>
+      <text>{{P_SN}}</text>
+    </view>
+    <view class="menban-section" hidden="{{P_TYPE==1}}">
+      <text>密钥（KEY）</text>
+      <text>{{P_NOTE}}</text>
+    </view>
+    <view class="menban-section">
+      <text>打票纸宽度</text>
+      <view class="check-cont" wx:for="{{lilist}}" wx:key="list" id="{{index}}" bindtap="chooseWidth">
+        <image src="/img/select.png" hidden="{{index==chooseTab}}"></image>
+        <image src="/img/selected.png" hidden="{{index!=chooseTab}}"></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class="menban-section">
+      <text>打票机档口</text>
+      <view class="check-cont" wx:for="{{lilist1}}" wx:key="list" id="{{index}}" bindtap="choose1">
+        <image src="/img/select.png" hidden="{{index==chooseTab1}}"></image>
+        <image src="/img/selected.png" hidden="{{index!=chooseTab1}}"></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+    <view class="bottom">
+      <view class="btnn btnn1" bindtap="cancel">取消添加</view>
+      <view class="btnn btnn2" bindtap="confirm">添加</view>
+    </view>
+  </view>
+</view>

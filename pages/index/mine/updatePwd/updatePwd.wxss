@@ -1,0 +1,27 @@
+/* pages/updatePwd/updatePwd.wxss */
+.item {
+  width: 100%;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.item view,
+.item input {
+  font-size: 30rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.btn {
+  background-color: var(--themecolor);
+  width: 690rpx !important;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #FFF;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 100rpx;
+  padding: 0 0;
+  border-radius: 10rpx;
+
+}

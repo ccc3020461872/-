@@ -1,0 +1,24 @@
+<!--pages/index/shopSet/setProduct/setProduct.wxml-->
+<view class="cont">
+  <view class="cont-bott">
+    <view>
+      <label for="">
+        <text>店外预点餐</text>
+        <text class="label-bold-text">【堂食/打包】</text>
+      </label>
+      <view class="page-text-2 text-2">老顾客点餐时展示他点过的商品</view>
+    </view>
+    <switch color="var(--themecolor)"checked="{{switch1Checked}}" bindchange="switch1Change" />
+  </view>
+
+  <!-- 选择时间段 -->
+  <view class="cont-bott">
+    <view class="cont-display" bindtap="toset">
+      <view>客户预点餐时间</view>
+      <text>{{time}}</text>
+    </view>
+    <view class="right-img">
+      <image src="/img/right.png"></image>
+    </view>
+  </view>
+</view>

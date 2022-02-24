@@ -1,0 +1,78 @@
+/* pages/index/shopSet/setTime/cpnsChilds/resttime/resttime.wxss */
+
+
+.cont {
+  width: 92%;
+  padding: 50rpx 4%;
+  background-color: #fff;
+  border-radius: 80rpx;
+  min-height: 1000rpx;
+}
+.cont-time-list {
+  width: 90%;
+  padding: 40rpx 5%;
+  background: #F7F7F7;
+  border-radius: 20rpx;
+  opacity: 1;
+  margin-top: 20rpx;
+
+}
+.cont-item {
+  width: 94%;
+  padding: 20rpx 3% 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.cont-time .cont-time-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+
+.cont-time .time-title {
+  padding-left: 50rpx;
+}
+
+.cont-time .time-title::before {
+  content: "";
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: var(--themecolor);
+  position: absolute;
+  margin-top: 8rpx;
+  left: 35px;
+
+}
+.cont-item image {
+  width: 422rpx;
+  height: 340rpx;
+  margin: 0 auto;
+}
+.list-time {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 35rpx;
+}
+
+.formBtn {
+  position: fixed;
+  bottom: 30rpx;
+  width: 300rpx;
+  height: 90rpx;
+  border-radius: 50rpx;
+  background: #1E5051;
+  color: #fff;
+  line-height: 90rpx;
+  text-align: center;
+  margin: 0 225rpx;
+}

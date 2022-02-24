@@ -1,0 +1,26 @@
+<!--pages/boss/bossGuide/bossGuide.wxml-->
+<block wx:if="{{currentIndex!=0}}">
+  <common-title formcolor="{{formcolor}}" bind:tabarHeight="tabarHeight" titleType="{{titleType}}">
+    <view slot="commtitle">{{currentName}}</view>
+  </common-title>
+</block>
+<view style="height:{{statusBarHeight+statusTop}}rpx;" wx:if="{{currentIndex!=0}}"></view>
+
+<view class="content">
+  <!-- //营业汇总 -->
+  <common-summary wx:if="{{currentIndex==0}}"></common-summary>
+  <!-- //营销效果 -->
+  <common-fitment wx:if="{{currentIndex==1}}"></common-fitment>
+  <!-- //订单 -->
+  <common-order wx:if="{{currentIndex==2}}"></common-order>
+  <!-- //个人中心 -->
+  <common-center wx:if="{{currentIndex==3}}"></common-center>
+</view>
+<!-- //底部导航 -->
+<view class="bottomGuide">
+  <view class="bottomItem" wx:for="{{guide}}" wx:key="guide" bindtap="guide" data-index="{{index}}"
+    data-name="{{item.name}}">
+    <image src="{{currentIndex==index?item.img:item.choiceimg}}"></image>
+    <view class="viewActivity {{currentIndex==index?'viewActivityed':''}}">{{item.name}}</view>
+  </view>
+</view>

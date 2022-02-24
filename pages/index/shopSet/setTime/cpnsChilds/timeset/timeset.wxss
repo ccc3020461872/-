@@ -1,0 +1,171 @@
+/* pages/index/shopSet/setTime/cpnsChilds/timeset/timeset.wxss */
+.cont {
+  width: 92%;
+  padding: 50rpx 4%;
+  background-color: #fff;
+  border-radius: 80rpx;
+  min-height: 1000rpx;
+}
+
+/* 设置时间页面 */
+.cont-bott {
+  padding: 40rpx 0;
+  border: none;
+}
+.cont-bott {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0;
+}
+
+.cont-bott label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cont-bott label text:last-child {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  background-color: #fff;
+}
+
+/* 日期选择 */
+.check-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.check-list view {
+  width: 74rpx;
+  height: 53rpx;
+  background: #E2E2E2;
+  border-radius: 8rpx;
+  opacity: 1;
+  font-size: 30prx;
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 53rpx;
+  text-align: center;
+}
+
+.check-list view image {
+  width: 31rpx;
+  height: 31rpx;
+  position: relative;
+  top: -72rpx;
+  right: -37rpx;
+
+}
+
+
+/* 选择全天或者选择时间段 */
+.time-type {
+  display: flex;
+  align-items: center;
+}
+
+.time-type .check-cont {
+  margin-right: 60rpx;
+}
+
+.cont-display {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 30rpx 0;
+}
+
+.cont-display-left {
+  display: flex;
+  width: 90%;
+}
+
+.right-img {}
+
+.del-img {
+  padding: 30rpx 0;
+}
+
+.cont-add {
+  width: 100%;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1E5051;
+  border: none;
+  justify-content: flex-end;
+  padding-top: 20rpx;
+}
+
+/* 选择未选中样式 */
+.check-cont image {
+  width: 31rpx;
+  height: 31rpx;
+  margin-right: 10rpx;
+}
+
+.check-cont .label view {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+
+.check-cont .radio {
+  display: flex;
+  align-items: center;
+}
+.right-img {
+  width: 16rpx;
+  height: 26rpx;
+}
+/* 右箭头 */
+.right-img image {
+  width: 16rpx;
+  height: 26rpx;
+}
+.del-img{
+  width: 33rpx;
+  height: 33rpx;
+}
+/* 底部按钮 */
+.bottom {
+  width: 80%;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 35rpx;
+}
+
+.bottom .btnn {
+  width: 265rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 50rpx;
+  opacity: 1;
+  font-size: 30rpx;
+
+}
+
+.btnn1 {
+  border: 1rpx solid var(--themecolor);
+  color: var(--themecolor);
+
+}
+
+.btnn2 {
+  border: 1rpx solid var(--themecolor);
+  background-color: var(--themecolor);
+  color: #fff;
+}
+

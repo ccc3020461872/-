@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/goods/addGoods/index",
+    "pages/goods/classify/manage/manage",
+    "pages/goods/classify/sort/sort",
+    "pages/goods/classify/choose/choose",
+    "pages/goods/excipients/manage/manage",
+    "pages/goods/addGoods/forms/forms",
+    "pages/index/index",
+    "pages/deskCode/deskCode",
+    "pages/login/login",
+    "pages/index/shopSet/shopSet",
+    "pages/index/shopSet/setProduct/setProduct",
+    "pages/index/shopSet/setTime/setTime",
+    "pages/index/machina/machina",
+    "pages/index/shopSet/setNumber/setNumber",
+    "pages/index/shopSet/setOrder/setOrder",
+    "pages/index/shopSet/oneNotice/oneNotice",
+    "pages/logs/logs",
+    "pages/index/machina/machpage/machpage",
+    "pages/index/machina/machadd/machadd",
+    "pages/index/machina/machmodel/machmodel",
+    "pages/index/machina/machmodel/machimg/machimg",
+    "pages/index/reserveTable/reserveTable",
+    "pages/index/reserveTable/setReserve/setReserve",
+    "pages/index/stateMent/stateMent",
+    "pages/index/mine/updatePwd/updatePwd",
+    "pages/index/mine/web-view/web-view",
+
+    "pages/fitment/fitment",
+    "pages/enroll/enroll",
+    "pages/goods/setPacking/setPacking",
+    "pages/goods/addGoods/search/srarch",
+    "pages/goods/tag/tag",
+    "pages/goods/excipients/choose/choose",
+    "pages/goods/excipients/excipients",
+    "pages/goods/taste/taste",
+    "pages/goods/print/print",
+    "pages/goods/addGoods/photes/photes",
+    "pages/goods/addGoods/imgPreview/imgPreview",
+    "pages/goods/classify/add/add"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "客爱点商家助手",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将判断您所在位置与店铺的距离"
+    }
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

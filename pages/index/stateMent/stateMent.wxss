@@ -1,0 +1,29 @@
+/* pages/index/stateMent/stateMent.wxss */
+/* 导航 */
+
+
+.nav-list {
+  width: 80%;
+  margin: 30rpx 10%;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  border: 1rpx solid var(--themecolor);
+}
+
+.item {
+  width: 22%;
+  height: 100%;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  text-align: center;
+  margin: 0 0 20rpx 0;
+  font-size: 24rpx;
+  border-right: 1rpx solid var(--themecolor);
+}
+
+.item.active {
+  background: var(--themecolor);
+  border: 1rpx solid var(--themecolor);
+  color: #fff;
+}

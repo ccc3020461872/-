@@ -1,0 +1,47 @@
+/* 搜索框 */
+.searchInput {
+  padding: 22rpx 30rpx 14rpx 26rpx;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 28rpx;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d1d1;
+}
+.searchInput .inputinput {
+  display: flex;
+  align-items: center;
+  background-color: #F0F0F0;
+  height: 60rpx;
+  border-radius: 30rpx;
+  width: 85%;
+}
+.searchInput .inputinput image {
+  width: 35rpx;
+  margin: 0 10rpx 0 20rpx;
+}
+/* 搜索数据 */
+.searchInfo {
+  padding: 40rpx 30rpx 14rpx 26rpx;
+}
+.searchInfo .info {
+  display: flex;
+  align-items: center;
+  height: 140rpx;
+  margin-bottom: 60rpx;
+}
+.info .info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 14rpx;
+}
+.info .info-text .price {
+  color: #f15a26;
+}
+.searchInfo image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}

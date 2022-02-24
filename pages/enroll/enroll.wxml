@@ -1,0 +1,38 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+  <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 温馨提示 -->
+      <view class="tips">
+        <text>温馨提示： “以下资料”需要您提前准备，准备完成点击“开始填写资料”</text>
+        <view class="triangle"></view>
+      </view>
+      <!-- 需要提交的列表 -->
+      <view class="list">
+        <block wx:for="{{infoList}}" wx:key="tips">
+          <view class="item">
+           <image src="{{item.img}}"></image>
+           <view class="categary">
+            <view class="title">
+             <text>{{item.title}}</text>
+             <text>示例</text>
+            </view>
+            <view class="description">
+             {{item.tips}}
+            </view>
+           </view>
+          </view>
+        </block>
+      </view>
+      <view class="note">资料仅用于开通服务审核， 请放心提交</view>
+      <view class="button" style="background-color: {{color}};">
+        开始填写资料
+      </view>
+    </view>
+  </view>
+</view>

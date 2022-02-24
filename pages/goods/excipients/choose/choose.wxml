@@ -1,0 +1,35 @@
+<page-meta
+>
+  <navigation-bar
+    background-color="{{color}}"
+/>
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+   <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+    <!-- 全选 -->
+    <view class="all">
+      <image src="/images/selected.png" wx:if="{{allChoose}}" mode="widthFix" bindtap="choose" data-type="{{false}}" ></image>
+      <image src="/images/select.png" wx:else bindtap="choose" data-type="{{true}}" mode="widthFix"></image>
+      <text>全选</text>
+    </view>
+    <!-- 辅料列表 -->
+    <view class="listBox">
+      <view class="list" wx:for="{{list}}">
+      <view class="goodsName">{{item.ACCESSORIES_NAME}}</view>
+      <view class="price">
+       <text>{{item.PRICE}}元</text>
+       <image src="/images/selected.png" mode="widthFix" wx:if="{{item.select}}" bindtap="choose" data-index="{{index}}"></image>
+       <image wx:else src="/images/select.png" mode="widthFix" bindtap="choose" data-index="{{index}}"></image>
+      </view>
+    </view>
+    </view>
+     <!-- 新建商品 -->
+     <view class="cc-btn cc-center" style="background-color: {{color}};" bindtap="commit">保存</view>
+    </view>
+
+  </view>
+</view>

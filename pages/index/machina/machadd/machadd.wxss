@@ -1,0 +1,66 @@
+/* pages/index/machina/machadd/machadd.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+.container {
+  width: 94%;
+  padding: 0 3%;
+  height: 1000rpx;
+  background: #fff;
+  border-radius: 15rpx;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f4f4f4;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.ipt {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-weight: 400;
+  color: #999999;
+}
+
+input {
+  width: 70%;
+  text-align: right;
+}
+
+.append {
+  width: 300rpx;
+  height: 86rpx;
+  background: #1E5051;
+  border-radius: 43rpx;
+  opacity: 1;
+  color: #fff;
+  position: fixed;
+  bottom: 150rpx;
+  left: 225rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+}
+
+.page-text {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 56rpx;
+  margin-bottom: 50rpx;
+}
+
+
+.menban-cont {
+  padding: 20rpx 5%;
+  text-align: center;
+}

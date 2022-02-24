@@ -1,0 +1,44 @@
+<page-meta
+>
+  <navigation-bar
+    background-color="{{color}}"
+/>
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+   <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 编辑辅料 -->
+       <view class="edit">
+         <view class="text">
+          <view class="title">编辑辅料</view>
+          <view class="tips">可用于所有商品添加辅料时选择</view>
+         </view>
+         <view class="btn cc-center" style="color: {{color}}; border-color: {{color}};" bindtap="add">添加辅料</view>
+       </view>
+       <!-- 辅料列表 -->
+       <form bindsubmit="commit">
+       <view class="list">
+          <view class="item" wx:for="{{list}}" wx:key="id">
+            <view class="left">
+            <!-- 辅料名称 -->
+              <input type="text" class="goodsName" placeholder="辅料名称" bindinput="doInput" data-type="name" data-index="{{index}}" name="{{item.id+'N'}}" value="{{item.name}}" placeholder-class="placeholder"/>
+              <!-- 价格 -->
+              <view class="price">
+                <input type="text" placeholder="价格" value="{{item.price}}"  bindinput="doInput" data-type="price" data-index="{{index}}" name="{{item.id+'P'}}" placeholder-class="placeholder"/>
+              <text>元</text>
+              </view>
+            </view>
+            <!-- 删除 -->
+            <image class="remove" bindtap="removeItem" data-index="{{index}}" data-item="{{item}}" src="/images/remove.png" mode="widthFix"></image>
+          </view>         
+       </view>
+     <!-- 新建商品 -->
+     <button form-type="submit" class="built cc-center" style="background-color: {{color}};" disabled="{{disabled}}">保存</button>
+    </form>
+    </view>
+
+  </view>
+</view>

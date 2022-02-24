@@ -1,0 +1,16 @@
+<!--pages/updatePwd/updatePwd.wxml-->
+<form bindsubmit='formSubmit'>
+<view class="item">
+  <view>旧密码:</view>
+  <input placeholder="6-20字符，区分大小写" maxlength="20"  name="oldPwd"/>
+</view>
+<view class="item">
+  <view>新密码:</view>
+  <input placeholder="6-20字符，区分大小写" maxlength="20" name="newPwd"/>
+</view>
+<view class="item">
+  <view>确认新密码:</view>
+  <input placeholder="6-20字符，区分大小写" maxlength="20" name="rightPwd"/>
+</view>
+<button class="btn" form-type='submit'>确定</button>
+</form>

@@ -1,0 +1,16 @@
+<view>
+  <swiper bindtransition="changeImg">
+    <swiper-item>
+      <image src="{{image}}" class="goodsImg" mode="widthFix"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{image}}" class="goodsImg" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+  <button style="background-color: {{color}};">确定</button>
+  <!-- 当前图片张数 -->
+  <view class="number">
+    <text>2</text>
+    <text>/480</text>
+  </view> 
+</view>

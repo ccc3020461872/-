@@ -1,0 +1,268 @@
+/* component/con-summary/con-summary.wxss */
+.summary {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.titleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.storeImg {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 10rpx;
+}
+
+.storeInfo {
+  display: flex;
+  align-items: center;
+}
+
+.picker,
+.storeName {
+  font-size: 28rpx;
+  align-items: center;
+}
+
+.storeName1 {
+  width: 91%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.dateImg {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+  padding-top: 5rpx;
+}
+
+.rightImg {
+  width: 15rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.todayMoney {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30rpx 0;
+}
+
+.moneyText {
+  font-size: 26rpx;
+  /* font-weight: bold; */
+}
+
+.money {
+  font-size: 45rpx;
+  color: red;
+}
+
+.money text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.todayMoneyItemTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todayMoneyItemTitle view {
+  font-size: 22rpx;
+  color: #fff;
+  margin-left: 10rpx;
+}
+
+.todayMoneyContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.todayMoneyItemNum {
+  font-size: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 10rpx;
+  font-weight: bold;
+}
+
+.todayMoneyItem {
+  background: linear-gradient(to right, var(--themecolorsecond), var(--themecolor));
+  width: 30%;
+  padding: 30rpx 0;
+  border-radius: 10rpx;
+
+}
+
+.todayMoneyItem:not(:first-child) {
+  margin-left: 4%;
+}
+
+
+/* //柱线图 */
+.postPicture,
+.recentPicture {
+  background-color: #fff;
+  width: 690rpx;
+  height: 500rpx;
+  margin: 0rpx auto 0;
+  border-radius: 8rpx;
+  padding: 30rpx 0;
+  box-shadow: 0rpx 5rpx 20rpx #ddd;
+}
+
+.peopleAccount {
+  font-weight: bold;
+  position: relative;
+  padding: 0rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.peopleAccount::before {
+  content: '';
+  position: absolute;
+  width: 8rpx;
+  height: 40rpx;
+  background-color: #f7c829;
+  left: 30rpx;
+  top: 0rpx;
+  border-radius: 8rpx;
+}
+
+.peopleAccount text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.eacher {
+  width: 96%;
+  padding: 20rpx 2%;
+  height: 450rpx;
+  box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.1);
+  margin-top: 30rpx;
+}
+.eacher1{
+  height: 650rpx;
+}
+.ec_cont{
+  height: 400rpx;
+
+}
+ec-canvas {
+  width: 90%;
+  height: 90%;
+}
+.ec_cont1{
+  height: 500rpx;
+}
+.ec_cont1 ec-canvas{
+  width: 50% !important; 
+  height: 50% !important;
+  transform:scale(0.5, 0.5) !important;
+}
+/* 导航 */
+
+
+.nav-list {
+  width: 300rpx;
+  height: 60rpx;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1rpx solid var(--themecolor);
+}
+
+.item {
+  width: 49.5%;
+  height: 100%;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  text-align: center;
+  margin: 0 0 20rpx 0;
+  font-size: 24rpx;
+}
+
+.item.active {
+  background: var(--themecolor);
+  border: 1rpx solid var(--themecolor);
+  color: #fff;
+}
+
+/* 支付方式 */
+.payType {
+  display: flex;
+  justify-content: center;
+}
+
+.type1,.type2 {
+  position: relative;
+  padding: 0rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.type1::before,.type2::before{
+  content: '';
+  position: absolute;
+  width: 40rpx;
+  height: 30rpx;
+  top: 0rpx;
+  border-radius: 8rpx;
+  top: 10rpx;
+}
+.type1::before{
+  right: 140rpx;
+  background-color:#F57904;
+}
+.type2::before{
+  right: 160rpx;
+  background-color:#4285F4;
+}
+.storeImg{
+  width: 140rpx;
+  height: 52rpx;
+}
+
+.allmoney{
+  text-align: center;
+  font-size: 35rpx;
+  margin-top: 20rpx;
+  
+}
+.allmoney_title{
+  font-size: 26rpx;
+  color: #888;
+}
+
+
+.price_type{
+  width: 94%;
+  padding: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 170rpx;
+  height: 0;
+}
+.price_type_item view{
+  font-size: 26rpx;
+  color: #888;
+}

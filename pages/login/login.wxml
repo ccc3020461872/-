@@ -1,0 +1,44 @@
+<!--pages/boss/bossIndex/bossIndex.wxml-->
+<form bindsubmit='formSubmit'>
+  <image src="/images/null/denglu.png" class="login_img"></image>
+  <view class="login_img_cont">
+    <view class="bg">
+      <view style="height:100px"></view>
+      <view class="title">客爱点{{way==1?'老板助手':'工作台'}}欢迎您登录</view>
+    </view>
+    <view class="nav-list1">
+      <view wx:for="{{nav}}" wx:key="list" class="item1 {{currentIndex== index ? 'active' : ''}}" catchtap="choose"
+        data-idx="{{index}}">{{item}}</view>
+    </view>
+    <view class="content" hidden="{{currentIndex== 1}}">
+      <view class="item">
+        <image src="/img/account.png"></image>
+        <input placeholder="请输入账号" name="account" value="{{account}}" />
+      </view>
+      <view class="item">
+        <image src="/img/pwd.png" style="width:23rpx"></image>
+        <input placeholder="请输入密码" name="pwd" value="{{pwd}}" />
+      </view>
+      <view class='all ' bindtap="selectAll">
+        <image style='margin-right:20rpx;' class="icon" src="/img/select.png" wx:if="{{isSelect}}"></image>
+        <image style='margin-right:20rpx;' class="icon" src="/img/selected.png" wx:else></image>
+        <view>记住密码</view>
+      </view>
+    </view>
+    <!-- 手机号登录 -->
+    <view class="content" hidden="{{currentIndex== 0}}">
+      <view class='item'>
+        <image src="/img/account.png"></image>
+        <input name="phone" placeholder='请填写联系电话' bindinput="telInput" focus="{{focus}}"
+          type="number" disabled="{{dsbtel}}" maxlength='11' ></input>
+      </view>
+      <view class='item'>
+        <image src="/img/pwd.png" style="width:23rpx"></image>
+        <input name="code" placeholder='请输入验证码' maxlength="6" auto-height type="number"></input>
+        <button class='code' bindtap='code' disabled="{{dsb}}">{{btnvalue}}</button>
+      </view>
+    </view>
+    <button class="btn" form-type='submit'>登录</button>
+    <view class="register">立即注册</view>
+  </view>
+</form>

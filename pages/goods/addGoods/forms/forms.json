@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "add-goods": "/component/addGoods/addGoods",
+    "popup": "/component/popup/popup"
+  },
+  "navigationBarTitleText": "添加商品"
+}

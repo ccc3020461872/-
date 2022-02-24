@@ -1,0 +1,31 @@
+<!--component/con-center/con-center.wxml-->
+<view class="item">
+  <view>头像</view>
+  <image src="/images/shouyeLOGO.png"></image>
+</view>
+<view class="item">
+  <view> 昵称</view>
+  <view>玛玛哈哈韩式料理</view>
+</view>
+<view class="item">
+  <view>手机号</view>
+  <view>18902262551</view>
+</view>
+<view class="item">
+  <view>密码</view>
+  <view bindtap="updatePwd">修改密码</view>
+</view>
+<view class="item">
+  <view>分享</view>
+  <image src="/img/right.png" class="right-img"></image>
+</view>
+<view class="item" bindtap="toweb">
+  <view>反馈</view>
+  <image src="/img/right.png" class="right-img"></image>
+</view>
+<view class="item">
+  <view>帮助/联系我们</view>
+  <image src="/img/right.png" class="right-img"></image>
+</view>
+
+<view class="loginOut" bindtap="loginOut">退出登录</view>

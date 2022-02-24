@@ -1,0 +1,96 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+  <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 桌贴码申请 -->
+      <!-- 有桌贴码 -->
+      <view class="choose">
+        <view class="text">
+          <view class="title">
+            <text>桌贴码申请</text>
+            <text>【有桌号】</text>
+          </view>
+          <view class="tips">
+            输入桌号，备注，选择数量提交申请
+          </view>
+        </view>
+        <image class="chooseImg" bindtap="chooseType" src="/images/{{isDeskCode ? 'switch' : 'switch1'}}.png" mode="widthFix"></image>
+      </view>
+       <!-- 无桌贴码 -->
+      <view class="choose" wx:if="{{!isDeskCode}}" style="margin-top: 80rpx;">
+        <view class="text">
+          <view class="title">
+            <text>桌贴码申请</text>
+            <text>【无桌号】</text>
+          </view>
+          <view class="tips">
+            {{isDeskCode ? '输入桌号，备注，选择数量提交申请' : '不需要桌号,只输入备注+选择数量'}}
+          </view>
+        </view>
+        <image class="chooseImg" bindtap="chooseType" src="/images/switch.png" mode="widthFix"></image>
+      </view>
+     
+      <!-- 输入桌号 -->
+      <view class="deskNum" wx:if="{{isDeskCode}}">
+        <view class="show">
+          <view class="text">
+           <text>桌号</text>
+           <text>桌号</text>
+          </view>
+          <view class="num">
+           <text bindtap="chooseTableNum" data-type="start">{{start}}</text>
+           <view class="line"></view>
+           <text bindtap="chooseTableNum" data-type="end">{{end}}</text>
+          </view>
+        </view>
+        <!-- 桌号输入框 -->
+        <view class="enter">
+          <view class="input"><input type="number" placeholder="输入桌号"  placeholder-class="placeholder" bindinput="enter" focus="{{deskNumFocus}}" value="{{deskNum}}" data-type="deskNum"/></view>
+        </view>
+       
+      </view>
+       <!-- 备注 -->
+       <view class="note">
+          <text>备注</text>
+          <input type="text" placeholder="逢4过，不要带4的桌号，比如4，14" bindinput="enter" value="{{note}}" data-type="note"/>
+        </view>
+        <!-- 数量 -->
+       <view class="note">
+          <text class="request-enter">数量</text>
+          <input type="text" placeholder="输入数量 例如：13张x2(2是每张桌子贴2张)" bindinput="enter" value="{{num}}" data-type="num"/>
+        </view>
+        <!-- 打印方式 -->
+        <view class="printType">
+           <view class="printTitle request-enter">打印方式</view>
+           <view class="self" bindtap="choosePrint">
+           <image src="/images/{{printSelf ? 'selected': 'select'}}.png"  mode="widthFix"></image>
+            自己打印
+           </view>
+           <view class="server" bindtap="choosePrint">
+            <image src="/images/{{printSelf ? 'select': 'selected'}}.png"  mode="widthFix" ></image>
+            服务商打印
+           </view>
+        </view>
+        <view class="choose" wx:if="{{isDeskCode}}" style="margin-top: 80rpx;">
+        <view class="text">
+          <view class="title">
+            <text>桌贴码申请</text>
+            <text>【无桌号】</text>
+          </view>
+          <view class="tips">
+            {{isDeskCode ? '输入桌号，备注，选择数量提交申请' : '不需要桌号,只输入备注+选择数量'}}
+          </view>
+        </view>
+        <image class="chooseImg" bindtap="chooseType" src="/images/switch1.png" mode="widthFix"></image>
+      </view>
+      <!-- 新建商品 -->
+      <view class="built cc-center" style="background-color: {{color}};" bindtap="commit" >提交申请</view>
+    </view>
+
+  </view>
+</view>

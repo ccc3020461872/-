@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="mod1">
+    <view class="box2">
+      <view class="bd1">
+        <view class="group1">
+          <view class="layer1 {{currTab==index?'active':''}}" wx:for="{{datenav}}" wx:key="datenav" id="{{index}}" bindtap="chooseDate">
+            <text lines="1" class="word2">{{item}}</text>
+          </view>
+        </view>
+        <view class="bg-cont" style="display: flex;justify-content: space-between;">
+          <view class="group3">
+            <view class="block1">
+              <text lines="1" class="info4">上月</text>
+            </view>
+            <view class="block3" >
+              <image src="/img/index/next.png" class="icon1"></image>
+              <text lines="1" class="word5">2021.12月</text>
+              <image src="/img/index/next.png" class="label1"></image>
+            </view>
+          </view>
+          <view class="group3">
+            <view class="block1" style="justify-content:flex-start;padding-left:60rpx">
+              <text lines="1" class="info4" >本月</text>
+            </view>
+            <view class="block3" style="padding-left:30rpx">
+              <image src="/img/index/next.png" class="icon1"></image>
+              <text lines="1" class="word5">2022.1月</text>
+              <image src="/img/index/next.png" class="label1"></image>
+            </view>
+          </view>
+        </view>
+        <view class="group4">
+          <text lines="1" class="word6">指标分析</text>
+          <text lines="1" class="txt2">本期较上期</text>
+        </view>
+        <view class="group5">
+          <text lines="1" class="word7">营业额（元）</text>
+          <view class="layer5"></view>
+          <text lines="1" class="word8">171.60%</text>
+        </view>
+        <view class="group6">
+          <text lines="1" decode="true" class="word9">上期：26,471.38&nbsp;&nbsp;本期：71,895.43</text>
+          <text lines="1" class="txt3">+45,424.05</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

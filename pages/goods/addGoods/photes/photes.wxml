@@ -1,0 +1,17 @@
+<view class="photes">
+  <!-- 搜索框 -->
+  <view class="search">
+   <view class="input">
+    <image src="/images/search.png" mode="heightFix"></image>
+    <input type="text" placeholder-class="placeholder" placeholder="请输入商品名称"/>
+   </view>
+   <view class="search-text" style="color: {{color}};">搜索</view>
+  </view>
+  <!-- 搜索之后展示的图片区 -->
+  <view class="images">
+    <view class="total">共418张图片</view>
+    <view class="imgItem">
+      <image  wx:for="{{10}}" src="/images/test.png" data-img="/images/test.png" bindtap="toOtherPage" data-url="/pages/goods/addGoods/imgPreview/imgPreview"></image>
+    </view>
+  </view>
+</view>

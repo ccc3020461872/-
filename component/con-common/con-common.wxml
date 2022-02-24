@@ -1,0 +1,27 @@
+<!--component/con-detail/con-detail.wxml-->
+<wxs src="../../pages/tofix.wxs" module="filters"></wxs>
+<view class="summary">
+  <!-- <view class="moneyText" style="margin-top:20rpx">销售统计</view> -->
+  <view class="itemContent">
+    <view class="item {{currentIndex==index?'activityed':''}}" wx:for="{{allData}}" wx:key="box" bindtap="choice"
+      data-index="{{index}}">{{item.name}}</view>
+  </view>
+  <!-- //销售统计 -->
+  <view class="hotproduct">
+    <view class="hotItem" wx:for="{{dataList}}" wx:key="PART3" wx:if="{{dataList.length!=0}}">
+      <image src="{{item.GOODS_IMG}}" mode="aspectFill"></image>
+      <view class="hotItemProcess">
+        <view class="hotName">{{item.GOODS_NAME}}</view>
+        <view class="progress">
+          <progress percent="{{filters.toPoint(item.proportion)}}" stroke-width="3" activeColor="var(--themecolor)"
+            backgroundColor="#eee" border-radius="16" />
+          <view>下单{{item.allNumber}}次</view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{dataList.length==0 && isShow}}">
+      <v-info fromimages="{{images}}" frominfoWord="{{infoWord}}" formheight="{{height}}"></v-info>
+    </block>
+  </view>
+  <view style="height:150rpx"></view>
+</view>

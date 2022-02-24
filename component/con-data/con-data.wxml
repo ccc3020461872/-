@@ -1,0 +1,34 @@
+<!-- //柱线图 -->
+<view class="eacher">
+  <view class="moneyText" style="margin:0rpx 0 20rpx">营业汇总</view>
+  <view class="ec_cont">
+    <ec-canvas id="businessTrend" class='mychart-businessTrend' canvas-id="mychart-businessTrend" ec="{{line_ec}}">
+    </ec-canvas>
+  </view>
+</view>
+<!-- 饼状图 -->
+<view class="eacher eacher1">
+  <view class="moneyText" style="margin:0rpx 0 20rpx">收款方式统计</view>
+  <view class="payType">
+    <view class="type1">微信</view>
+    <view class="type2">支付宝</view>
+  </view>
+  <view class="allmoney">
+    <view class="allmoney_title">总收账</view>
+    <view>{{selectDay.allMoney}}</view>
+  </view>
+  <view class="price_type">
+    <view class="price_type_item">
+      <view>微信收款</view>
+      <text>￥{{wxPay}}</text>
+    </view>
+    <view class="price_type_item">
+      <view>支付宝收款</view>
+      <text>￥{{aPay}}</text>
+    </view>
+  </view>
+  <view class="ec_cont1">
+    <ec-canvas id="mychart-dom-bar" class='mychart-bar' canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+
+</view>

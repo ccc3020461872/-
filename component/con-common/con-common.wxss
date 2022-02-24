@@ -1,0 +1,119 @@
+/* component/con-detail/con-detail.wxss */
+.summary{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 150rpx;
+}
+.titleItem{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.storeImg{
+ width: 52rpx;
+ height: 52rpx;
+ margin-right: 10rpx;
+}
+.storeInfo{
+ display: flex;
+ align-items: center;
+}
+.picker,.storeName{
+ font-size: 28rpx;
+}
+.picker view{
+  font-size: 26rpx;
+}
+.storeName1{
+ width: 91%;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+ text-align: right;
+}
+
+.picker{
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+}
+.dateImg{
+ width: 32rpx;
+ height: 32rpx;
+ margin-left: 10rpx;
+}
+.rightImg{
+ width: 15rpx;
+ height: 28rpx;
+ margin-left: 10rpx; 
+}
+.moneyText {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.itemContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:20rpx ;
+}
+.item{
+  font-size: 28rpx;
+}
+.item:last-child{
+  margin-left: 50rpx;
+  border-bottom: 2rpx solid #fff;
+}
+.activityed{
+  color: var(--themecolor);
+  border-bottom: 2rpx solid var(--themecolor) !important ;
+}
+
+/* //销售统计 */
+
+.hotproduct{
+  background-color: #fff;
+  width: 690rpx;
+  margin:  30rpx auto;
+  border-radius: 8rpx;
+  /* box-shadow: 0rpx 5rpx  20rpx #ddd; */
+}
+.hotItem{
+  width: 100%;
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.hotItemProcess{
+  width: 80%;
+}
+.hotItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+}
+.peopleimg{
+  width:80rpx !important;
+  height: 80rpx !important;
+  border-radius: 100% !important;
+}
+.hotName{
+  font-size: 28rpx;
+}
+.progress{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+progress{
+  width: 65%;
+}
+.progress view{
+  font-size: 26rpx;
+  color: #666;
+}

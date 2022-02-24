@@ -1,0 +1,26 @@
+
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+.cont-left .title {
+  display: block;
+  margin: 40rpx 0 30rpx;
+}
+
+.cont-left image {
+  width: 13rpx;
+  height: 21rpx;
+  margin-left: 20rpx;
+}
+
+.cont-left view {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.cont-right image {
+  width: 422rpx;
+  height: 340rpx;
+}

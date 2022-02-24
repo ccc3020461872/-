@@ -1,0 +1,207 @@
+/* component/con-effect/con-effect.wxss */
+@import "/weui.wxss";
+
+.summary {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.titleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.storeImg{
+  width: 130rpx;
+  height: 52rpx;
+  margin-right: 10rpx;
+ }
+
+.storeInfo {
+  display: flex;
+  align-items: center;
+}
+
+.picker {
+  color: #333 !important;
+}
+
+.picker,
+.storeName {
+  font-size: 28rpx;
+
+}
+
+.picker view {
+  font-size: 26rpx;
+
+}
+
+.storeName1 {
+  width: 91%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.dateImg {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+
+.rightImg {
+  width: 15rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.todayMoney {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+
+.moneyText {
+  font-size: 26rpx;
+  padding: 30rpx 0 0 30rpx;
+}
+
+.money {
+  font-size: 45rpx;
+  color: red;
+}
+
+.money text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.todayMoneyItemTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todayMoneyItemTitle view {
+  font-size: 22rpx;
+  color: #fff;
+  margin-left: 10rpx;
+}
+
+.todayMoneyContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.todayMoneyItemNum {
+  font-size: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 10rpx;
+  font-weight: bold;
+}
+
+.todayMoneyItem {
+  background: linear-gradient(to right, var(--themecolorsecond), var(--themecolor));
+  width: 30%;
+  padding: 30rpx 0;
+  border-radius: 10rpx;
+
+}
+
+.todayMoneyItem:not(:first-child) {
+  margin-left: 4%;
+}
+
+
+/* //柱线图 */
+.postPicture,
+.recentPicture {
+  background-color: #fff;
+  width: 690rpx;
+  height: 500rpx;
+  margin: 0rpx auto 0;
+  border-radius: 8rpx;
+  padding: 30rpx 0;
+  box-shadow: 0rpx 5rpx 20rpx #ddd;
+}
+
+.peopleAccount {
+  font-weight: bold;
+  position: relative;
+  padding: 0rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.peopleAccount::before {
+  content: '';
+  position: absolute;
+  width: 8rpx;
+  height: 40rpx;
+  background-color: #f7c829;
+  left: 30rpx;
+  top: 0rpx;
+  border-radius: 8rpx;
+}
+
+.peopleAccount text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.eacher {
+  width: 100%;
+  height: 500rpx !important;
+  box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.1);
+  font-size: 26rpx !important;
+  border-radius: 20rpx;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+
+}
+.eacher1{
+  height: 700rpx !important;
+}
+.ec_cont{
+  height: 450rpx;
+}
+ec-canvas {
+  width: 100%;
+  height:450rpx !important;
+}
+
+
+.num {
+  width: 94%;
+  padding: 30rpx 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.num_item {
+  width: 20%;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+
+}
+
+.num_item .num_item_num {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.weui-cell__bd{
+  font-size: 26rpx !important;
+  color: #000 !important;
+}

@@ -1,0 +1,39 @@
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+.cont-bott label text:last-child {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 32rpx;
+}
+
+.cont-bott label text:first-child {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 32rpx;
+}
+.text-2{
+  margin-top: 30rpx;
+}
+
+
+.cont-display{
+  width: 90%;
+  font-size: 29rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666;
+}

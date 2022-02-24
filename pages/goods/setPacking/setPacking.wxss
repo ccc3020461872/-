@@ -1,0 +1,104 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+.box {
+  min-height: 10vh;
+}
+/* 按订单按商品收费 */
+.tollType .type{
+  padding: 40rpx 60rpx 24rpx 22rpx;
+  background-color: #F7F7F7;
+  border-radius: 20rpx;
+  margin-bottom: 40rpx;
+}
+.tollType .type .title {
+  font-size: 32rpx;
+  color: #333333;
+  margin-bottom: 32rpx;
+  
+}
+.tollType .type .tip {
+  color: #666666;
+  line-height: 57rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.selected .tip,
+.selected .title,
+.selected .tip .text {
+  color: #fff !important;
+}
+.type .tip .text {
+  max-width: 78%;
+}
+
+.tollType .type .checkImg {
+  width: 40rpx;
+  margin-top: 9rpx;
+}
+.price,
+.chooseGoods {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}
+.price .set-price {
+  display: flex;
+  align-items: center;
+}
+.price input {
+  margin-right: 10rpx;
+  width: 180rpx;
+  text-align: center;
+  height: 52rpx;
+}
+.selected input {
+  border-radius: 7rpx;
+  background-color: #fff;
+  color: #000;
+}
+.tollType  .chooseGoods .chooseImg {
+  width: 20rpx;
+  margin-left: 10rpx;
+}
+.chooseGoods .shopName {
+  display: flex;
+  align-items: center;
+}
+.placeholder {
+  color: #D0D0D0;
+}
+/* 新建商品 */
+.built {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  bottom: 140rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 128rpx;
+  box-sizing: border-box;
+  width: 300rpx;
+  height: 108rpx;
+}

@@ -1,0 +1,118 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 50rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.box {
+  min-height: 10vh;
+}
+
+.tips {
+  background-color: #474747;
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  font-size: 27rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.list .categary {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  height: 140rpx;
+  justify-content: space-between;
+}
+
+.list .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36rpx;
+}
+
+.list .item image {
+  width: 200rpx;
+  height: 140rpx;
+}
+
+.list .item .title {
+  display: flex;
+  align-items: center;
+}
+
+.list .item .title text:first-child {
+  font-size: 34rpx;
+  color: #000000;
+}
+
+.list .item .title text:last-child {
+  font-size: 22rpx;
+  color: #909090;
+  background-color: #ededed;
+  width: 60rpx;
+  height: 34rpx;
+  text-align: center;
+  line-height: 34rpx;
+  border-radius: 5rpx;
+  margin-left: 10rpx;
+}
+
+.list .item .description {
+  font-size: 24rpx;
+  color: #909090;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border: 10rpx solid #474747;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  left: 50rpx;
+  bottom: -5rpx;
+  transform: rotate(136deg);
+}
+.note {
+  font-size: 24rpx;
+  color: #909090;
+  text-align: center;
+  margin-top: 68rpx;
+}
+.button {
+  width: 350rpx;
+  height: 100rpx;
+  font-size: 42rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  margin: 50rpx auto;
+}

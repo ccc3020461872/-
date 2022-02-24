@@ -1,0 +1,14 @@
+<!--pages/index/stateMent/stateMent.wxml-->
+
+<view class="nav-list">
+  <view wx:for="{{navlist}}" wx:key="list" class="item {{currentIndex== index ? 'active' : ''}}" catchtap="choose"
+    style="width:{{index==3?'33.5%':'22%'}};border-right:{{index==3?'none':''}}" data-idx="{{index}}">{{item}}</view>
+</view>
+<!-- 营业汇总 -->
+<common-data wx:if="{{currentIndex==0}}"></common-data>
+<!-- 菜品营销 -->
+<common-detail wx:if="{{currentIndex==1}}"></common-detail>
+<!-- 营销效果 -->
+<common-effect wx:if="{{currentIndex==2}}"></common-effect>
+<!-- 营业指标 -->
+<common-targets wx:if="{{currentIndex==3}}"></common-targets>

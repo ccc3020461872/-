@@ -1,0 +1,17 @@
+<!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="cont">
+  <form action="" bindsubmit="toSubmit">
+    <view class="cont-item cont-top">
+      <image src="/img/s1.png"></image>
+    </view>
+    <textarea name="" id="" cols="30" rows="10" placeholder="请输入公告" name="title" value="{{title}}"></textarea>
+    <view>
+      <text class="cont-text">为您推荐，一键选择</text>
+      <view class="cont-list">
+        <view class="cont-items" wx:for="{{list}}" data-title="{{item.text}}" wx:key="list" bindtap="tochoose">
+          {{item.text}}</view>
+      </view>
+    </view>
+    <button class="formBtn" form-type="submit"> 保存</button>
+  </form>
+</view>

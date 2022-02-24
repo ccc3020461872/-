@@ -1,0 +1,143 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+/* 搜索 */
+/* 搜索框 */
+.box .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26rpx;
+}
+.box .search .input{
+  display: flex;
+  align-items: center;
+  background-color: #F0F0F0;
+  padding: 14rpx 20rpx;
+  border-radius: 84rpx;
+  width: 70%;
+}
+.box input {
+  font-size: 28rpx;
+  width: 80%;
+}
+.box image {
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.placeholder {
+  color: #9F9F9F;
+}
+.search-text {
+  font-size: 34rpx;
+}
+/* 分类管理 */
+.classify {
+  font-size: 26rpx;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36rpx;
+}
+.classify .left,
+.classify .right {
+  padding: 13rpx 24rpx;
+  box-sizing: border-box;
+  border-radius: 74rpx;
+}
+.classify .left {
+  border: 1px solid;
+}
+.classify .right {
+  background-color: #f4f4f4;
+  color: #CCCCCC;
+}
+.empty {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #808080;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+/* 下面的商品详情 */
+.detail {
+  margin-top: 36rpx;
+  display: flex;
+  font-weight: 700;
+}
+.detail .className {
+  width: 30%;
+  text-align: center;
+  color: #737373;
+}
+.detail .className .goodsName {
+  margin-bottom: 80rpx;
+}
+.detail .goodsInfo {
+  width: 70%;
+}
+.detail .goodsInfo .goodsImg {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  border: 1px solid;
+}
+.detail .goodsInfo .goodsItem {
+  width: 100%;
+  display: flex;
+  margin-right: 28rpx;
+}
+.goodsItem .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 40rpx;
+  width: calc(100% - 200rpx);
+}
+.goodsItem .info  .up-img{
+  align-self: flex-end;
+  text-align: right;
+}
+.goodsItem .info image{
+  width: 160rpx;
+}
+.goodsItem .info .goods-name {
+  color: #000;
+}
+.goodsItem .info .goods-price {
+  color: #FF2929 ;
+}
+
+/* 新建商品 */
+.built {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  bottom: 140rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 40rpx 106rpx;
+  border-radius: 128rpx;
+  box-sizing: border-box;
+}

@@ -1,0 +1,313 @@
+/* component/con-summary/con-summary.wxss */
+/* page {
+  width: 100%;
+  height: 380rpx;
+  background: linear-gradient(179deg, #1E5051 0%, #2F5C5D 10%, #fff 24%, #FFFFFF 100%);
+  opacity: 1;
+} */
+.slotContent{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.commtitle{
+  text-align: left;
+  font-size: 36rpx !important;
+  width: 76%;
+  color: #fff;
+}
+.summary {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: linear-gradient(179deg, var(--themecolor) 0%, #FFFFFF 100%);
+  opacity: 1;
+  height: 300rpx;
+}
+
+.titleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 40rpx; */
+}
+
+.storeImg {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 10rpx;
+}
+
+.storeInfo {
+  display: flex;
+  align-items: center;
+}
+
+.picker,
+.storeName {
+  font-size: 28rpx;
+  align-items: center;
+  color: #fff;
+}
+
+.storeName1 {
+  width: 91%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.picker image{
+  width: 96rpx;
+  height: 30rpx;
+}
+
+.dateImg {
+  width: 96rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+  padding-top: 5rpx;
+}
+
+.rightImg {
+  width: 15rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.todayMoney {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30rpx 0;
+}
+
+.moneyText {
+  font-size: 26rpx;
+  /* font-weight: bold; */
+}
+
+.money {
+  font-size: 45rpx;
+  color: #fff;
+}
+
+.money text {
+  font-size: 24rpx;
+}
+
+.todayMoneyItemTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todayMoneyItemTitle view {
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  line-height: 22rpx;
+  margin-left: 10rpx;
+}
+
+.todayMoneyContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.todayMoneyItemNum {
+  font-size: 40rpx;
+  width: 100%;
+  text-align: center;
+  margin-top: 10rpx;
+  font-weight: bold;
+}
+
+.todayMoneyItem {
+  background: linear-gradient(136deg, #EDF8F8 0%, #789697 100%);
+  width: 30%;
+  padding: 30rpx 0;
+  border-radius: 10rpx;
+  color: var(--themecolor);
+
+}
+
+.todayMoneyItem:not(:first-child) {
+  margin-left: 4%;
+}
+
+
+.peopleAccount {
+  font-weight: bold;
+  position: relative;
+  padding: 0rpx 60rpx;
+  box-sizing: border-box;
+}
+
+
+/* 导航 */
+
+
+.nav-list {
+  width: 300rpx;
+  height: 60rpx;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1rpx solid var(--themecolor);
+}
+
+.item {
+  width: 49.5%;
+  height: 100%;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  text-align: center;
+  margin: 0 0 20rpx 0;
+  font-size: 24rpx;
+}
+
+.item.active {
+  background: var(--themecolor);
+  border: 1rpx solid var(--themecolor);
+  color: #fff;
+}
+
+/* 支付方式 */
+.payType {
+  display: flex;
+  justify-content: center;
+}
+
+.type1,
+.type2 {
+  position: relative;
+  padding: 0rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.type1::before,
+.type2::before {
+  content: '';
+  position: absolute;
+  width: 40rpx;
+  height: 30rpx;
+  top: 0rpx;
+  border-radius: 8rpx;
+  top: 10rpx;
+}
+
+.type1::before {
+  right: 140rpx;
+  background-color: #F57904;
+}
+
+.type2::before {
+  right: 160rpx;
+  background-color: #4285F4;
+}
+
+.storeImg {
+  width: 140rpx;
+  height: 52rpx;
+}
+
+.allmoney {
+  text-align: center;
+  font-size: 35rpx;
+  margin-top: 20rpx;
+
+}
+
+.allmoney_title {
+  font-size: 26rpx;
+  color: #888;
+}
+
+
+.price_type {
+  width: 94%;
+  padding: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 170rpx;
+  height: 0;
+}
+
+.price_type_item view {
+  font-size: 26rpx;
+  color: #888;
+}
+
+
+/* 六个种类开始 */
+.getTypeList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.getTypeList .item {
+  width: 220rpx;
+  height: 200rpx;
+  background: #FAF5F9;
+  border-radius: 10rpx;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Bold, PingFang-SC;
+  font-weight: bold;
+  color: #000000;
+}
+
+.item-image {
+  height: 120rpx;
+  margin-top: 20rpx;
+}
+
+.popularize .getTypeList .item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.popularize .getTypeList .item .title .item-title {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.popularize .getTypeList .item .title .item-title2 {
+  font-size: 21rpx;
+  color: #999997;
+}
+
+/* 六个种类结束 */
+/* 线开始 */
+.popularize .line {
+  height: 16rpx;
+  background-color: #999997;
+  width: 100%;
+  opacity: .09;
+}
+
+.type-cont text {
+  font-size: 38rpx;
+  font-family: PingFang-SC-Bold, PingFang-SC;
+  font-weight: bold;
+  color: #000000;
+  line-height: 130rpx;
+}

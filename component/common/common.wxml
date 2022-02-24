@@ -1,0 +1,7 @@
+<!--component/common/common.wxml-->
+<!-- //没有内容模板 -->
+<view class="noinfo" style="height:{{screenHeight}}rpx">
+  <image src="{{fromimages}}" class="image" style="height:{{formheight}}rpx" mode="widthFix"></image>
+  <view class="infoWord">{{frominfoWord}}</view>
+  <view class="infoTetx">{{frominfoTetx}}</view>
+</view>

@@ -1,0 +1,99 @@
+/* pages/component/nav/nav.wxss */
+page{
+  height: 200px;
+  background-image: linear-gradient(to bottom,var(--themecolor) ,#fff,#fff);
+}
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0 0 60rpx;
+  border: none;
+  position: relative;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+
+.VerticalNav.nav .cu-item.cur {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+
+.VerticalNav.nav .cu-item.cur::before {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+
+.VerticalBox {
+  display: flex;
+}
+
+.VerticalMain {
+  padding-left: 40rpx;
+}
+
+.VerticalNav {
+  width: 180rpx
+}
+
+.cu-list .cu-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cu-list .cu-item image {
+  width: 156rpx;
+  height: 122rpx;
+}
+
+.cu-list .cu-item .content {
+  width: 65%;
+}
+
+.cu-list .cu-item .content .text-sm {
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 36rpx;
+  margin-top: 30rpx;
+}
+
+.cu-list .cu-item .content .text-grey {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cu-list .cu-item .content .text-grey image {
+  width: 13rpx;
+  height: 23rpx;
+}
+
+.scroll-title {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std R;
+  color: #999999;
+  margin-bottom: 40rpx;
+}

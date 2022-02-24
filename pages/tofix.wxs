@@ -1,0 +1,20 @@
+var filters = {
+  toFix: function (value) {
+    return value.toFixed(2) //此处2为保留两位小数
+  },
+  string: function (value) {
+    return JSON.stringify(value) //判断是不是空字符串
+  },
+
+  toPoint: function toPoint(percent) {
+    var str = percent.replace("%", "");
+    return str;
+  }
+
+}
+module.exports = {
+  toFix: filters.toFix,
+  toPoint:filters.toPoint,
+  string: filters.string,
+
+}

@@ -1,0 +1,111 @@
+/* component/con-detail/con-detail.wxss */
+.summary {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 150rpx;
+}
+
+
+.moneyText {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.itemContent {
+  width: 90%;
+  padding: 20rpx 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.item {
+  height: 55rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+
+.activityed {}
+
+.line {
+  width: 60rpx;
+  height: 10rpx;
+  background: #003333;
+  border-radius: 5rpx;
+  margin: 10rpx auto 0;
+}
+
+/* 列表 */
+.conent {
+  display: flex;
+}
+
+.list {
+  background-color: #fff;
+
+}
+
+.list-left {
+  width: 40%;
+
+}
+
+.active {
+  border-right: 1rpx solid #F5F5F5;
+}
+
+.active1 {
+  padding: 5rpx 0;
+}
+
+.bg view {
+  background-color: #F5F5F5;
+}
+
+.list-right {
+  width: 60%;
+}
+
+.list_top,
+.list_item {}
+
+.list_item {
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666;
+  padding-left: 30rpx;
+  display: -webkit-box;
+
+}
+
+.list_top view,
+.list_item view {
+  text-align: center;
+}
+
+.list-right-item view {
+  width: 240rpx;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.list_item .list-item-text {
+  width: 200rpx;
+  text-align: left;
+  margin-left: 50rpx;
+}
+
+.list_item .list-idx {
+  width: 50rpx;
+}

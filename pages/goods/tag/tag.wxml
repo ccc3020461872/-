@@ -1,0 +1,28 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+  <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 商品喜好标签选择 -->
+      <view class="title">
+        商品喜好标签选择（单选）
+      </view>
+      <!-- 选择列表 -->
+      <view class="choose-list" >
+        <block wx:for="{{chooseList}}">
+          <view class="item cc-center" data-index="{{index}}" bindtap="chooseTag" style="{{index === currentIndex && isSelected ? selected : ''}}">
+            {{item}}
+          </view>
+        </block>
+      </view>
+
+      <!-- 新建商品 -->
+      <view class="built " bindtap="toOtherPage"  style="background-color: {{color}};">保存</view>
+    </view>
+
+  </view>
+</view>

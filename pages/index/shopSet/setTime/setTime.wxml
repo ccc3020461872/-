@@ -1,0 +1,37 @@
+<view class="cont">
+  <view class="cont-time"  wx:if="{{!showState}}">
+    <!-- <view>
+      <text>您未设置堂食时间</text>
+      <text>门店休息中，不会接收新订单</text>
+    </view>
+    <view class="formBtn form-btns">设置营业时间</view> -->
+    <view class="cont-time-top">
+      <text class="time-title">堂食营业时间</text>
+      <text class="next">添加</text>
+    </view>
+    <view class="cont-time-top cont-time-list">
+      <view>
+        <view>堂食营业中</view>
+        <view class="list-time">顾客到店扫码点餐，门店正常接单中。</view>
+      </view>
+      <image src="/img/right.png" class="right-img"></image>
+    </view>
+    <view class="cont-time-top cont-time-list" bindtap="toset">
+      <view>
+        <view>每日</view>
+        <view class="list-time">00：00-23：00</view>
+      </view>
+      <image src="/img/right.png" class="right-img"></image>
+    </view>
+  </view>
+
+  <block wx:if="{{false}}">
+    <resttime />
+  </block>
+
+  <!-- 设置时间 -->
+  <block wx:if="{{showState}}">
+    <timeset />
+  </block>
+
+</view>

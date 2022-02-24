@@ -1,0 +1,24 @@
+<view class="addGoods" style="display: {{right ? 'flex' : 'block'}};">
+  <view class="left">
+    <!-- 标题 -->
+    <view class="title">
+      <view class="titleText">
+        {{title}}
+      </view>
+      <view wx:if="{{example}}" class="example">示例</view>
+    </view>
+    <!-- 提示 -->
+    <view class="tips">
+      <!-- 提示信息 -->
+      <view class="tipMessage">
+        <input type="text" wx:if="input" placeholder="{{placeholder}}" placeholder-class="placeholder" />
+        <view wx:else class="choose"></view>
+      </view>
+      <!-- 箭头 -->
+      <view class="icon"> > </view>
+    </view>
+  </view>
+  <view class="right" wx:if="{{right}}">
+    <slot name="right"></slot>
+  </view>
+</view>

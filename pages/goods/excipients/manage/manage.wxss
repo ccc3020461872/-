@@ -1,0 +1,101 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+.box {
+  min-height: 10vh;
+  max-height: 800rpx;
+  overflow: auto;
+}
+.edit {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 60rpx 34rpx 0 20rpx;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 9;
+}
+.edit .text .title {
+  font-size: 36rpx;
+  color: #000000;
+  margin-bottom: 30rpx;
+  font-weight: 700;
+}
+.edit .text .tips {
+  font-size: 26rpx;
+  color: #949494;
+}
+.edit .btn {
+  font-weight: 700;
+  font-size: 36rpx;
+  border: 1px solid ;
+  width: 190rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+/* 辅料列表 */
+.list {
+ margin-top: 200rpx;
+}
+.list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #CECECE;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.list .item .left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list .item .left .price{
+  display: flex;
+  align-items: center;
+}
+.list .item .left .price input {
+  width: 2em;
+}
+.list .item .goodsName {
+  width: 70%;
+}
+.list .item image {
+  width: 100rpx;
+}
+/* 新建商品 */
+.built {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  bottom: 140rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+}

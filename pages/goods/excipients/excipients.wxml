@@ -1,0 +1,23 @@
+<page-meta
+>
+  <navigation-bar
+    background-color="{{color}}"
+/>
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+   <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+  
+     <!-- 暂无分类 -->
+     <view class="empty">
+      店铺暂无可选择的辅料
+     </view>
+     <!-- 新建商品 -->
+     <view class="built " style="background-color: {{color}};" bindtap="toOtherPage" data-url="/pages/goods/excipients/manage/manage">添加辅料</view>
+    </view>
+
+  </view>
+</view>

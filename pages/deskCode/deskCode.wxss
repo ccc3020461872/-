@@ -1,0 +1,143 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+.box {
+  min-height: 10vh;
+}
+.box .choose {
+  display: flex;
+  justify-content: space-between;
+}
+.choose .chooseImg {
+  width: 120rpx;
+}
+.deskNum {
+  width: 410rpx;
+  margin: auto;
+  margin-top: 28rpx;
+}
+.deskNum .show {
+  width: 100%;
+}
+.deskNum .show .text {
+  font-size: 36rpx;
+}
+.deskNum .show .text,
+.deskNum .show .num {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deskNum .enter {
+  width: 90%;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  border-top: none;
+  margin: auto;
+  margin-top: 34rpx;
+  display: flex;
+  justify-content: center;
+}
+.enter .input {
+  display: flex;
+ transform: translateY(-50%);
+}
+.enter .input input {
+  width: 100rpx;
+  font-size: 24rpx;
+}
+.enter .input::after {
+  content: "*";
+  color: #ff2929;
+}
+.note {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 36rpx;
+  border-bottom: 1px solid #A0A0A0;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.note input {
+  font-size: 26rpx;
+  width: 88%;
+  text-align: right;
+}
+.note text {
+  font-size: 30rpx;
+  color: #000000;
+}
+.deskNum .show .num {
+  padding: 0 13rpx;
+  margin-top: 67rpx;
+  font-weight: 700;
+  font-size: 38rpx;
+}
+.deskNum .show .num .line {
+  width: 80rpx;
+  height: 2rpx;
+  background-color: #e8e8e8;
+}
+.printType {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #000000;
+}
+.printType image {
+  width: 38rpx;
+  margin-right: 10rpx;
+}
+.printType .self,
+.printType .server {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.box .title {
+  font-size: 32rpx;
+  color: #333;
+}
+.box .title text:last-child {
+  font-weight: 700;
+}
+.box .tips {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 28rpx;
+} 
+/* 新建商品 */
+.built {
+  font-size: 30rpx;
+  width: 300rpx;
+  height: 100rpx;
+  color: #fff;
+  position: fixed;
+  bottom: 70rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 128rpx;
+  box-sizing: border-box;
+}

@@ -1,0 +1,13 @@
+/* pages/index/machina/machmodel/machimg/machimg.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+image {
+  width: 673rpx;
+  height: 1078rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 24rpx 0rpx #f2f2f2;
+  border-radius: 21rpx;
+}

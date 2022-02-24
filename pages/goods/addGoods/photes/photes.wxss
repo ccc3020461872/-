@@ -1,0 +1,49 @@
+.photes {
+  padding: 22rpx 27rpx 0;
+}
+/* 搜索框 */
+.photes .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26rpx;
+}
+.photes .search .input{
+  display: flex;
+  align-items: center;
+  background-color: #F0F0F0;
+  padding: 14rpx 20rpx;
+  border-radius: 84rpx;
+  width: 87%;
+}
+.photes input {
+  font-size: 28rpx;
+  width: 80%;
+}
+.photes image {
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.placeholder {
+  color: #9F9F9F;
+}
+.search-text {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+/* 图片区 */
+.images .total{
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.images  .imgItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.images  .imgItem image{
+  height: 200rpx ;
+  width: 200rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}

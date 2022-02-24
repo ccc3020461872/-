@@ -1,0 +1,28 @@
+<page-meta
+>
+  <navigation-bar
+    background-color="{{color}}"
+/>
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+   <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <!-- 商品列表 -->
+      <view class="goodsList">
+         <view class="item" wx:for="{{list}}">
+          <view class="goodsName">{{item.CATEGORY_NAME}}</view>
+          <view class="upDown" bindtap="doChoose"  data-index="{{index}}" data-item="{{item}}">
+            <image wx:if="{{choose && currentIndex === index }}" class="up" src="/images/selected.png" mode="widthFix"></image>
+            <image wx:else class="down" src="/images/select.png" mode="widthFix"></image>
+          </view>
+         </view>
+      </view>
+     <!-- 保存 -->
+     <view class="built cc-center" style="background-color: {{color}};" bindtap="save">保存</view>
+    </view>
+
+  </view>
+</view>

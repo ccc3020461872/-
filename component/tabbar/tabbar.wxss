@@ -1,0 +1,18 @@
+.tabbar {
+  overflow: hidden;
+  padding-left: 14rpx;
+}
+.tabbar .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64rpx;
+}
+.tabbar .title view {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.tabbar .title view:last-child {
+  width: 174rpx;
+} 

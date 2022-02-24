@@ -1,0 +1,27 @@
+<!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="cont">
+  <form action="" bindsubmit="toSubmit">
+    <view class="cont-item cont-top">
+      <image src="/img/s1.png"></image>
+    </view>
+    <view class="cont-num">
+      <view>
+        <text>最小取餐号</text>
+        <text class="page-text-2 ">第一笔订单的取餐号</text>
+      </view>
+      <view>
+        <text>最大取餐号</text>
+        <text class="page-text-2">顾客看到的最大取餐号</text>
+      </view>
+    </view>
+    <view class="cont-input">
+      <view>
+        <input type="number" name="minNum" value="1" />
+        <input type="number" name="maxNum" value="100" />
+      </view>
+      <view class="border"></view>
+      <view class="cont-input-tips">每天取餐号从1开始，到100后将重新从1开始</view>
+    </view>
+    <button class="formBtn" form-type="submit"> 保存</button>
+  </form>
+</view>

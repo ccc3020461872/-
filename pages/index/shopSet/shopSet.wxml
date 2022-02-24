@@ -1,0 +1,14 @@
+<view class="cont">
+  <view class="cont-item" wx:for="{{setList}}" wx:key="list" bindtap="toPage" data-url="{{item.url}}">
+    <view class="cont-left">
+      <text class="title">{{item.title}}</text>
+      <view>
+        <text>去设置</text>
+        <image src="/img/right.png"></image>
+      </view>
+    </view>
+    <view class="cont-right">
+      <image src="{{item.img}}"></image>
+    </view>
+  </view>
+</view>

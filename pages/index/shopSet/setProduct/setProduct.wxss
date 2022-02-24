@@ -1,0 +1,92 @@
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+label text:first-child {
+  font-size: 40rpx;
+}
+
+.imgList {
+  padding-top: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgList .upimg {
+  width: 210rpx;
+  height: 175rpx;
+  text-align: center;
+  line-height: 175rpx;
+  margin-bottom: 30rpx;
+  border-radius: 15rpx;
+  background: #FBF9FA;
+  color: #B7B7B7;
+  font-size: 40rpx;
+  margin-right: 25rpx;
+}
+
+.cont-bott {
+  align-items: baseline;
+}
+
+.cont-bott view>view {
+  height: 30rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 30rpx;
+}
+
+label text:last-child {
+  height: 50rpx;
+  font-size: 26rpx;
+  background-color: #f4f4f4;
+  color: #666;
+  padding: 6rpx 20rpx;
+}
+
+switch {
+  transform: scale(0.7, 0.7);
+}
+
+/* 商品列表 */
+.proItem {
+  width: 210rpx;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+}
+
+.proItem image {
+  width: 100%;
+  height: 175rpx;
+  border-radius: 10rpx;
+}
+
+.proItem .proInfo {
+  width: 92%;
+  padding: 10rpx 4% 15rpx 4%;
+  font-size: 32rpx;
+}
+
+.proInfo .name {
+  font-size: 32rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: #080808;
+}
+
+.proItem .price {
+  color: red;
+  font-size: 32rpx;
+}
+
+.menban-cont image {
+  width: 540rpx;
+  height: 670rpx;
+}
+
+.del-img {
+  margin-top: 30rpx;
+}

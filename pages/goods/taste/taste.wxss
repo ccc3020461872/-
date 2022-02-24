@@ -1,0 +1,129 @@
+/* 背景颜色 */
+page {
+  background-color: #fff;
+}
+.backBox {
+  height: 90rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* 内容区 */
+.content {
+  background-color: #fff;
+  border-top-right-radius: 80rpx;
+  border-top-left-radius: 80rpx;
+  padding: 60rpx 34rpx 200rpx 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+.box {
+  min-height: 10vh;
+}
+
+/* 口味选择 */
+.box .shortcut .title {
+  font-size: 36rpx;
+  color: #000;
+  margin-bottom: 14rpx;
+}
+.shortcut .shortcut-list {
+  background-color: #f7f5f6;
+  padding: 20rpx 30rpx;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #000;
+}
+/* 添加口味 */
+ .addTaste {
+   margin-top: 60rpx;
+ }
+ .addTaste .title {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 60rpx;
+ }
+ .addTaste .title .choose {
+   font-size: 36rpx;
+   color: #000;
+ }
+ .addTaste .title .add {
+   font-size: 22rpx;
+   color: #949494;
+   border: 1px solid #949494;
+   width: 180rpx;
+   height: 70rpx;
+   border-radius: 70rpx;
+ }
+ .tasteInput {
+   overflow: hidden;
+   margin-bottom: 30rpx;
+ }
+ .tasteInput .property,
+ .tasteInput .name{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-bottom: 6rpx;
+   border-bottom: 1px solid #CECECE;
+ }
+ .tasteInput input {
+   width: 95%;
+ }
+ .tasteInput .property input {
+  font-size: 36rpx;
+}
+ .tasteInput .name {
+   float: right;
+   width: 85%;
+ }
+
+ .tasteInput .name input {
+   font-size: 34rpx;
+ }
+ .tasteInput .name .left {
+   position: relative;
+   width: 90%;
+ }
+ .tasteInput .name .point {
+   width: 10rpx;
+   height: 10rpx;
+   border-radius: 50%;
+   margin-right: 20rpx;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: -30rpx;
+ }
+ .addInput {
+   float: right;
+   width: 100%;
+   text-align: right;
+   margin-top: 20rpx;
+   font-size: 27rpx;
+ }
+ .placeholder {
+   color: #A1A1A1;
+ }
+ .tasteInput image {
+   width: 100rpx;
+ }
+/* 新建商品 */
+.built {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 30rpx 106rpx;
+  border-radius: 108rpx;
+  box-sizing: border-box;
+  z-index: 9;
+}

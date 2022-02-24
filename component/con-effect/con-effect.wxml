@@ -1,0 +1,64 @@
+<!--component/con-effect/con-effect.wxml-->
+<view class="summary">
+  <view class="titleItem">
+    <view class="storeInfo">
+      <image src="/images/ke.png" class="storeImg" mode="aspectFill"></image>
+      <!-- <view class="storeName">客爱点</view> -->
+    </view>
+    <view style="width:30%">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2033-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          <view>{{date}}</view>
+          <image src="/agentpages/images/dateImg.png" class="dateImg"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- //柱线图 -->
+  <view class="eacher">
+    <view class="moneyText" style="margin-top:20rpx">新增会员数量</view>
+    <view class="ec_cont">
+      <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ ecBar }}"></ec-canvas>
+    </view>
+
+  </view>
+
+  <!-- //折线图 -->
+  <view class="eacher eacher1">
+    <view class="weui-cells weui-cells_after-title ">
+      <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">活动列表</view>
+        <picker class="weui-cell__ft weui-cell__ft_in-access" bindchange="bindRegionChange" value="{{index}}"
+          range="{{region}}">
+          <view class="picker">
+            {{region[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="num">
+      <view class="num_item">
+        <view>{{couponList[index].getCouponNumber}}</view>
+        <view class="num_item_num">领取次数</view>
+      </view>
+      <view class="num_item">
+        <view>{{couponList[index].getCouponPersonal}}</view>
+        <view class="num_item_num">领取人数</view>
+      </view>
+      <view class="num_item">
+        <view>{{couponList[index].CheckCouponNumber}}</view>
+        <view class="num_item_num">核销张数</view>
+      </view>
+      <view class="num_item">
+        <view>{{couponList[index].CheckCouponPersonal}}</view>
+        <view class="num_item_num">核销人数</view>
+      </view>
+    </view>
+    <view class="ec_cont">
+      <ec-canvas id="mychart-dom-multi-scatter" canvas-id="mychart-multi-scatter" ec="{{ ecScatter }}"></ec-canvas>
+    </view>
+  </view>
+</view>
+
+<view style="height:200rpx"></view>

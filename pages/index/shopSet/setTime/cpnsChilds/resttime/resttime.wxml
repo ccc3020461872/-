@@ -1,0 +1,15 @@
+<!--pages/index/shopSet/setTime/cpnsChilds/resttime/resttime.wxml-->
+<view class="cont">
+  <view class="cont-time-top cont-time-list cont-time">
+    <view>
+      <view class="time-title">堂食休息中</view>
+      <view class="list-time">休息期间，门店不再接收新订单。如需继续
+        接单，请先开营业。</view>
+    </view>
+  </view>
+  <view class="cont-item cont-top">
+    <image src="/img/s1.png"></image>
+  </view>
+
+  <view class="formBtn" bindtap="open">开始营业</view>
+</view>

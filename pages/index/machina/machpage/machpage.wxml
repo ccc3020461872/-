@@ -1,0 +1,42 @@
+<view class="cont">
+  <view class="page1" hidden="{{isNum!=1}}">
+    <view class="page-text">第 1 步，连接电源并放入卷纸，注意检查 纸张放入方向</view>
+    <view class="page-video">
+      <video src="{{video}}" objectFit="cover"></video>
+      <text lines="1" decode="true" class="txt3">客爱点打票机&nbsp;｜&nbsp;视频教程</text>
+    </view>
+    <view class="page-video">
+      <video src="{{video}}" objectFit="cover"></video>
+    </view>
+    <view style="height:200rpx"></view>
+    <view class="formBtn" bindtap="toNext">已通电和放入卷纸，下一步</view>
+  </view>
+  <view class="page1" hidden="{{isNum!=2}}">
+    <view class="page-text">第 2 步，连接网络，等待打印小票，检查是否打印出信号强度或联网成功小票</view>
+    <view class="page-video">
+      <video src="{{video}}" objectFit="cover"></video>
+      <text lines="1" decode="true" class="txt3">客爱点打票机&nbsp;｜&nbsp;视频教程</text>
+    </view>
+    <view class="page-video">
+      <video src="{{video}}" objectFit="cover"></video>
+    </view>
+    <view class="select">未打印出小票，请致电飞鹅官方售后电话020-23398726</view>
+    <view class="agreement">
+      <radio checked="{{checked}}" bindtap="conTap" data-type="radioTap"></radio>
+      <!-- <view class="black" bindtap="agree">选择即表示同意</view> -->
+      <view class="text" bindtap="conTap" data-type="showExplain">已打印出信号强度或联网成功小票</view>
+    </view>
+    <view style="height:200rpx"></view>
+    <view class="formBtn" bindtap="toNext">下一步</view>
+  </view>
+  <view class="page1" hidden="{{isNum!=3}}">
+    <view class="page-text">第 3 步，已找到打票机底部的SN二维码，扫码 绑定打票机</view>
+    <view class="page-video">
+      <video src="{{video}}" objectFit="cover"></video>
+    </view>
+    <view style="height:200rpx"></view>
+    <view class="formBtn formBtn1" bindtap="toScan">已找到二维码，点击扫描</view>
+    <view class="formBtn formBtn2" bindtap="confirm">暂无二维码，手动添加</view>
+  </view>
+  <machmask isHidd="{{isHidd}}" P_SN="{{P_SN}}" P_TYPE="{{P_TYPE}}"  />
+</view>

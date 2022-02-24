@@ -1,0 +1,71 @@
+/* pages/index/shopSet/oneNotice/oneNotice.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+.cont-item image {
+  width: 422rpx;
+  height: 340rpx;
+  margin: 0 auto;
+}
+
+.cont-top {}
+
+.cont-num {
+  /* width: 9; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont-num .page-text-2 {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 40rpx;
+}
+
+.cont-num text {
+  display: block;
+  text-align: center;
+}
+
+.cont-num,
+.cont-input {
+  width: 90%;
+  padding: 30rpx 5%;
+}
+
+.cont-input view:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont-input input {
+  width: 233rpx;
+  height: 96rpx;
+  background: #F7FAFF;
+  border-radius: 32rpx 32rpx 32rpx 32rpx;
+  opacity: 1;
+  text-align: center;
+}
+
+.cont-input-tips {
+  width: 70%;
+  padding: 40rpx 15%;
+  height: 72rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 43rpx;
+  text-align: center;
+}
+
+form .formBtn {
+  width: 300rpx !important;
+  height: 100rpx;
+  background: #1E5051;
+  border-radius: 50rpx;
+  left: 215rpx;
+  line-height: 70rpx;
+}

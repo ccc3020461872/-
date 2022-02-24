@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "machmask": "../cpnsChilds/machmask/machmask"
+  },
+  "navigationBarBackgroundColor": "#1E5051",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "添加打票机"
+}

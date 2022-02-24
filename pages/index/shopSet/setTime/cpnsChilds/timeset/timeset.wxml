@@ -1,0 +1,66 @@
+<!--pages/index/shopSet/setTime/cpnsChilds/timeset/timeset.wxml-->
+<view class="cont">
+  <!-- 设置时间页面 -->
+  <!-- hidden="{{true}}" -->
+  <view>
+    <view class="cont-bott">
+      <view>
+        <label for="">
+          <text>营业日</text>
+          <text class="cont-bott-text">点击卡片选择日期</text>
+        </label>
+      </view>
+      <view class="check-cont">
+        <label class="radio" bindtap="selectAll">
+          <image src="/img/select.png" hidden="{{!selectedAll}}"></image>
+          <image src="/img/selected.png" hidden="{{selectedAll}}"></image>
+          <view>全选</view>
+        </label>
+      </view>
+    </view>
+    <view class="check-list">
+      <view class="check-item" wx:for="{{week}}" wx:key="list">
+        <text>{{item.text}}</text>
+        <image src="/img/select1.png" hidden="{{!item.selected}}"></image>
+        <image src="/img/selected.png" hidden="{{item.selected}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cont-bott">
+    <label for="">
+      <text>营业时间段</text>
+      <text></text>
+    </label>
+  </view>
+  <view class="time-type">
+    <view class="check-cont" wx:for="{{typeli}}" wx:key="typeli">
+      <label class="radio" bindtap="selectAll">
+        <image src="/img/select.png" hidden="{{!selectedAll}}"></image>
+        <image src="/img/selected.png" hidden="{{selectedAll}}"></image>
+        <view>{{item}}</view>
+      </label>
+    </view>
+  </view>
+  <!-- 选择时间段 -->
+  <view class="cont-bott">
+    <view class="cont-display">
+      <view class="cont-display-left">
+        <label for="">
+          <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+            <text>{{time}}</text>
+          </picker>
+          <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+            <text>- {{time}}</text>
+          </picker>
+        </label>
+      </view>
+      <image src="/img/right.png" class="right-img"></image>
+    </view>
+    <image src="/img/del.jpg" class="del-img"></image>
+  </view>
+  <view class="cont-display cont-add">+ 添加</view>
+  <view class="bottom">
+    <view class="btnn btnn1" bindtap="cancel">删除</view>
+    <view class="btnn btnn2" bindtap="confirm">保存</view>
+  </view>
+</view>

@@ -1,0 +1,92 @@
+/* 弹框*/
+
+/* 选择样式 */
+.check-cont image {
+  width: 31rpx;
+  height: 31rpx;
+  margin-right: 10rpx;
+}
+
+.check-cont .label view {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+
+.check-cont .radio {
+  display: flex;
+  align-items: center;
+}
+
+
+.menban {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(102, 102, 102, .5);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+}
+
+.menban-cont {
+  width: 450rpx;
+  height: 610rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+}
+
+.menban-cont-img {
+  width: 187rpx;
+  height: 180rpx;
+}
+
+.menban-section {
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+}
+
+.menban-cont {
+  padding: 20rpx 5%;
+  text-align: center;
+}
+
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom .btnn {
+  width: 190rpx;
+  height: 65rpx;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 33rpx;
+  opacity: 1;
+  font-size: 23rpx;
+
+}
+
+.btnn1 {
+  border: 1rpx solid var(--themecolor);
+  color: var(--themecolor);
+
+}
+
+.btnn2 {
+  border: 1rpx solid var(--themecolor);
+  background-color: var(--themecolor);
+  color: #fff;
+}
+
+/*  */

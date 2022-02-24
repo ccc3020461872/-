@@ -1,0 +1,29 @@
+<page-meta
+>
+  <navigation-bar
+    background-color="{{color}}"
+/>
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+   <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <view class="box">
+      <view class="tips">点击上下箭头调整顺序</view>
+      <!-- 商品列表 -->
+      <view class="goodsList">
+         <view class="item">
+          <view class="goodsName">酸汤面</view>
+          <view class="upDown">
+            <image class="up" src="/images/up.png" mode="heightFix"></image>
+            <image class="down" src="/images/down.png" mode="heightFix"></image>
+          </view>
+         </view>
+      </view>
+     <!-- 保存 -->
+     <view class="built cc-center" style="background-color: {{color}};">保存</view>
+    </view>
+
+  </view>
+</view>

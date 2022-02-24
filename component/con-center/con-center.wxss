@@ -1,0 +1,43 @@
+/* component/con-center/con-center.wxss */
+.item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+}
+.item image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+/* 右箭头 */
+.item .right-img{          
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+}
+
+.item view:first-child{
+  font-size: 28rpx;
+  color: #333;
+}
+.item view:last-child{
+  font-size: 28rpx;
+  color: #666;
+}
+.loginOut{
+  position: fixed;
+  bottom: 200rpx;
+  width: 690rpx;
+  background-color: var(--themecolor);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  left: 30rpx;
+  border-radius: 10rpx;
+}

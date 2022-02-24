@@ -1,0 +1,54 @@
+/* pages/index/shopSet/oneNotice/oneNotice.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
+
+.cont-item image {
+  width: 422rpx;
+  height: 340rpx;
+  margin: 0 auto;
+}
+
+.cont-top {}
+
+textarea {
+  width: 94%;
+  height: 220rpx;
+  border-radius: 20rpx;
+  padding: 30rpx 3%;
+  opacity: 1;
+  border: 1px solid #ECECEC;
+  margin-bottom: 30rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.cont-text {
+  color: #666;
+}
+
+.cont-items {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+  background-color: #f4f4f4;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+
+}
+
+form .formBtn {
+  width: 300rpx !important;
+  height: 100rpx;
+  background: #1E5051;
+  border-radius: 50rpx;
+  left: 215rpx;
+  line-height: 70rpx;
+}

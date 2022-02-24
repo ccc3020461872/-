@@ -1,0 +1,94 @@
+// pages/goods/classify/add/add.js
+import toPage from '../../../utils/common/toPage'
+
+const app = getApp()
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    color: null,
+    chooseList: ['本店招牌','网红特色推荐','本店王牌特色'],
+    selectedClass: '',
+    isSelected: true,
+    currentIndex: 0,
+    
+  },
+  toOtherPage(e){
+    const {currentTarget: {dataset: {url}}} = e
+    toPage(url)
+  },
+  chooseTag(e){
+    const { currentTarget: { dataset: {index}}} = e;
+    const { currentIndex } = this.data
+    if(index === currentIndex){
+      this.setData({
+        isSelected: false,
+      })
+    }else {
+      this.setData({
+        isSelected: true,
+        currentIndex: index,
+      })
+    }
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    const {globalData: {color}} = app;
+    this.setData({
+      color,
+      selected: `background: ${color};color: #fff`
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    const { currentIndex, chooseList } = this.data
+    wx.setStorageSync('tag', chooseList[currentIndex])
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  }
+})

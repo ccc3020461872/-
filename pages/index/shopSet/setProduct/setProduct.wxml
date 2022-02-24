@@ -1,0 +1,36 @@
+<!--pages/index/shopSet/setProduct/setProduct.wxml-->
+<view class="cont">
+  <label>
+    <text>你希望顾客看到哪些推荐商品？</text>
+    <text bindtap="quxiao">示例</text>
+  </label>
+  <view class="imgList">
+    <view class="proItem" data-id="{{item.DB_GOODS_ID}}" bindtap="proDetails" wx:for='{{dataList}}' wx:key='pro'
+      style="margin-right:{{index%2==0?25 :0}}rpx">
+      <image class="logo" src="{{item.G_IMG}}" mode="aspectFill"></image>
+      <view class="proInfo">
+        <view class="name">{{item.G_NAME}}</view>
+        <view class="price">￥{{item.G_MONEY}}</view>
+      </view>
+    </view>
+    <view class="upimg" bindtap="uploadImage">+</view>
+  </view>
+
+  <view class="cont-bott">
+    <view>
+      <label for="">
+        <text>展示常点商品？</text>
+        <text>示例</text>
+      </label>
+      <view>老顾客点餐时展示他点过的商品</view>
+    </view>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Change" />
+  </view>
+</view>
+
+<view class="menban" hidden="{{hiddState}}">
+  <view class="menban-cont">
+    <image src="/img/mach.png"></image>
+  </view>
+  <image src="/img/del.jpg" class="del-img" bindtap="quxiao"></image>
+</view>

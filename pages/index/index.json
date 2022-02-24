@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "common-title":"/component/con-title/con-title",
+    "common-summary":"/component/con-summary/con-summary",
+    "common-detail":"/component/con-detail/con-detail",
+    "common-order":"/component/con-order/con-order",
+    "common-center":"/component/con-center/con-center",
+    "common-food":"/component/con-food/con-food",
+    "common-fitment": "/component/con-fitment/con-fitment",
+    "ec-canvas": "/component/ec-canvas/ec-canvas"
+  },
+  "navigationStyle":"custom",
+  "navigationBarTextStyle": "white"
+}

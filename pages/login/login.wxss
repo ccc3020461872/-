@@ -1,0 +1,152 @@
+/* pages/boss/bossIndex/bossIndex.wxss */
+
+
+.nav-list1 {
+  width: 80%;
+  margin: 0rpx 10% 30rpx;
+  display: flex;
+  justify-content: center;
+
+}
+
+.item1 {
+  height: 100%;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 50rpx 50rpx;
+}
+
+.item1.active {
+  border-bottom: 5rpx solid var(--themecolor);
+  color: var(--themecolor)
+}
+
+.login_img {
+  width: 100%;
+  height: 451rpx;
+}
+
+.login_img_cont {
+  position: relative;
+  top: -400rpx;
+}
+
+.bg {
+  background-image: url('https://kad-1254002404.cos.ap-chengdu.myqcloud.com/keaidian/WEG/denglu.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 451rpx;
+  width: 100%;
+  position: relative;
+  top: -100rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 10rpx;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 76%;
+  border-bottom: 1rpx solid #eee;
+  padding: 0rpx 0 10rpx;
+  box-sizing: border-box;
+  margin-bottom: 60rpx;
+}
+
+.item image {
+  width: 28rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.item input {
+  font-size: 28rpx;
+}
+
+.btn {
+  width: 76% !important;
+  height: 75rpx;
+  line-height: 75rpx;
+  color: #fff;
+  padding: 0 0;
+  border-radius: 40rpx;
+  font-weight: initial;
+  font-size: 30rpx;
+  background-color: var(--themecolor);
+  margin-top: 30rpx;
+}
+
+.agree {
+  color: #666;
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.agree text {
+  color: var(--themecolor);
+}
+
+.all {
+  width: 76%;
+  margin: 0 12%;
+  box-sizing: border-box;
+  margin-bottom: 60rpx;
+  font-size: 27rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #9FA7AD;
+  display: flex;
+  align-items: center;
+}
+
+.all image {
+  width: 29rpx;
+  height: 29rpx;
+}
+
+.register {
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #2C5B5C;
+  line-height: 26px;
+  margin-top: 100rpx;
+}
+
+.code {
+  width: 170rpx !important;
+  border: 1rpx solid #999;
+  border-radius: 8rpx;
+  padding: 0rpx 2%;
+  box-sizing: border-box;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx !important;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #9EA6AD;
+  background-color: #fff;
+}

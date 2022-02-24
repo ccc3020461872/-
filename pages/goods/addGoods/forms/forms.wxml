@@ -1,0 +1,187 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+<view>
+  <!-- 背景颜色 -->
+  <view class="backBox" style="background-color: {{color}};"></view>
+  <!-- 内容区 -->
+  <view class="content">
+    <view class="box"></view>
+    <!-- 表单 -->
+    <form bindsubmit="save">
+      <!-- 商品名称 -->
+      <view class="form-item isright">
+        <view class="left">
+          <view class="title weight">商品名称</view>
+          <view class="tips">
+            <input type="text" placeholder-class="placeholder" placeholder="请输入商品名称" />
+          </view>
+        </view>
+        <view class="right">
+          <view wx:if="{{!goodsImgPath}}" class="updateImg" bindtap="showPop">
+            <image class="icon" src="/images/updateImg.png" mode="widthFix"></image>
+            <view style="color: {{color}};">上传图片</view>
+          </view>
+          <image wx:else src="{{goodsImgPath}}" bindtap="showPop" class="goodsImg"></image>
+        </view>
+      </view>
+      <!-- 分类 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight"><text class="request">分类</text></view>
+          <view class="tips" bindtap="toOtherPage" data-type="分类">
+            <input type="text" placeholder-class="placeholder" value="{{classify.CATEGORY_NAME}}" placeholder="请选择分类" disabled />
+            <view class="choose-icon">
+              <image src="/images/choose.png" mode="heightFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text class="request">价格</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips">
+            <input type="text" name="GOODS_PRICE" placeholder-class="placeholder" placeholder="请设置价格" />
+          </view>
+        </view>
+      </view>
+      <!-- 会员价 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>会员价</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips">
+            <input type="text" name="GOODS_VIP_PRICE" placeholder-class="placeholder" placeholder="请设置会员价格" />
+          </view>
+        </view>
+      </view>
+      <!-- 促销价 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title ">
+            <text>促销价</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips">
+            <input type="text"  name="PROMOTION_PRICE" placeholder-class="placeholder" placeholder="请设置促销价格" />
+          </view>
+        </view>
+      </view>
+      <!-- 打印档口 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title "><text class="request">打印档口</text></view>
+          <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/print/print">
+            <view class="littleTip">
+                <input type="text" placeholder-class="placeholder" placeholder="请选择商品打印档口" value="{{print}}" disabled />
+                <text class="text" wx:if="{{!print}}">如:前台,后厨等</text>
+            </view>
+            <view class="choose-icon">
+              <image src="/images/choose.png" mode="heightFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 上架下架 -->
+      <view class="form-item littleTip">
+        <view class="left">
+          <view class="title " style="margin-bottom: 0;"><text class="request">上架/下架</text></view>
+        </view>
+        <view class="right">
+          <switch type="switch" name="VALID"  color="{{color}}"></switch>
+        </view>
+      </view>
+      <!-- 口味 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>口味</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/taste/taste">
+            <view class="littleTip">
+              <input type="text" placeholder-class="placeholder" placeholder="请添加口味" value="{{taste}}" disabled />
+              <text class="text" wx:if="{{!taste}}">如:辣度,温度等</text>
+            </view>
+            <view class="choose-icon">
+              <image src="/images/choose.png" mode="heightFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 辅料 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>辅料</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips" bindtap="toOtherPage" data-type="辅料">
+            <view class="littleTip">
+              <input type="text" placeholder-class="placeholder" placeholder="请添加辅料" value="{{access}}" disabled />
+              <text class="text" wx:if="{{!access}}">如:煎蛋,瘦肉,椰果等</text>
+            </view>
+            <view class="choose-icon">
+              <image src="/images/choose.png" mode="heightFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 打包费 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>打包费(元)</text>
+            <text class="example">说明</text>
+          </view>
+          <view class="tips">
+            <input type="text" name="PACKING_CHARGE" placeholder-class="placeholder" placeholder="如需收取打包费,请输入金额" />
+          </view>
+        </view>
+      </view>
+      <!-- 商品喜好标签 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>商品喜好标签</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/tag/tag">
+            <view class="littleTip">
+              <input type="text" placeholder-class="placeholder" value="{{tag}}" placeholder="选择喜好标签" disabled />
+            </view>
+            <view class="choose-icon">
+              <image src="/images/choose.png" mode="heightFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 商品描述 -->
+      <view class="form-item ">
+        <view class="left">
+          <view class="title weight">
+            <text>商品描述</text>
+            <text class="example">示例</text>
+          </view>
+          <view class="tips">
+            <input type="text" name="GOODS_DESC" placeholder-class="placeholder" placeholder="请输入商品描述" />
+          </view>
+        </view>
+      </view>
+      <!-- 保存 -->
+      <view class="btns">
+        <button class="copy" style="color: {{color}}; border-color: {{color}};">复制并继续添加</button>
+        <button class="save" formType="submit" style="background-color: {{color}}; color: #fff;">保存</button>
+      </view>
+      <!-- 上传图片弹窗 -->
+      <popup choose="{{['上传','客爱点VIP图库']}}" bind:chooseType="updateImg" show="{{popShow}}"></popup>
+
+    </form>
+  </view>
+</view>

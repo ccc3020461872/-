@@ -1,0 +1,15 @@
+<!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="cont">
+  <view class="cont-item cont-top">
+    <image src="/img/s1.png"></image>
+  </view>
+  <view class="cont-list">
+    <view class="cont-items" wx:for="{{list}}" wx:key="list">
+      <input type="text" placeholder="请输入备注信息（10字内）" name="title" bindinput="getInput" maxlength="10"
+        value="{{item}}" id="{{index}}" bindblur="getInput" />
+      <image src="/img/delete.png" id="{{index}}" bindtap="toDelete"></image>
+    </view>
+  </view>
+  <view class="cont-display cont-add" bindtap="toAdd">+ 添加</view>
+  <view class="formBtn {{!isShow?'active':''}}" bindtap="{{isShow?'toSubmit':''}}">保存</view>
+</view>
