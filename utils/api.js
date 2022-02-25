@@ -58,6 +58,14 @@ export const updateGoodsCategory = data => getRequest(`/business/Api_2032_update
 export const deteleCategory = data => getRequest(`/business/Api_9034_deteleCategory`,data)
 // 分类排序 
 export const  goodsCategorySort = data => getRequest(`/business/Api_2021_goodsCategorySort`,data)
+// 新增口味  
+export const  addSpecificationsGroup = data => getRequest(`/business/Api_2052_addSpecificationsGroup`,data)
+// 查询喜好标签
+export const  goodsLike = data => getRequest(`/business/Api_2022_goodsLike`,data)
+// 商品排序
+export const  goodsSort = data => getRequest(`/business/Api_2023_goodsSort`,data)
+// 商品上下架
+export const  updateGoodsNew = data => getRequest(`/business/Api_9002_updateGoodsNew`,data)
 // 上传文件 
 export const uploadFileCOS = data => upLoadImg(`/applets/uploadFileCOS`, data)
 
@@ -87,7 +95,7 @@ export const salesStatistics = data => getRequest(`/boss/salesStatistics`, data)
 // 搜索商品
 export const goodsSearch = data => getRequest(`/boss/Api_1001_goodsSearch`, data);
 //商品上下架列表
-export const goodsList = data => getRequest(`/boss/goodsList`, data);
+// export const goodsList = data => getRequest(`/boss/goodsList`, data);
 //商品分类查询
 // export const goodsCategory = data => getRequest(`/boss/Api_1004_goodsCategory`, data);
 //商品分类修改
@@ -99,7 +107,7 @@ export const addGoodsCate = data => getRequest(`/boss/Api_1006_addGoodsCategory`
 //单商品上下架
 export const updateGoods = data => getRequest(`/boss/updateGoods`, data);
 //批量商品上下架
-export const updateGoodsNew = data => getRequest(`/boss/Api_1002_updateGoodsNew`, data);
+// export const updateGoodsNew = data => getRequest(`/boss/Api_1002_updateGoodsNew`, data);
 //商品置顶
 export const goodsTop = data => getRequest(`/boss/Api_1033_goodsTop`, data);
 //修改商品类目

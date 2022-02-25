@@ -76,6 +76,7 @@ page {
 }
 .inputClassify text {
   font-size: 36rpx;
+  max-width: 80%;
 }
 .inputClassify image{
   height: 90rpx;

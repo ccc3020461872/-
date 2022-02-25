@@ -162,8 +162,14 @@ Page({
         if(res.result === 'success'){
           wx.showToast({
             title: '删除成功',
-            icon: 'none'
+            icon: 'none',
+            success: () => {
+              setTimeout(() => {
+                this.changeDetail('query')
+              }, 500);
+            }
           })
+         
         }else if(res.result === 'error') {
           wx.showToast({
             title: '当前分类下有关联菜品，不能删除',

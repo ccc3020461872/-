@@ -14,7 +14,7 @@
         <view class="left">
           <view class="title weight">商品名称</view>
           <view class="tips">
-            <input type="text" placeholder-class="placeholder" placeholder="请输入商品名称" />
+            <input type="text" name="GOODS_NAME" placeholder-class="placeholder" placeholder="请输入商品名称" />
           </view>
         </view>
         <view class="right">
@@ -32,7 +32,7 @@
           <view class="tips" bindtap="toOtherPage" data-type="分类">
             <input type="text" placeholder-class="placeholder" value="{{classify.CATEGORY_NAME}}" placeholder="请选择分类" disabled />
             <view class="choose-icon">
-              <image src="/images/choose.png" mode="heightFix"></image>
+              <image src="/images/choose.png" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -79,11 +79,11 @@
           <view class="title "><text class="request">打印档口</text></view>
           <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/print/print">
             <view class="littleTip">
-                <input type="text" placeholder-class="placeholder" placeholder="请选择商品打印档口" value="{{print}}" disabled />
+                <input type="text" placeholder-class="placeholder" placeholder="请选择商品打印档口"  style="width: 400rpx;"value="{{print}}" disabled />
                 <text class="text" wx:if="{{!print}}">如:前台,后厨等</text>
             </view>
             <view class="choose-icon">
-              <image src="/images/choose.png" mode="heightFix"></image>
+              <image src="/images/choose.png" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -94,7 +94,7 @@
           <view class="title " style="margin-bottom: 0;"><text class="request">上架/下架</text></view>
         </view>
         <view class="right">
-          <switch type="switch" name="VALID"  color="{{color}}"></switch>
+          <switch type="switch" name="VALID" checked  color="{{color}}"></switch>
         </view>
       </view>
       <!-- 口味 -->
@@ -104,13 +104,13 @@
             <text>口味</text>
             <text class="example">示例</text>
           </view>
-          <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/taste/taste">
+          <view class="tips" bindtap="toOtherPage" data-type="口味" data-url="/pages/goods/taste/taste">
             <view class="littleTip">
-              <input type="text" placeholder-class="placeholder" placeholder="请添加口味" value="{{taste}}" disabled />
+              <input type="text" placeholder-class="placeholder" value="{{taste}}" style="width: 400rpx;" placeholder="请添加口味" disabled />
               <text class="text" wx:if="{{!taste}}">如:辣度,温度等</text>
             </view>
             <view class="choose-icon">
-              <image src="/images/choose.png" mode="heightFix"></image>
+              <image src="/images/choose.png" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -124,11 +124,18 @@
           </view>
           <view class="tips" bindtap="toOtherPage" data-type="辅料">
             <view class="littleTip">
-              <input type="text" placeholder-class="placeholder" placeholder="请添加辅料" value="{{access}}" disabled />
+              <block wx:if="{{access}}">
+                <view>
+               <text wx:for="{{access}}">{{item.name}} </text>
+              </view>
+              </block>
+              <block wx:else>
+                <input type="text" placeholder-class="placeholder" style="width: 340rpx;" placeholder="请添加辅料"  disabled />
               <text class="text" wx:if="{{!access}}">如:煎蛋,瘦肉,椰果等</text>
+              </block>
             </view>
             <view class="choose-icon">
-              <image src="/images/choose.png" mode="heightFix"></image>
+              <image src="/images/choose.png" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -137,11 +144,11 @@
       <view class="form-item ">
         <view class="left">
           <view class="title weight">
-            <text>打包费(元)</text>
+            <text class="request">打包费(元)</text>
             <text class="example">说明</text>
           </view>
           <view class="tips">
-            <input type="text" name="PACKING_CHARGE" placeholder-class="placeholder" placeholder="如需收取打包费,请输入金额" />
+            <input type="text" name="PACKING_CHARGE" placeholder-class="placeholder" placeholder="输入打包金额，不收打包费填0" />
           </view>
         </view>
       </view>
@@ -152,12 +159,12 @@
             <text>商品喜好标签</text>
             <text class="example">示例</text>
           </view>
-          <view class="tips" bindtap="toOtherPage" data-url="/pages/goods/tag/tag">
+          <view class="tips" bindtap="toOtherPage" data-type="喜好标签" data-url="/pages/goods/tag/tag">
             <view class="littleTip">
-              <input type="text" placeholder-class="placeholder" value="{{tag}}" placeholder="选择喜好标签" disabled />
+              <input type="text" placeholder-class="placeholder" value="{{tag.name}}" placeholder="选择喜好标签" disabled />
             </view>
             <view class="choose-icon">
-              <image src="/images/choose.png" mode="heightFix"></image>
+              <image src="/images/choose.png" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -176,7 +183,7 @@
       </view>
       <!-- 保存 -->
       <view class="btns">
-        <button class="copy" style="color: {{color}}; border-color: {{color}};">复制并继续添加</button>
+        <button class="copy" formType="submit" bindtap="copyTap" data-type="copy" style="color: {{color}}; border-color: {{color}};">复制并继续添加</button>
         <button class="save" formType="submit" style="background-color: {{color}}; color: #fff;">保存</button>
       </view>
       <!-- 上传图片弹窗 -->

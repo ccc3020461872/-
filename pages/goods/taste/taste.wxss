@@ -127,3 +127,6 @@ page {
   box-sizing: border-box;
   z-index: 9;
 }
+.warn {
+  color: red;
+}

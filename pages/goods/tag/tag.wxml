@@ -15,13 +15,13 @@
       <view class="choose-list" >
         <block wx:for="{{chooseList}}">
           <view class="item cc-center" data-index="{{index}}" bindtap="chooseTag" style="{{index === currentIndex && isSelected ? selected : ''}}">
-            {{item}}
+            {{item.name}}
           </view>
         </block>
       </view>
 
       <!-- 新建商品 -->
-      <view class="built " bindtap="toOtherPage"  style="background-color: {{color}};">保存</view>
+      <view class="built c cc-center" bindtap="toOtherPage"  style="background-color: {{color}};">保存</view>
     </view>
 
   </view>

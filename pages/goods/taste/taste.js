@@ -1,6 +1,8 @@
 // pages/goods/classify/add/add.js
-import toPage from '../../../utils/common/toPage'
-
+import  {tasteStringify, toPage} from '../../../utils/common/index'
+import {
+  addSpecificationsGroup, //新增
+} from '../../../utils/api'
 const app = getApp()
 Page({
 
@@ -11,6 +13,8 @@ Page({
     color: null,
     shortcutList: ['辣度：不辣/微辣/中辣/重辣', "甜度：无糖/少糖/多糖/全糖", "温度：热饮/常温/少冰/多冰"],
     info: [],
+    sameItem: null,  //找到重复的，颜色红色警示\
+    sameStyle: "color: red;"
   },
   toOtherPage(e) {
     const {
@@ -51,33 +55,25 @@ Page({
       }
     }
   }) {
-    const {
+    let {
       shortcutList,
       info
     } = this.data;
     let type = shortcutList[index].split('：');
     const attribute = type[0]
     const names = type[1].split('/')
-    // 查询是否有没有输入的口味
-    const patt = /[辣甜温]/
-    const noSet = info.find((item) => {
-      return Boolean(patt.test(item.nameValue) || item.nameValue === null)
-    })
-    console.log('noSet', noSet);
-    // 如果有的话直接赋值
-    if (noSet) {
-      noSet.nameValue = attribute
-      noSet.nameNum.map((v, i) => {
-        v.value = names[i]
-      })
-    } else {
       // 没有的话新增一个，在赋值
+      console.log(info);
+     
       this.initInfo();
       info[info.length - 1].nameValue = attribute;
       info[info.length - 1].nameNum.map((v, i) => {
         v.value = names[i]
       })
-    }
+     if(!info[0].nameValue){
+      info.splice(0,1)
+     }
+  
     this.setData({
       info
     })
@@ -124,15 +120,29 @@ Page({
         info
       } = this.data;
       if (info.length !== 0) {
-        info.splice(currentIndex, 1)
+        wx.showModal({
+          content: '是否删除当前属性？同时会删除其子属性',
+          success: res => {
+            if(res.confirm){
+              info.splice(currentIndex, 1)
+              this.setData({
+                info,
+                sameItem: null
+              })
+              wx.showToast({
+                title: '删除成功',
+                icon: 'none'
+              })
+            }
+          }
+        }) 
       }
-      this.setData({
-        info
-      })
+      
     } else {
       this.initInfo()
     }
   },
+  // 新建一个口味对象
   initInfo() {
     const {
       info
@@ -161,7 +171,6 @@ Page({
     this.setData({
       info
     })
-    console.log(this.data.info);
   },
   // 设置口味
   setName(e) {
@@ -190,11 +199,62 @@ Page({
       info
     })
   },
+  // 保存
+  save(){
+    console.log('保存',this.data.info);
+    this.setData({
+      sameItem: null
+    })
+    const { info } = this.data;
+   
+    const nameValueEmpty = info.find(v => {
+      return !v.nameValue
+    })
+     // 先过滤掉item上面空的value
+     info.map(v => {
+      v.nameNum = v.nameNum.filter(v2 => v2.value)
+     })
+    if(nameValueEmpty){
+      wx.showToast({
+        title: '口味属性为必填项',
+        icon: 'none'
+      })
+      return
+    }
+    const same = info.find((v , i, a) =>{
+      return (
+        a.find((v1, i1,) => {
+          return v.nameValue === v1.nameValue && v.numId !== v1.numId
+        })
+      )
+    }) 
+    if(same){
+      wx.showToast({
+        title: '请勿添加相同的口味',
+        icon: 'none'
+      })
+      this.setData({
+        sameItem:same
+      })
+      return
+    }
+    wx.setStorageSync('taste', info)
+    toPage()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.initInfo()
+    console.log(options);
+    const info = options?.chooseTaste&&JSON.parse(options.chooseTaste)
+    if(info){
+      this.setData({
+        info
+      })
+    }else {
+      this.initInfo()
+    }
+   
   },
 
   /**
@@ -229,31 +289,32 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    const {
-      info: dataInfo
-    } = this.data
-    if (dataInfo.length !== 0) {
-      if (dataInfo.find(v => {
-          return v.nameValue === null
-        })) {
-        return
-      }
-    } else {
-      return
-    }
-    const info = JSON.parse(JSON.stringify(this.data.info))
-    console.log(info);
-    const newArr = []
-    info.map((item) => {
-      const arr2 = [];
-      arr2.push(item.nameValue)
-      item.nameNum.map(v => {
-        arr2.push(v.value)
-      })
-      newArr.push(arr2.join('/').replace('/', ":"))
-    })
-    console.log(newArr);
-    wx.setStorageSync('taste', newArr.join(','))
+    // const {
+    //   info: dataInfo
+    // } = this.data
+    // if (dataInfo.length !== 0) {
+    //   if (dataInfo.find(v => {
+    //       return v.nameValue === null
+    //     })) {
+    //     return
+    //   }
+    // } else {
+    //   return
+    // }
+    // const info = JSON.parse(JSON.stringify(this.data.info))
+    // console.log(info);
+    // const newArr = []
+    // info.map((item) => {
+    //   const arr2 = [];
+    //   arr2.push(item.nameValue)
+    //   item.nameNum.map(v => {
+    //     arr2.push(v.value)
+    //   })
+    //   newArr.push(arr2.join('/').replace('/', ":"))
+    // })
+    // console.log(newArr);
+    // console.log( tasteStringify(this.data.info));
+    // wx.setStorageSync('taste', newArr.join(','))
   },
 
   /**

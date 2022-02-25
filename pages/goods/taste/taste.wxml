@@ -22,7 +22,7 @@
         <view class="tasteInput" wx:for="{{info}}" wx:key="numId">
           <!-- 口味属性 -->
           <view class="property">
-            <input type="text" placeholder="口味属性，如辣度、温度等" bindinput="setName" data-index="{{index}}" data-type="attribute" placeholder-class="placeholder" value="{{item.nameValue}}" />
+            <input type="text" placeholder="口味属性，如辣度、温度等" bindinput="setName" class="{{item.nameValue === sameItem.nameValue ? 'warn' : ''}}" data-index="{{index}}" data-type="attribute" placeholder-class="placeholder" value="{{item.nameValue}}" />
             <image src="/images/remove.png" mode="widthFix" bindtap="doChangeTast" data-type="-" data-index="{{index}}"></image>
           </view>
           <!-- 口味名称 -->
@@ -38,7 +38,7 @@
         </view>
       </view>
       <!-- 新建商品 -->
-      <view class="built " style="background-color: {{color}};" bindtap="toOtherPage">保存</view>
+      <view class="built " style="background-color: {{color}};" bindtap="save">保存</view>
     </view>
 
   </view>

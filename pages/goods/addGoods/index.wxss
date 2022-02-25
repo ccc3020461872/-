@@ -59,9 +59,14 @@ page {
 }
 .classify .left,
 .classify .right {
-  padding: 13rpx 24rpx;
   box-sizing: border-box;
   border-radius: 74rpx;
+  width: 150rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
 }
 .classify .left {
   border: 1px solid;
@@ -70,23 +75,35 @@ page {
   background-color: #f4f4f4;
   color: #CCCCCC;
 }
+.classify .current-categary{ 
+  font-size: 34rpx;
+  font-weight: 700;
+  min-width: 40%;
+  max-width: 51%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .empty {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
   color: #808080;
   font-size: 36rpx;
   font-weight: 600;
+  white-space: nowrap;
 }
 /* 下面的商品详情 */
 .detail {
   margin-top: 36rpx;
   display: flex;
   font-weight: 700;
+  justify-content: space-between;
 }
 .detail .className {
-  width: 30%;
+  width: 24%;
   text-align: center;
   color: #737373;
 }
@@ -95,6 +112,9 @@ page {
 }
 .detail .goodsInfo {
   width: 70%;
+  max-height: 58vh;
+  overflow: auto;
+  position: relative;
 }
 .detail .goodsInfo .goodsImg {
   width: 200rpx;
@@ -106,6 +126,7 @@ page {
   width: 100%;
   display: flex;
   margin-right: 28rpx;
+  margin-bottom: 40rpx;
 }
 .goodsItem .info {
   display: flex;
@@ -140,4 +161,12 @@ page {
   padding: 40rpx 106rpx;
   border-radius: 128rpx;
   box-sizing: border-box;
+}
+
+.goodsItem  .upDown image{
+  width: 36rpx;
+  float: right;
+}
+.goodsItem .upDown image:last-child {
+  margin-right: 44rpx;
 }

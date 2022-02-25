@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/goods/addGoods/forms/forms",
     "pages/goods/addGoods/index",
+    "pages/goods/taste/taste",
     "pages/goods/classify/manage/manage",
     "pages/goods/classify/sort/sort",
     "pages/goods/classify/choose/choose",
     "pages/goods/excipients/manage/manage",
-    "pages/goods/addGoods/forms/forms",
-    "pages/index/index",
     "pages/deskCode/deskCode",
     "pages/login/login",
     "pages/index/shopSet/shopSet",
@@ -34,7 +35,6 @@
     "pages/goods/tag/tag",
     "pages/goods/excipients/choose/choose",
     "pages/goods/excipients/excipients",
-    "pages/goods/taste/taste",
     "pages/goods/print/print",
     "pages/goods/addGoods/photes/photes",
     "pages/goods/addGoods/imgPreview/imgPreview",

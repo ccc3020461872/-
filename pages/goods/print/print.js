@@ -10,7 +10,7 @@ Page({
     color: null,
     choose: false,
     currentIndex: null,
-    list:['前台','后厨','前台和后厨'],
+    list:['前台','后厨',],
   },
   doChoose(e){
     console.log(e);
