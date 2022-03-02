@@ -47,8 +47,8 @@ page {
   border-radius: 50%;
   background-color: var(--themecolor);
   position: absolute;
-  margin-top: 8rpx;
-  left: 35px;
+  margin-top: 19rpx;
+  left: 26px;
 
 }
 
@@ -73,7 +73,6 @@ page {
 }
 
 .cont-time-list {
-  width: 90%;
   padding: 40rpx 5%;
   background: #F7F7F7;
   border-radius: 20rpx;

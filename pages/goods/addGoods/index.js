@@ -31,7 +31,7 @@ Page({
     }
   },
   async toOtherPage(e){
-    const {currentTarget: {dataset: {url, type}}} = e
+    const {currentTarget: {dataset: {url, type, goods}}} = e
     if(type === '分类管理'){
       const { goodsList } = this.data
       if(goodsList && goodsList.length !== 0){
@@ -42,6 +42,11 @@ Page({
         toPage(url)
       }
     
+    }else if(type === 'itemtap'){
+      const {goodsList, currentIndex} = this.data
+      const { CATEGORY_NAME, GOODS_CATEGORY_ID } = goodsList[currentIndex];
+      const CATEGORY = {CATEGORY_NAME, GOODS_CATEGORY_ID}
+      toPage(url, {goods: JSON.stringify({...goods,CATEGORY})})
     }else{
       toPage(url)
     }
@@ -49,8 +54,9 @@ Page({
   },
   // 点击左边的大类
   chooseClass(e){
-    const {currentTarget: {dataset: {index}}} = e;
+    const {currentTarget: {dataset: {index , info}}} = e;
     console.log(index);
+    console.log(info);
     this.setData({
       currentIndex: index
     })
@@ -72,8 +78,6 @@ Page({
         }
       }
     })
-    
-   
   },
   // 商品排序点击
   sortTap(){

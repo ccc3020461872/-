@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-info":"/component/common/common"
+  },
+  "navigationBarTitleText": "当日收款详情"
+} 

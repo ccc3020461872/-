@@ -2,7 +2,8 @@
 <view class="menban" hidden="{{isHidd}}">
   <view class="menban-cont">
     <view>添加打票机</view>
-    <image class="menban-cont-img" src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg"></image>
+    <image class="menban-cont-img" src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.png">
+    </image>
     <view class="menban-section">
       <text>编号（SN）</text>
       <text>{{P_SN}}</text>
@@ -27,7 +28,6 @@
         <text>{{item}}</text>
       </view>
     </view>
-
     <view class="bottom">
       <view class="btnn btnn1" bindtap="cancel">取消添加</view>
       <view class="btnn btnn2" bindtap="confirm">添加</view>

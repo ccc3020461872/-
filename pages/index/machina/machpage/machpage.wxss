@@ -3,10 +3,15 @@ page {
   height: 200px;
   background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
 }
+.cont{
+  padding: 10rpx 5%;
+}
+.page1 {
+box-sizing: content-box;
+}
 
 .page-video {
-  width: 86%;
-  height: 400rpx;
+  height: 470rpx;
   padding: 30rpx 5%;
   margin: 50rpx 2%;
   background: #EEEEEE;
@@ -40,10 +45,10 @@ page {
   border-radius: 43rpx;
   opacity: 1;
   margin-left: 110rpx;
-  bottom: 200rpx;
+  bottom: 160rpx;
 }
 
-.formBtn2{
+.formBtn2 {
   bottom: 40rpx;
   border: 1rpx solid #1E5051;
   background-color: #fff;
@@ -52,11 +57,12 @@ page {
 
 .select {
   height: 26rpx;
-  font-size: 26rpx;
+  font-size: 25rpx;
   font-family: PingFang-SC-Medium, PingFang-SC;
   font-weight: 500;
   color: #1E5051;
-  line-height: 125rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
 }
 
 /* 协议开始 */
@@ -78,4 +84,8 @@ page {
 
 radio {
   transform: scale(.6)
+}
+.page-text{
+  font-size: 28rpx;
+  line-height: 50rpx;
 }

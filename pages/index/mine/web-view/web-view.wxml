@@ -2,7 +2,7 @@
 <form action="" bindsubmit="formSubmit">
   <view class="box">
     <view class="section">
-      <text>问题描述<text>*</text></text>
+      <text>问题描述<text style="color: red;">*</text></text>
       <textarea name="note" id="" cols="30" rows="10" maxlength="200"></textarea>
       <text class="note-num">0/200</text>
     </view>
@@ -12,7 +12,7 @@
         <block wx:for="{{imgList}}" wx:key="lin">
           <image src="{{item}}" mode="aspectFill">
           </image>
-          <image src="/img/index/del.png" class="del" id="{{index}}" catchtap="del"></image>
+          <image src="/img/del.jpg" class="del" id="{{index}}" catchtap="del"></image>
         </block>
         <image src="/img/index/up.png" hidden="{{imgList.length>=3}}" bindtap="uploadImage">
         </image>
@@ -20,10 +20,10 @@
       <view style="text-align: right;color: #999;">{{imgList.length}}/3</view>
     </view>
     <view class="section section1">
-      <text>手机号<text>*</text></text>
+      <text>手机号<text style="color: red;">*</text></text>
       <input type="" placeholder="请输入您的手机号" name="phone" maxlength="11" type="number" />
     </view>
-    <button form-type="submit" disabled="{{disabled}}" class="butform">发布</button>
+    <button form-type="submit" disabled="{{disabled}}" class="butform" style="width:90%;">发布</button>
     <view style="height:200rpx"></view>
   </view>
 </form>

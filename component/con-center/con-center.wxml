@@ -1,31 +1,39 @@
 <!--component/con-center/con-center.wxml-->
-<view class="item">
-  <view>头像</view>
-  <image src="/images/shouyeLOGO.png"></image>
+<view class="cont">
+  <view class="item">
+    <view>头像</view>
+    <image src="{{shop.SHOP_IMG}}"></image>
+  </view>
+  <view class="item">
+    <view> 昵称</view>
+    <view>{{shop.SHOP_NAME}}</view>
+  </view>
+  <view class="item">
+    <view>手机号</view>
+    <view>{{shop.SHOP_TEL}}</view>
+  </view>
+  <view class="item">
+    <view>密码</view>
+    <view bindtap="updatePwd">修改密码</view>
+  </view>
+  <view class="item" bindtap="toshare">
+    <view>分享</view>
+    <image src="/img/right.png" class="right-img"></image>
+  </view>
+  <view class="item" bindtap="toweb">
+    <view>反馈</view>
+    <image src="/img/right.png" class="right-img"></image>
+  </view>
+  <view class="item" bindtap="toabout">
+    <view>帮助/联系我们</view>
+    <image src="/img/right.png" class="right-img"></image>
+  </view>
+  <button open-type="share" class="share"></button>
+  <view bindtap="tosetting" class="setting">《用户协议》</view>
+  <view style="display: flex;justify-content: center;">
+    <view class="remark" bindtap="toOut">客爱点<text>®</text> · 让堂食更火爆</view>
+  </view>
 </view>
-<view class="item">
-  <view> 昵称</view>
-  <view>玛玛哈哈韩式料理</view>
-</view>
-<view class="item">
-  <view>手机号</view>
-  <view>18902262551</view>
-</view>
-<view class="item">
-  <view>密码</view>
-  <view bindtap="updatePwd">修改密码</view>
-</view>
-<view class="item">
-  <view>分享</view>
-  <image src="/img/right.png" class="right-img"></image>
-</view>
-<view class="item" bindtap="toweb">
-  <view>反馈</view>
-  <image src="/img/right.png" class="right-img"></image>
-</view>
-<view class="item">
-  <view>帮助/联系我们</view>
-  <image src="/img/right.png" class="right-img"></image>
-</view>
+
 
 <view class="loginOut" bindtap="loginOut">退出登录</view>

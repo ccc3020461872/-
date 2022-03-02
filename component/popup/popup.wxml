@@ -1,63 +1,62 @@
 <view class="popup" wx:if="{{show}}" bindtouchmove="preventTouchMove">
-  <block wx:if="{{type === 0}}"> 
+  <block wx:if="{{type === 0}}">
     <view class="choose">
-    <view class="item" wx:for="{{choose}}" wx:key="{{index}}" bindtap="itemTap" data-type="{{item}}">
-      <view class="text">
-       {{item}}
-        <!-- 限时免费 -->
-        <image wx:if="{{item === '客爱点VIP图库'}}" src="/images/free.png" mode="widthFix"></image>
+      <view class="item" wx:for="{{choose}}" wx:key="{{index}}" bindtap="itemTap" data-type="{{item}}">
+        <view class="text">
+          {{item}}
+          <!-- 限时免费 -->
+          <image wx:if="{{item === '客爱点VIP图库'}}" src="/images/free.png" mode="widthFix"></image>
+        </view>
       </view>
+      <view class="cancel" bindtap="clouse">取消</view>
     </view>
-    <view class="cancel" bindtap="clouse">取消</view>
-  </view>
   </block>
   <!-- 模板底部弹窗 -->
   <block wx:if="{{type === 1}}">
     <view class="choose1">
       <view class="title">
         <text bindtap="clouse">X</text>
-       <text>选择模板</text>
+        <text>选择模板</text>
       </view>
       <!-- 图片列表 -->
       <view class="imgList">
         <radio-group>
-          <view class="itemBox" wx:for="{{imgList}}">
+          <view class="itemBox" wx:for="{{backList}}" wx:key="backList">
             <label>
-              <image  class="imgitem" src="{{item}}"> 
-            <radio></radio>
-          </image>
+              <image class="imgitem" src="{{item}}" data-url="{{item}}" bindtap="chooseswiper">
+                <radio></radio>
+              </image>
             </label>
           </view>
         </radio-group>
+      </view>                     
+      <!-- 确认选择 -->
+      <view class="confirm" bindtap="chooseSure">
+        确认选择
       </view>
-     <!-- 确认选择 -->
-     <view class="confirm">
-      确认选择 
-     </view>
+      <view style="height:120rpx"></view>
     </view>
   </block>
   <!-- 中间确认取消按钮 -->
   <block wx:if="{{type === 2}}">
     <view class="choose2">
-    <view class="title">选择轮播图模板</view>
-    <!-- 轮播图模板列表 -->
-    <radio-group>
-    <view class="imgList1">
-          <view class="itemBox1" wx:for="{{imgList}}">
-            <label>
-              <image  class="imgitem1" src="{{item}}"> 
-            <radio ></radio>
-          </image>
+      <view class="title">选择背景图模板</view>
+      <radio-group>
+        <view class="imgList1">
+          <view class="itemBox1" wx:for="{{swiperList}}" wx:key="swiperList">
+            <label data-url="{{item}}" bindtap="chooseback">
+              <image class="imgitem1" src="{{item}}">
+                <radio></radio>
+              </image>
             </label>
           </view>
-        
-      </view>
-    </radio-group>
-    <!-- 取消确认选择 -->
-    <view class="chooseType">
-         <text bindtap="clouse">取消</text>
-         <text>确认选择</text>
         </view>
+      </radio-group>
+      <!-- 取消确认选择 -->
+      <view class="chooseType">
+        <text bindtap="clouse">取消</text>
+        <text bindtap="chooseSure1">确认选择</text>
+      </view>
     </view>
   </block>
 </view>

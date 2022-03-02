@@ -27,15 +27,15 @@
         <view class="detail">
           <!-- 左边名字 -->
           <view class="className">
-            <view class="goodsName" style="{{currentIndex===index ? selected : ''}}" wx:for="{{goodsList}}" bindtap="chooseClass" data-index="{{index}}">{{item.CATEGORY_NAME}}</view>
+            <view class="goodsName" style="{{currentIndex===index ? selected : ''}}" wx:for="{{goodsList}}" bindtap="chooseClass" data-index="{{index}}" data-info="{{item}}">{{item.CATEGORY_NAME}}</view>
           </view>
           <!-- 右边详情 -->
           <view class="goodsInfo">
             <block wx:if="{{goodsList[currentIndex].goods.length !== 0}}">
-              <view class="goodsItem" wx:for-item="item2" wx:for-index="index2" wx:for="{{goodsList[currentIndex].goods}}">
+              <view class="goodsItem" wx:for-item="item2"  wx:for-index="index2" wx:for="{{goodsList[currentIndex].goods}}">
                 <!-- 商品图片 -->
                 <view>
-                  <image src="{{item2.GOODS_IMG}}" class="goodsImg" style="border-color: {{color}};">
+                  <image src="{{item2.GOODS_IMG}}" catchtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms" data-type="itemtap" data-goods="{{item2}}" class="goodsImg" style="border-color: {{color}};">
                   </image>
                 </view>
                 <!-- 商品信息 -->
@@ -68,7 +68,7 @@
         </view>
       </block>
       <!-- 新建商品 -->
-      <view class="built" style="background-color: {{color}};" bindtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms">新建商品</view>
+      <view class="built cc-center" style="background-color: {{color}};" bindtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms">新建商品</view>
     </view>
 
   </view>

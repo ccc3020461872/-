@@ -55,25 +55,41 @@ Page({
       })
       return
     }
-    wx.showToast({
-      title: '选择成功',
-      icon: 'none',
-      duration: 1000
-    })
-    setTimeout(() => {
-      wx.setStorageSync('accessories', selectArr)
-      toPage()
-    }, 1000);
+    toPage()
+  
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let { list } = this.options
+    let { list,access } = this.options
+    access = JSON.parse(access)
+    console.log(access);
     list = JSON.parse(list)
     list.map(v => {
       v.select = false
     })
+    function filterIndex(sourceArr,target){
+      const newArr = sourceArr.filter(v =>{
+        const item = target.find((v2) => {
+          return v2.id === v.ACCESSORIES_ID
+        });
+        return v.ACCESSORIES_ID === item?.id 
+      })
+      const indexArr = [];
+      newArr.forEach(v => {
+        let index = sourceArr.findIndex(v1 => v1.ACCESSORIES_ID + '' === v.ACCESSORIES_ID + '');
+        index !== -1&&indexArr.push(index)
+      })
+      indexArr.forEach(v => {
+        sourceArr[v].select = true
+      });
+      return sourceArr
+    }
+    if(access) {
+     const newArr =  filterIndex(list ,access);
+     console.log(newArr);
+    }
     this.setData({
       list: list
     })
@@ -97,7 +113,7 @@ Page({
    const selectArr = wx.getStorageSync('accessories');
    console.log(selectArr);
    const { list } = this.data;
-    list.map((v,i,a) => {
+   selectArr&&list.map((v,i,a) => {
      selectArr.forEach(v2 =>{
        if(v2.ACCESSORIES_NAME === v.ACCESSORIES_NAME){
         v.select = true
@@ -119,14 +135,21 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    const { list } = this.data;
+    const selectArr = list.filter(v => {
+      return v.select
+    });
+    console.log(selectArr);
+    if(selectArr.length !== 0){
+      wx.setStorageSync('accessories', selectArr)
+    }
   },
 
   /**

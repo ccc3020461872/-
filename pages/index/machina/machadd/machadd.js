@@ -16,7 +16,9 @@ Page({
     lilist1: ['前台', '后厨'],
     chooseTab: 0,
     chooseTab1: 0,
-    isHidd: true
+    isHidd: true,
+    sn1:'',
+    key1:''
   },
 
   /**
@@ -37,6 +39,19 @@ Page({
       fail: function (err) {
         console.log('fail', err)
       }
+    })
+
+  },
+  getsn(e){
+    console.log(e.detail.value)
+    this.setData({
+      sn1:e.detail.value
+    })
+  },
+  getkey(e){
+    console.log(e.detail.value)
+    this.setData({
+      key1:e.detail.value
     })
   },
   cancel() {

@@ -1,4 +1,8 @@
 /* pages/index/shopSet/oneNotice/oneNotice.wxss */
+page {
+  height: 200px;
+  background-image: linear-gradient(to bottom, var(--themecolor), #fff, #fff);
+}
 
 .cont-item image {
   width: 422rpx;
@@ -6,7 +10,213 @@
   margin: 0 auto;
 }
 
-.cont-top {}
+.cont-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bd4 {
+  height: 352rpx;
+  background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/ps1xboro34i7lk9q0o4uulns64gu9ygnqa76d4df6f-f6e3-4176-ba63-98754e3b99a2) 100% no-repeat;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: 374rpx;
+  background-color: #fff;
+  margin-bottom: 15rpx;
+}
+
+.layer12 {
+  background-color: rgba(95, 179, 181, 1.000000);
+  border-radius: NaNrpx;
+  height: 80rpx;
+  width: 374rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.outer32 {
+  width: 108rpx;
+  height: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 11rpx 0 0 120rpx;
+}
+
+.layer22 {
+  background-color: rgba(74, 166, 168, 1.000000);
+  border-radius: 4rpx;
+  width: 108rpx;
+  height: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.outer42 {
+  width: 304rpx;
+  height: 31rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 17rpx 0 11rpx 24rpx;
+}
+
+.mod12 {
+  background-color: rgba(255, 255, 255, 0.070000);
+  width: 144rpx;
+  height: 28rpx;
+  margin-top: 3rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.mod22 {
+  width: 81rpx;
+  height: 30rpx;
+  background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/psd06x2vnevv4qdoadx6szuo9mri2fnk9zj022fdb34-49ac-4402-aea4-059d5c729981) -1rpx 0rpx no-repeat;
+  background-size: 83rpx 31rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.layer1 {
+  width: 324rpx;
+  height: 221rpx;
+  display: flex;
+  flex-direction: column;
+}
+.info-cont{
+  padding: 10rpx 5% 0;
+}
+.outer1 {
+  width: 314rpx;
+  height: 73rpx;
+  flex-direction: row;
+  display: flex;
+}
+
+.section8 {
+  background-color: rgba(250, 250, 250, 1.000000);
+  border-radius: 10rpx;
+  width: 121rpx;
+  height: 73rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.info3 {
+  width: 25rpx;
+  overflow-wrap: break-word;
+  color: rgba(153, 153, 153, 1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+  margin: 29rpx 0 0 82rpx;
+}
+
+.txt1 {
+  width: 47rpx;
+  overflow-wrap: break-word;
+  color: rgba(153, 153, 153, 1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+  margin: 29rpx 0 0 39rpx;
+}
+
+.info4 {
+  overflow-wrap: break-word;
+  color: rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+  margin: 14rpx 0 0 1rpx;
+}
+
+.info40 {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: #333333;
+  text-align: left;
+  margin-top: 10rpx;
+  width: 100%;
+  display: block;
+}
+
+.outer2 {
+  width: 340rpx;
+  height: 35rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 27rpx 0 0 6rpx;
+}
+
+.main1 {
+  width: 100%;
+  border-radius: 17rpx;
+  height: 35rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.word6 {
+  min-width: 64rpx;
+  height: 21rpx;
+  background-color: rgba(95, 179, 181, 0.120000);
+  overflow-wrap: break-word;
+  color: rgba(102, 102, 102, 1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+  padding: 8rpx 15rpx;
+  border-radius: 10rpx;
+  margin:0 20rpx 25rpx 0;
+}
+
+.info5 {
+  width: 86rpx;
+  height: 21rpx;
+  overflow-wrap: break-word;
+  color: rgba(102, 102, 102, 1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+}
+
+.txt2 {
+  width: 64rpx;
+  height: 21rpx;
+  overflow-wrap: break-word;
+  color: rgba(102, 102, 102, 1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22rpx;
+  display: block;
+}
 
 
 
@@ -57,6 +267,7 @@
   justify-content: flex-end;
   padding-top: 20rpx;
 }
+
 .active {
   background-color: #CDCDCD !important;
 }

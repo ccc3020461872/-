@@ -49,7 +49,6 @@ page {
 }
 
 .cont {
-  width: 90%;
   padding: 50rpx 5%;
   background-color: #fff;
   border-radius: 80rpx 80rpx 0 0;

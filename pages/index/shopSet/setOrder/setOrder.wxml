@@ -1,12 +1,45 @@
 <!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="headebg">
+  <common-title formcolor="false" commnote='{{commnote}}' backSate="no">
+    <image src="/img/backWhite.png" slot="commimg"  ></image>
+    <view slot="commtitle">门店公告设置</view>
+  </common-title>
+</view>
 <view class="cont">
   <view class="cont-item cont-top">
-    <image src="/img/s1.png"></image>
+    <text lines="1" class="info4">顾客点餐时将看到</text>
+    <view class="bd4">
+      <view class="layer1">
+        <view class="layer12">
+          <view class="outer32">
+            <view class="layer22"></view>
+          </view>
+          <view class="outer42">
+            <view class="mod12"></view>
+            <view class="mod22"></view>
+          </view>
+        </view>
+        <view class="info-cont">
+          <view class="outer1">
+            <view class="section8"></view>
+            <text lines="1" decode="true" class="info3">x&nbsp;1</text>
+            <text lines="1" decode="true" class="txt1">¥&nbsp;24</text>
+          </view>
+          <text lines="1" class="info40">快捷备注</text>
+          <view class="outer2">
+            <view class="main1">
+              <text wx:for="{{list}}" wx:key="list" lines="1" class="word6">{{item}}</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
   </view>
   <view class="cont-list">
     <view class="cont-items" wx:for="{{list}}" wx:key="list">
-      <input type="text" placeholder="请输入备注信息（10字内）" name="title" bindinput="getInput" maxlength="10"
-        value="{{item}}" id="{{index}}" bindblur="getInput" />
+      <input type="text" placeholder="请输入备注信息（10字内）" name="title" bindinput="getInput" maxlength="10" value="{{item}}"
+        id="{{index}}" bindblur="getInput" />
       <image src="/img/delete.png" id="{{index}}" bindtap="toDelete"></image>
     </view>
   </view>

@@ -1,5 +1,8 @@
 // pages/goods/classify/manage/manage.js
-import toPage from '../../../utils/common/toPage'
+import {toPage, getShopId} from '../../../utils/common/index'
+import {
+  amountOfPackaging //打包费设置
+} from '../../../utils/api'
 const app = getApp()
 Page({
 
@@ -9,11 +12,19 @@ Page({
   data: {
      color: null,
      selectedClass: null,
-     currentType: 'order'
+     currentType: 'order',
+     price: null,
   },
   toOtherPage(e){
     const {currentTarget: {dataset: {url}}} = e
     toPage(url)
+  },
+  // 输入金额
+  inputPrice(e){
+    const {detail: {value: price}} = e;
+    this.setData({
+      price,
+    }) 
   },
   // 点击选择的收费类型
   typeChoose(e){
@@ -22,6 +33,37 @@ Page({
     this.setData({
       currentType: type
     })
+  },
+  async save(){
+    const SHOP_ID = await getShopId();
+    const { currentType, price: PACKING_CHARGE = ''} = this.data;
+    const PACKTYPE = currentType === 'order' ? 1 : 0;
+    if(PACKTYPE === 1){
+      if(!PACKING_CHARGE || PACKING_CHARGE-0 <= 0){
+        wx.showToast({
+          title: '请输入打包费用',
+          icon: 'none'
+        })
+        return
+      }
+    }
+    const content = PACKTYPE === 1 ? '是否按订单收费' : '是否按商品收费'
+    wx.showModal({
+      content,
+      success: async res => {
+        if(res.confirm){
+         await amountOfPackaging({
+            SHOP_ID,
+            PACKING_CHARGE,
+            PACKTYPE,
+          })
+         toPage()
+        }
+      }
+    })
+    
+   
+    
   },
   /**
    * 生命周期函数--监听页面加载

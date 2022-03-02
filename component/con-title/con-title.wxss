@@ -9,6 +9,10 @@
   width: 21rpx;
   height: 35rpx;
 }
+.commimg image{
+  width: 100%;
+  height: 100%;
+}
 .slotContent{
   width: 100%;
   display: flex;
@@ -16,6 +20,7 @@
   position: fixed;
   top: 0;
   z-index: 1000;
+  padding-bottom: 20rpx;
   /* align-items: center; */
 }
 .commtitle{

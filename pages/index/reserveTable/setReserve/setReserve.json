@@ -1,6 +1,9 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "common-title": "/component/con-title/con-title"
+  },
   "navigationBarBackgroundColor": "#1E5051",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "预点餐设置-点餐"
+  "navigationBarTitleText": "预点餐设置-点餐",
+  "navigationStyle":"custom"
 }

@@ -1,8 +1,19 @@
+<page-meta>
+  <navigation-bar background-color="{{color}}" />
+</page-meta>
+
 <view class="cont">
   <view class="top-time">
-    <picker mode="date">
+    <picker mode="date" start="2022-01-01" end="{{startDate}}" bindchange="bindDateChangeStart">
       <view class="tip right-img">
-        <text>{{date}}</text>
+        <text>{{sdate}}</text>
+        <image src="/img/right.png"></image>
+      </view>
+    </picker>
+    <view>—</view>
+    <picker mode="date" style="margin-left: 20rpx;" start="{{endDate}}" end="2023-01-01" bindchange="bindDateChangeEnd">
+      <view class="tip right-img">
+        <text>{{edate}}</text>
         <image src="/img/right.png"></image>
       </view>
     </picker>
@@ -10,32 +21,52 @@
   <view class="cont-top">
     <label>
       <text>访客数（人）</text>
-      <text>100</text>
+      <text>{{date.customerNumber}}</text>
     </label>
     <label>
-      <text>访客数（人）</text>
-      <text>100</text>
+      <text>订单数（单）</text>
+      <text>{{date.orderNumber}}</text>
     </label>
     <label>
-      <text>访客数（人）</text>
-      <text>10</text>
+      <text>营业实收（元）</text>
+      <text>{{date.allOrderMoney}}</text>
     </label>
   </view>
-  <block wx:if='{{dataList.length != 0}}'>
-    <view class="list" wx:for="{{dataList}}" wx:key="list" bindtap="toDay" id="{{index}}">
+  <block wx:if='{{dataList[0].orderDesc.length != 0 && dataList.length==1}}'>
+    <view class="list" wx:for="{{dataList[0].orderDesc}}" wx:key="list" bindtap="toDay" id="{{index}}">
       <view>
         <view class="date">
-          <image src="/img/index/wechat.png" class="img"></image>
-          <view>{{item.date}}</view>
+          <image src="/img/index/wechat.png" class="img" wx:if='{{item.INT_TYPE == 1}}'></image>
+          <image src="/img/index/alipay.png" wx:else></image>
+          <view>{{item.PAYMENT_TIME}}</view>
         </view>
         <view class="pay-list">
-          <view class="label-num label">旺座现代城店</view>
+          <view class="label-num label">{{item.SHOP_NAME}}</view>
         </view>
       </view>
-      <view class="money">{{item.orderMoney}}</view>
+      <view class="money">{{item.PAYMENT_AMOUNT}}</view>
+    </view>
+  </block>
+  <block wx:if="{{dataList[0].orderDesc.length==0 && dataList.length==1}}">
+    <v-info fromimages="{{images}}" frominfoWord="{{infoWord}}" formheight="{{height}}"></v-info>
+  </block>
+
+  <!-- 选择不同时间段 -->
+  <block wx:if='{{dataList.length != 0 && dataList.length>1}}'>
+    <view class="list" wx:for="{{dataList}}" wx:key="list" bindtap="toDay" id="{{index}}">
+      <view>
+        <view class="date">{{item.date}}</view>
+        <view class="pay-list">
+          <view class="label-num label">订单数（单） <text class="text">{{item.orderNUm}}</text></view>
+          <view class="label-mon label">营业实收（元）<text class="text">{{item.orderMoney}}</text></view>
+        </view>
+      </view>
+      <image src="/img/right.png" class="img" style="width: 15rpx;" mode="widthFix"></image>
     </view>
   </block>
   <block wx:if="{{dataList.length==0}}">
     <v-info fromimages="{{images}}" frominfoWord="{{infoWord}}" formheight="{{height}}"></v-info>
   </block>
 </view>
+
+<view style="height:200rpx"></view>

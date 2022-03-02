@@ -1,14 +1,28 @@
 <!--pages/index/stateMent/stateMent.wxml-->
-
+<view class="top-time">
+  <picker mode="date" start="2022-01-01" end="{{startDate}}" bindchange="bindDateChangeStart">
+    <view class="tip right-img">
+      <text>{{sdate}}</text>
+      <image src="/img/right.png"></image>
+    </view>
+  </picker>
+  <view>—</view>
+  <picker mode="date" style="margin-left: 20rpx;" start="{{endDate}}" end="2023-01-01" bindchange="bindDateChangeEnd">
+    <view class="tip right-img">
+      <text>{{edate}}</text>
+      <image src="/img/right.png"></image>
+    </view>
+  </picker>
+</view>
 <view class="nav-list">
   <view wx:for="{{navlist}}" wx:key="list" class="item {{currentIndex== index ? 'active' : ''}}" catchtap="choose"
     style="width:{{index==3?'33.5%':'22%'}};border-right:{{index==3?'none':''}}" data-idx="{{index}}">{{item}}</view>
 </view>
 <!-- 营业汇总 -->
-<common-data wx:if="{{currentIndex==0}}"></common-data>
+<common-data wx:if="{{currentIndex==0}}" sdate="{{sdate}}" edate="{{edate}}"></common-data>
 <!-- 菜品营销 -->
-<common-detail wx:if="{{currentIndex==1}}"></common-detail>
+<common-detail wx:if="{{currentIndex==1}}" sdate="{{sdate}}" edate="{{edate}}" ></common-detail>
 <!-- 营销效果 -->
-<common-effect wx:if="{{currentIndex==2}}"></common-effect>
+<common-effect wx:if="{{currentIndex==2}}" sdate="{{sdate}}" edate="{{edate}}" ></common-effect>
 <!-- 营业指标 -->
 <common-targets wx:if="{{currentIndex==3}}"></common-targets>

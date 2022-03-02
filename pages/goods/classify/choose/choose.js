@@ -57,9 +57,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const list = JSON.parse(options.list);
-    const classify = JSON.parse(options?.classify) || '';
-    console.log('分类列表',list);
+    const list = options?.list && JSON.parse(options.list) || null;
+    const classify = options?.classify&& JSON.parse(options.classify) || '';
+    console.log('分类列表',list,'当前选中',classify);
     if(classify){
       console.log('当前选择的',classify);
      const currentIndex = list.findIndex((v) => {

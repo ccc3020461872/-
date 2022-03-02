@@ -1,8 +1,14 @@
 <!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="headebg">
+  <common-title formcolor="false" commnote='{{commnote}}' backSate="no">
+    <image src="/img/backWhite.png" slot="commimg"></image>
+    <view slot="commtitle">门店公告设置</view>
+  </common-title>
+</view>
 <view class="cont">
   <form action="" bindsubmit="toSubmit">
     <view class="cont-item cont-top">
-      <image src="/img/s1.png"></image>
+      <image src="{{imgUrl}}shop/shop/s4.png"></image> 
     </view>
     <view class="cont-num">
       <view>
@@ -16,11 +22,12 @@
     </view>
     <view class="cont-input">
       <view>
-        <input type="number" name="minNum" value="1" />
-        <input type="number" name="maxNum" value="100" />
+        <input bindinput="getmin" type="number" name="minNum" value="{{minNum}}" maxlength="6" /><text>———</text>
+        <input bindinput="getmax" type="number" name="maxNum" value="{{maxNum}}" maxlength="6" />
       </view>
+
       <view class="border"></view>
-      <view class="cont-input-tips">每天取餐号从1开始，到100后将重新从1开始</view>
+      <view class="cont-input-tips">每天取餐号从{{minNum}}开始，到{{maxNum}}后将重新从{{minNum}}开始</view>
     </view>
     <button class="formBtn" form-type="submit"> 保存</button>
   </form>

@@ -13,7 +13,6 @@ page {
 }
 
 .section {
-  width: 94%;
   padding: 20rpx 3%;
   margin-bottom: 20rpx;
   font-size: 28rpx;
@@ -101,12 +100,15 @@ page {
 .butform {
   width: 100%;
   margin-top: 80rpx;
-  line-height: 80rpx;
+  line-height: 70rpx;
   background: var(--themecolor);
   color: #fff;
   font-size: 32rpx;
   border-radius: 10rpx;
-  margin-bottom: 100rpx;
+  border-radius: 50rpx;
+  position: fixed;
+  left: 5%;
+  bottom: 100rpx;
 }
 
 .imgList .del {

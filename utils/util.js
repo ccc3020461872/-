@@ -14,6 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+
 const currentData = () => {
   //获取当前时间
   var date = new Date();
@@ -30,8 +31,25 @@ const currentData = () => {
   console.log(nowDate)
   return nowDate
 }
+const morrDate = () => {
+  var date = new Date();
+  date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (day < 10) {
+    day = "0" + day;
+  }
+  var nextDate = year + "-" + month + "-" + day;
+  console.log(nextDate)
+  return nextDate
+}
 
-export  {
+export {
   formatTime,
   currentData,
+  morrDate
 }

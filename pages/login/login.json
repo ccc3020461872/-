@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "common-title":"/component/con-title/con-title"
+  },
+  "navigationStyle":"custom",
+  "navigationBarTextStyle": "white"
 }

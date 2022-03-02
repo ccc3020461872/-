@@ -44,7 +44,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const {print = ''} = options;
+    if(print){
+      console.log(print);
+      const {list} = this.data;
+      const currentIndex = list.findIndex(v => v === print);
+      this.setData({
+        currentIndex,
+        choose: true
+      })
+    }
   },
 
   /**

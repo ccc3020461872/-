@@ -2,9 +2,36 @@
 /* 导航 */
 
 
+.top-time {
+  /* width: 90%; */
+  margin: 20rpx 5%;
+  height: 81rpx;
+  line-height: 81rpx;
+  background: #FAFAFA;
+  border-radius: 41rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.right-img {
+  display: flex;
+  align-items: center;
+}
+
+/* 右箭头 */
+.right-img image {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  transform: rotate(90deg);
+}
+
 .nav-list {
   width: 80%;
-  margin: 30rpx 10%;
+  margin: 30rpx 10% 40rpx;
   height: 60rpx;
   display: flex;
   justify-content: space-between;

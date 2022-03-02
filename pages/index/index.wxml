@@ -5,11 +5,10 @@
   </common-title>
 </block>
 <view style="height:{{statusBarHeight+statusTop}}rpx;" wx:if="{{currentIndex!=0}}"></view>
-
 <view class="content">
   <!-- //营业汇总 -->
   <common-summary wx:if="{{currentIndex==0}}"></common-summary>
-  <!-- //营销效果 -->
+  <!-- //店铺装修 -->
   <common-fitment wx:if="{{currentIndex==1}}"></common-fitment>
   <!-- //订单 -->
   <common-order wx:if="{{currentIndex==2}}"></common-order>

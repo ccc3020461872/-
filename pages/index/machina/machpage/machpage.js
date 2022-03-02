@@ -23,6 +23,9 @@ Page({
     console.log(options)
     typee = options.typee
     P_TYPE = typee == 'XINYEYUN' ? 1 : (typee == 'FEIEYUN' ? 2 : 3)
+    that.setData({
+      P_TYPE: P_TYPE
+    })
     console.log('1.芯烨2.飞蛾3.易联云', P_TYPE)
     that.getData()
     wx.getStorage({
@@ -34,6 +37,17 @@ Page({
       fail: function (err) {
         console.log('fail', err)
       }
+    })
+  },
+  cancel() {
+    this.setData({
+      isHidd: true
+    })
+  },
+  tocall(e) {
+    var phone = e.currentTarget.id
+    wx.makePhoneCall({
+      phoneNumber: phone,
     })
   },
   toNext() {
@@ -56,7 +70,7 @@ Page({
         console.log('扫描返回', res)
         that.setData({
           P_SN: res.result,
-          P_TYPE:P_TYPE,
+          P_TYPE: P_TYPE,
           isHidd: false
         })
       },

@@ -14,7 +14,7 @@ label text:first-child {
 }
 
 .imgList .upimg {
-  width: 210rpx;
+  width: 205rpx;
   height: 175rpx;
   text-align: center;
   line-height: 175rpx;
@@ -23,11 +23,10 @@ label text:first-child {
   background: #FBF9FA;
   color: #B7B7B7;
   font-size: 40rpx;
-  margin-right: 25rpx;
 }
 
 .cont-bott {
-  align-items: baseline;
+  /* align-items: baseline; */
 }
 
 .cont-bott view>view {
@@ -89,4 +88,34 @@ switch {
 
 .del-img {
   margin-top: 30rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/*  */
+.goodmen {
+  width: 207rpx;
+  height: 175rpx;
+  border-radius: 10rpx;
+  position: relative;
+  top: -185rpx;
+  text-align: center;
+}
+
+.goodmen image {
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.top-note {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.cont-bott image {
+  width: 91rpx;
+  height: 60rpx;
 }

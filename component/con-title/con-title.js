@@ -9,7 +9,8 @@ Component({
     commtitle: String,
     formcolor: Boolean,
     backSate: String,
-    titleType:Boolean
+    titleType: Boolean,
+    commnote: String
   },
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -28,23 +29,42 @@ Component({
   methods: {
     back() {
       console.log('kkkkkkkkkkkkk')
-      if (this.data.backSate != 'no') {
+      if (this.data.backSate == 'yes') {
         wx.navigateBack({
           delta: 1,
+        })
+      } else {
+        var that = this
+        wx.showModal({
+          title: '确认返回？',
+          content: that.data.commnote,
+          success(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              wx.navigateBack({
+                delta: 1,
+              })
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
         })
       }
     },
   },
   lifetimes: {
     ready() {
-      const _this=this;
+      const _this = this;
       _this.setData({
         statusBarHeight: getApp().globalData.statusBarHeight,
         statusTop: getApp().globalData.statusTop,
       })
-      let statusBarHeight=getApp().globalData.statusBarHeight;
-      let statusTop=getApp().globalData.statusTop;
-      let parmas={statusBarHeight,statusTop}
+      let statusBarHeight = getApp().globalData.statusBarHeight;
+      let statusTop = getApp().globalData.statusTop;
+      let parmas = {
+        statusBarHeight,
+        statusTop
+      }
       _this.triggerEvent('tabarHeight', parmas)
       console.log(getApp().globalData.statusBarHeight)
     }

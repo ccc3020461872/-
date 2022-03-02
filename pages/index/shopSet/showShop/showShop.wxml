@@ -1,0 +1,52 @@
+<view class="headebg" style="background-image: url({{shop.BACKGROUND_IMG}});">
+  <common-title formcolor="true">
+    <!-- <view slot="commtitle">{{storeName}}</view> -->
+  </common-title>
+</view>
+<view class="center">
+  <view class="Marked">
+    <view class="title">
+      <view bindtap="goPage" class="btn">
+        <image src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/shop/2.png" class="phone"></image>
+        <view class="text">手机点单</view>
+      </view>
+      <view class="span1"></view>
+      <view bindtap="goMine" class="btn">
+        <image src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/shop/1.png"></image>
+        <view class="text">个人中心</view>
+      </view>
+    </view>
+  </view>
+  <view class="shopInfo">
+    <image src="{{shop.SHOP_IMG}}" class="logo" mode="aspectFill"></image>
+    <view class="add-note">
+      <view class="text">{{shop.SHOP_DESC}}</view>
+      <view class="address">
+        <image src="/img/index/address.png" class="adres address1"></image>
+        <view class="ads">{{shop.SHOP_ADD}}</view>
+        <image src="/img/index/address2.png" class="adres address2"></image>
+      </view>
+    </view>
+  </view>
+  <view class="saletitle">
+    <image src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/shop/3.png" class="hotSale"></image>
+  </view>
+  <view class="saleContent">
+    <scroll-view scroll-x="true" class="saleScroll">
+      <view class="saleItem" wx:for="{{promotionGoodsList}}" wx:key="goodsList">
+        <image src="{{item.GOODS_IMG}}" class="saleImg"></image>
+        <view class="saleText padding">{{item.GOODS_NAME}}</view>
+        <view class="SaleNum padding">月售{{item.MONTHLY_SALES}}</view>
+        <view class="productInfo padding">
+          <view class="price"><text>￥</text>{{item.GOODS_PRICE}}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="saletitle">
+    <image src="https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/shop/4.png" class="hotSale"></image>
+  </view>
+  <image src="{{shop.MARKETING_IMG}}" class="marketing"></image>
+</view>
+<view style="height:200rpx"></view>

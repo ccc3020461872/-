@@ -31,19 +31,34 @@
   font-size: 28rpx;
   font-weight: 700;
 }
-/* 图片区 */
-.images .total{
+.total{
   font-size: 28rpx;
   margin-bottom: 20rpx;
+}
+/* 图片区 */
+.images {
+  margin-top: 160rpx;
 }
 .images  .imgItem {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  
 }
 .images  .imgItem image{
   height: 200rpx ;
   width: 200rpx;
   border-radius: 10rpx;
   margin-bottom: 20rpx;
+  margin-right: 49rpx;
+}
+.images  .imgItem image:nth-child(3n){
+  margin-right: 0;
+}
+.fixed-box {
+  position: fixed;
+  padding: 22rpx 27rpx 0;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  top: 0;
 }

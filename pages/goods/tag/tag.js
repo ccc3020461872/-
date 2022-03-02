@@ -68,12 +68,13 @@ Page({
    */
   onLoad: async function (options) {
     const currentItem = options?.tag && JSON.parse(options.tag) || false;
+    console.log('上个页面传过来的',currentItem);
     await this.getList();
     if (currentItem) {
       const {
         chooseList
       } = this.data;
-      const currentIndex = chooseList.findIndex(v => v.id === currentItem.id)
+      const currentIndex = chooseList.findIndex(v => v.GOODS_LABEL_ID === currentItem.GOODS_LABEL_ID)
       this.setData({
         currentIndex
       })

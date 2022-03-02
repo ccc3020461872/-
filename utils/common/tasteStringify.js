@@ -1,4 +1,18 @@
-export default (info=[]) => {
+function isJson(data){
+  try {
+   if(typeof JSON.parse(data) == 'object'){
+     return true
+   }
+  }catch(e){
+    return false
+  }
+}
+export default info => {
+   if(isJson(info)){
+    info = typeof info === 'string' ? JSON.parse(info) : info
+   }else {
+     return info
+   }
    info = JSON.parse(JSON.stringify(info))  
    const newArr = []
    info.map((item) => {

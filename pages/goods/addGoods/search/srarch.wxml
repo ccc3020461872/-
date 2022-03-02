@@ -1,20 +1,28 @@
 <view class="search">
   <!-- 搜索框 -->
   <view class="searchInput">
-  <view class="inputinput">
-    <image src="/images/search.png" mode="widthFix"></image>
-    <input type="text" placeholder="请输入商品名称" focus="{{true}}"/>
-  </view>
+    <view class="inputinput">
+      <image src="/images/search.png" mode="widthFix"></image>
+      <input type="text" placeholder="请输入商品名称" bindinput="doInput" focus="{{true}}" />
+    </view>
     <view class="cancle">取消</view>
   </view>
   <!-- 搜索数据 -->
-  <view class="searchInfo">
-     <view class="info">
-        <image src="/images/test.png"></image> 
-       <view class="info-text">
-        <text class="name">纯油泼</text>
-        <text class="price">13.00</text>
-       </view>
-     </view>
-  </view>
+  <block wx:if="{{goodsList&&goodsList.length !== 0}}">
+    <view class="block" >
+      <view class="searchInfo" wx:for="{{goodsList}}">
+        <view class="info" bindtap="toOtherPage" data-item="{{item}}">
+          <image src="{{item.GOODS_IMG}}"></image>
+          <view class="info-text">
+            <text class="name">{{item.GOODS_NAME}}</text>
+            <text class="price">{{item.GOODS_PRICE}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 搜索不到的时候 -->
+  <block wx:if="{{goodsList.length === 0 && empty}}">
+    <view class="searchInfo">暂无该商品数据</view>
+  </block>
 </view>

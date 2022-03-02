@@ -1,6 +1,5 @@
 /* pages/index/shopSet/setTime/cpnsChilds/timeset/timeset.wxss */
 .cont {
-  width: 92%;
   padding: 50rpx 4%;
   background-color: #fff;
   border-radius: 80rpx;
@@ -138,7 +137,7 @@
 }
 /* 底部按钮 */
 .bottom {
-  width: 80%;
+  /* width: 100%; */
   padding: 0 10%;
   display: flex;
   justify-content: space-between;

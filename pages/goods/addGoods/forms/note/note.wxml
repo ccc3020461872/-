@@ -1,0 +1,10 @@
+<page-meta 
+scroll-top="{{scrollTop}}"
+>
+  <navigation-bar
+    title="{{nbTitle}}"
+  />
+</page-meta>
+<view >
+  <image   bindload="imageLoad" id="img" mode="widthFix" style="width: 100%;" src="{{imgList[currentImg]}}"></image>
+</view>

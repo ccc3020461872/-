@@ -1,47 +1,52 @@
 <!--component/con-detail/con-detail.wxml-->
 <wxs src="../../pages/tofix.wxs" module="filters"></wxs>
 <view class="summary">
-  <view class="itemContent">
+  <view class="itemContent" wx:if="{{allData.length>0}}">
     <view class="item {{currentIndex==index?'activityed':''}}" wx:for="{{allData}}" wx:key="box" bindtap="choice"
       data-index="{{index}}">
-      <view>{{item}}</view>
+      <view>{{item.name}}</view>
       <view class="line" wx:if="{{currentIndex==index}}"></view>
     </view>
   </view>
   <!-- //销售统计 -->
   <!--  -->
-  <view class="conent">
-    <view class="list list-left {{isActive?'active':''}}"  >
+  <view class="conent" wx:if="{{dataList.length>0}}">
+    <view class="list list-left {{isActive?'active':''}}">
       <view class="list_top list_item">
         <view class="list-idx" style="color:#f4f4f4">编号</view>
         <view class="list-item-text">菜品名称</view>
       </view>
-      <view class="list_item {{(isActive&&index%2!=0)?'active1':''}}" style="background:{{index%2==0? '#fff' :''}};" wx:for="{{dataList}}" wx:key="list">
+      <view class="list_item {{(isActive&&index%2!=0)?'active1':''}}" style="background:{{index%2==0? '#fff' :''}};"
+        wx:for="{{dataList}}" wx:key="list">
         <view class="list-idx">{{index+1}}</view>
         <view class="list-item-text">{{item.GOODS_NAME}}</view>
       </view>
-      
+
     </view>
     <view class="list list-right">
       <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
         <view class="list_top list_item list-right-item">
           <view wx:for="{{toplist}}" wx:key="li" style="background: #F5F5F5;">{{item}}</view>
         </view>
-        <view class="list_item list-right-item {{(isActive&&index%2!=0)?'bg':''}} {{(isActive&&index%2==0)?'active1':''}}" style="background:{{index%2==0? '#fff' :''}};" wx:for="{{dataList}}"
-          wx:key="list">
-          <view>{{index+1}}</view>
-          <view>{{item.GOODS_NAME}}</view>
+        <view
+          class="list_item list-right-item {{(isActive&&index%2!=0)?'bg':''}} {{(isActive&&index%2==0)?'active1':''}}"
+          style="background:{{index%2==0? '#fff' :''}};" wx:for="{{dataList}}" wx:key="list">
           <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
-          <view>{{item.allNumber}}</view>
+          <view>{{item.proportion}}</view>
+          <view>{{item.allMoney}}</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
+          <view>--</view>
         </view>
       </scroll-view>
     </view>
   </view>
+  <block wx:if="{{dataList.length==0}}">
+    <v-info fromimages="{{images}}" frominfoWord="{{infoWord}}" formheight="{{height}}"></v-info>
+  </block>
 </view>

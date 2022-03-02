@@ -1,12 +1,18 @@
 <!--pages/index/reserveTable/setReserve/setReserve.wxml-->
+<view class="headebg">
+  <common-title formcolor="false" commnote='{{commnote}}' backSate="no">
+    <image src="/img/backWhite.png" slot="commimg"></image>
+    <view slot="commtitle">预点餐设置-点餐</view>
+  </common-title>
+</view>
 <view class="cont">
   <view class="cont-time">
     <view class="">
       <text class="time-title">您希望顾客提前多久点餐</text>
-      <view class="group3">
+      <!-- <view class="group3">
         <image src="/img/select1.png" ></image>聪明的老板们都提前设置好顾客可预约的到店自取或就餐的时间，不用再一遍一遍回答顾客的咨询。
-        <!-- <text lines="1" decode="true" class="infoBox1">聪明的老板们都提前设置好顾客可预约的到店自取或就餐的时间，不用再一遍一遍回答顾客的咨询。</text> -->
-      </view>
+        <!-- <text lines="1" decode="true" class="infoBox1">聪明的老板们都提前设置好顾客可预约的到店自取或就餐的时间，不用再一遍一遍回答顾客的咨询。</text> 
+      </view> -->
     </view>
 
 
@@ -17,11 +23,10 @@
         <view class="list-time {{currTab==index?'active':''}}">{{item.note}}</view>
       </view>
       <label class="check-cont" bindtap="selectAll">
-        <image src="/img/select.png" wx:if="{{!currTab==index}}"></image>
-        <image src="/img/select1.png" wx:else></image>
+        <image src="/img/select1.png" wx:if="{{currTab==index}}"></image>
+        <image src="/img/select.png" wx:else></image>
       </label>
     </view>
-
   </view>
   <view class="formBtn" bindtap="tomodel">保存</view>
 

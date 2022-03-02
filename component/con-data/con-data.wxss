@@ -153,31 +153,37 @@
 }
 
 .eacher {
-  width: 96%;
+  margin: 0 3%;
   padding: 20rpx 2%;
-  height: 450rpx;
+  height: 480rpx;
   box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.1);
   margin-top: 30rpx;
 }
-.eacher1{
+
+.eacher1 {
   height: 650rpx;
 }
-.ec_cont{
+
+.ec_cont {
   height: 400rpx;
 
 }
+
 ec-canvas {
   width: 90%;
   height: 90%;
 }
-.ec_cont1{
+
+.ec_cont1 {
   height: 500rpx;
 }
-.ec_cont1 ec-canvas{
-  width: 50% !important; 
+
+.ec_cont1 ec-canvas {
+  width: 50% !important;
   height: 50% !important;
-  transform:scale(0.5, 0.5) !important;
+  transform: scale(0.5, 0.5) !important;
 }
+
 /* 导航 */
 
 
@@ -213,13 +219,15 @@ ec-canvas {
   justify-content: center;
 }
 
-.type1,.type2 {
+.type1,
+.type2 {
   position: relative;
   padding: 0rpx 60rpx;
   box-sizing: border-box;
 }
 
-.type1::before,.type2::before{
+.type1::before,
+.type2::before {
   content: '';
   position: absolute;
   width: 40rpx;
@@ -228,33 +236,37 @@ ec-canvas {
   border-radius: 8rpx;
   top: 10rpx;
 }
-.type1::before{
+
+.type1::before {
   right: 140rpx;
-  background-color:#F57904;
+  background-color: #1E5051;
 }
-.type2::before{
+
+.type2::before {
   right: 160rpx;
-  background-color:#4285F4;
+  background-color: #4285F4;
 }
-.storeImg{
+
+.storeImg {
   width: 140rpx;
   height: 52rpx;
 }
 
-.allmoney{
+.allmoney {
   text-align: center;
   font-size: 35rpx;
   margin-top: 20rpx;
-  
+
 }
-.allmoney_title{
+
+.allmoney_title {
   font-size: 26rpx;
   color: #888;
 }
 
 
-.price_type{
-  width: 94%;
+.price_type {
+  /* width: 94%; */
   padding: 0 3%;
   display: flex;
   justify-content: space-between;
@@ -262,7 +274,8 @@ ec-canvas {
   top: 170rpx;
   height: 0;
 }
-.price_type_item view{
+
+.price_type_item view {
   font-size: 26rpx;
   color: #888;
 }

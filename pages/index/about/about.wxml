@@ -1,0 +1,25 @@
+<!--pages/index/about/about.wxml-->
+<view class="cont">
+  <view class="cont-title">联系我们</view>
+  <view class="cont-top">
+    <image src="/img/avatar.png" class="top-img" data-url="{{shop.img}}" bindtap="showImg"></image>
+    <view class="cont-center">
+      <view class="section-cent" style="font-weight: normal;">技术服务热线(同微信)</view>
+      <view class="section-cent" bindtap="call" id="{{shop.tel}}">
+        <text>{{shop.tel}}</text>
+        <image src="/img/call.png"></image>
+      </view>
+      <view class="section-cent" bindtap="call" id="{{shop.tel2}}">
+        <text>{{shop.tel2}}</text>
+        <image src="/img/call.png"></image>
+      </view>
+    </view>
+    <image src="/img/code.png" class="top-img" data-url="{{shop.img}}" bindtap="showImg"></image>
+  </view>
+  <view class="cont-note">点击“电话图标”<text style="font-weight: bold;">拨打电话</text>，或者点击“二维码图片”可放大微信二维码<text
+      style="font-weight: bold;">添加微信联系客爱点</text></view>
+  <view class="cont-title">帮助视频</view>
+  <view class="video-list">
+    <video src="{{item}}" decode="true"  wx:for="{{videolist}}" wx:key="videolist"></video>
+  </view>
+</view>

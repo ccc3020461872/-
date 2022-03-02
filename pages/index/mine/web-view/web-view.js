@@ -1,8 +1,11 @@
 // pages/mine/web-view/web-view.js
 import {
   appId,
-  appStoreSaveAdvice
+  feedback,
+  uploadFileCOS
 } from '../../../../utils/api'
+let shopid
+
 Page({
   /**
    * 页面的初始数据
@@ -10,7 +13,6 @@ Page({
   data: {
     imgList: [],
     disabled: false,
-    uploadimg: [],
     imgList1: []
   },
 
@@ -20,9 +22,9 @@ Page({
   onLoad: function (options) {
     console.log(options)
     wx.getStorage({
-      key: 'openid',
+      key: 'shopid',
       success: function (res) {
-        openid = res.data
+        shopid = res.data
       }
     })
   },
@@ -42,18 +44,16 @@ Page({
     var that = this
     let phone = e.detail.value.phone
     let note = e.detail.value.note
-
-    if (phone == '') {
+    if (note == '') {
       wx.showToast({
-        title: '请填写手机号',
+        title: '请输入描述',
         icon: 'none'
       })
       return false;
     }
-
-    if (note == '') {
+    if (phone == '') {
       wx.showToast({
-        title: '请输入描述',
+        title: '请填写手机号',
         icon: 'none'
       })
       return false;
@@ -64,15 +64,14 @@ Page({
     if (that.data.imgList1.length == 0) {
       that.data.imgList1 = ''
     }
-    console.log(e.detail.value, M_STORE_ID, that.data.imgList1)
-    appStoreSaveAdvice({
-      OPENID: openid,
+    console.log(e.detail.value, that.data.imgList1)
+    feedback({
+      USER_ID: shopid,
       PHONE: phone,
-      NOTE: note,
       IMG: that.data.imgList1, //图片组
     }).then(res => {
       console.log('发布结果', res)
-      if (res.state == 'SUCCESS') {
+      if (res.STATUS == 'SUCCESS') {
         wx.showModal({
           title: '提交成功！',
           cancelText: '确认',
@@ -112,64 +111,28 @@ Page({
       sourceType: ['album', 'camera'],
       success: function (res) {
         // 多张照片上传
-        console.log('多张照片上传', res.tempFilePaths, res.tempFilePaths.length)
-        var tempFilePath = res.tempFilePaths
-
+        var tempFilePath = res.tempFilePaths[0]
         that.setData({
-          imgList: that.data.imgList.concat(tempFilePath)
+          imgList: that.data.imgList.concat(res.tempFilePaths)
         })
-
         console.log('imgList', that.data.imgList)
-        var successUp = 0; //成功个数
-        var failUp = 0; //失败个数
-        var length = res.tempFilePaths.length
-        var i = 0;
-        that.uploadImageSave1(tempFilePath, successUp, failUp, i, length);
+        uploadFileCOS(tempFilePath)
+          .then(data => {
+              console.log('服务器地址', typeof (data), data),
+                that.data.imgList1.push(data),
+                that.setData({
+                  imgList1: that.data.imgList1
+                }),
+                console.log('imgList1', that.data.imgList1)
+            }
+
+
+          )
+
+
 
       }
     })
-  },
-  // 多张照片上传
-  uploadImageSave1(filePaths, successUp, failUp, i, length) { //递归调用
-    console.log(i + "file路径为" + filePaths);
-    var that = this
-    if (filePaths[i]) {
-      var Key = util.getRandFileName(filePaths[i]);
-      cos.postObject({
-          Bucket: config.Bucket,
-          Region: config.Region,
-          Key: currentDate + '/images/' + Key,
-          FilePath: filePaths[i],
-        },
-        function (err, data) {
-          // wx.hideLoading();
-          if (data && data.Location) {
-            console.log('https://' + data.Location)
-            var V_BACKGRADE = 'https://' + data.Location
-            var imgList1 = that.data.imgList1
-            imgList1.push(V_BACKGRADE)
-            that.setData({
-              imgList1: imgList1,
-              V_BACKGRADE: imgList1,
-            })
-
-            i++;
-            if (i == length) {
-              console.log('总共' + successUp + '张上传成功,' + failUp + '张上传失败！');
-            } else { //递归调用uploadDIY函数
-              that.uploadImageSave1(filePaths, successUp, failUp, i, length);
-            }
-          } else {
-            wx.showToast({
-              title: '上传失败',
-              icon: 'error',
-              duration: 2000
-            });
-            failUp++;
-          }
-        });
-
-    }
   },
 
   /**

@@ -2,6 +2,7 @@
 import {
   setShopNotice
 } from '../../../../utils/api';
+const app = getApp()
 let shopid
 Page({
 
@@ -9,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    commnote: '直接返回后，刚对门店公告的修改将不会保存。',
     list: [{
         text: '亲爱的顾客下单完成后，请注意取单号。',
       },
@@ -30,6 +31,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    console.log(options)
+    if (options.title != undefined && options.title != 'undefined') {
+      this.setData({
+        title: options.title
+      })
+    }
+
     wx.getStorage({
       key: 'shopid',
       success: function (res) {
@@ -40,6 +48,13 @@ Page({
         console.log('fail', err)
       }
 
+    })
+  },
+
+
+  getTitle(e) {
+    this.setData({
+      title: e.detail.value
     })
   },
   tochoose(e) {
@@ -87,7 +102,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const {
+      globalData: {
+        color
+      }
+    } = app;
+    this.setData({
+      color
+    })
   },
 
   /**

@@ -1,102 +1,144 @@
 // pages/index/shopSet/setProduct/setProduct.js
+import {
+  imgUrl,
+  setMyGoods,
+  getHotGoods,
+  setHot,
+  goodsList
+} from '../../../../utils/api'
+let PREFERENTIAL_ACTIVITIES, shopid, TYPE = 1
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    switch1Checked: false,
+    imgUrl: imgUrl,
     hiddState: true,
-    switch1Checked: true,
-    imgList: [],
     disabled: false,
-    uploadimg: [],
-    imgList1: [],
-    dataList: [{
-      G_IMG: 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg',
-      G_NAME: '美味黄桃套餐',
-      G_MONEY: 22
-    }]
+    dataList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-  quxiao() {
-    this.setData({
-      hiddState: !this.data.hiddState
-    })
-  },
-  //上传图片
-  uploadImage() {
     var that = this
-    wx.chooseImage({
-      count: 3,
-      camera: 'back',
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-        // 多张照片上传
-        console.log('多张照片上传', res.tempFilePaths, res.tempFilePaths.length)
-        var tempFilePath = res.tempFilePaths
-
-        that.setData({
-          imgList: that.data.imgList.concat(tempFilePath)
-        })
-
-        console.log('imgList', that.data.imgList)
-        var successUp = 0; //成功个数
-        var failUp = 0; //失败个数
-        var length = res.tempFilePaths.length
-        var i = 0;
-        that.uploadImageSave1(tempFilePath, successUp, failUp, i, length);
-
+    if (options.PREFERENTIAL_ACTIVITIES != undefined) {
+      that.setData({
+        switch1Checked: options.PREFERENTIAL_ACTIVITIES == '1' ? true : false
+      })
+    }
+    wx.getStorage({
+      key: 'shopid',
+      success(res) {
+        console.log('缓存中的shop', res.data)
+        shopid = res.data
+        that.getHotGoods()
       }
     })
   },
-  // 多张照片上传
-  uploadImageSave1(filePaths, successUp, failUp, i, length) { //递归调用
-    console.log(i + "file路径为" + filePaths);
+  // 移除热销产品
+  toDel(e) {
+    var that=this
+    var goodid = e.currentTarget.id
+    TYPE = 0
+    wx.showModal({
+      title: '提示',
+      content: '确认移除？移除后将不再热销推荐中展示此产品',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          that.setHot()
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  // 添加推荐商品
+  setHotgood() {
+    TYPE = 1
+    this.setHot()
+  },
+  // 设置产品
+  setHot() {
+    setHot({
+      GOODS_ID: '200000843',
+      TYPE: TYPE,
+      HOTSORT: 0
+    }).then(res => {
+      console.log('设置产品', res)
+      this.getHotGoods()
+    })
+  },
+  showState(e) {
+    this.setData({
+      hiddState: false,
+      idx: e.currentTarget.id
+    })
+  },
+  quxiao() {
+    this.setData({
+      hiddState: true
+    })
+  },
+  switch1Change() {
+    this.setData({
+      switch1Checked:true
+    })
+    PREFERENTIAL_ACTIVITIES =1 
+    this.setMyGoodss()
+  },
+  setMyGoods() {
     var that = this
-    if (filePaths[i]) {
-      var Key = util.getRandFileName(filePaths[i]);
-      cos.postObject({
-          Bucket: config.Bucket,
-          Region: config.Region,
-          Key: currentDate + '/images/' + Key,
-          FilePath: filePaths[i],
-        },
-        function (err, data) {
-          // wx.hideLoading();
-          if (data && data.Location) {
-            console.log('https://' + data.Location)
-            var V_BACKGRADE = 'https://' + data.Location
-            var imgList1 = that.data.imgList1
-            imgList1.push(V_BACKGRADE)
-            that.setData({
-              imgList1: imgList1,
-              V_BACKGRADE: imgList1,
-            })
+    wx.showModal({
+      title: '提示',
+      content: '关闭后，将无法为老顾客推荐他点过的商品',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          that.setData({
+            switch1Checked:false
+          })
+          PREFERENTIAL_ACTIVITIES =2
+          that.setMyGoodss()
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
 
-            i++;
-            if (i == length) {
-              console.log('总共' + successUp + '张上传成功,' + failUp + '张上传失败！');
-            } else { //递归调用uploadDIY函数
-              that.uploadImageSave1(filePaths, successUp, failUp, i, length);
-            }
-          } else {
-            wx.showToast({
-              title: '上传失败',
-              icon: 'error',
-              duration: 2000
-            });
-            failUp++;
-          }
-        });
 
-    }
+  },
+  setMyGoodss(){
+    setMyGoods({
+      SHOP_ID: shopid,
+      PREFERENTIAL_ACTIVITIES: PREFERENTIAL_ACTIVITIES
+    }).then(res => {
+      console.log('设置常点商品展示', res)
+
+    })
+  },
+  getHotGoods() {
+    getHotGoods({
+      GOODS_ID: shopid,
+    }).then(res => {
+      console.log('热销产品', res)
+      this.setData({
+        dataList:res.hotGoods
+      })
+    })
+    // goodsList({
+    //   SHOP_ID: shopid,
+    // }).then(res => {
+    //   console.log('产品', res)
+    //   this.setData({
+    //     dataList:res.hotGoods
+    //   })
+    // })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

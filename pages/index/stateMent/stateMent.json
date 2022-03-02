@@ -4,5 +4,6 @@
     "common-detail":"/component/con-detail/con-detail",
     "common-effect":"/component/con-effect/con-effect",
     "common-targets":"/component/con-targets/con-targets"
-  }
+  },
+  "navigationBarTitleText": "营业数据"
 }

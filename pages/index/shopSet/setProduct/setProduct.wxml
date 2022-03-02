@@ -2,35 +2,44 @@
 <view class="cont">
   <label>
     <text>你希望顾客看到哪些推荐商品？</text>
-    <text bindtap="quxiao">示例</text>
+    <text bindtap="showState" id="1">示例</text>
   </label>
+  <view class="top-note">从商品管理选择商品</view>
   <view class="imgList">
-    <view class="proItem" data-id="{{item.DB_GOODS_ID}}" bindtap="proDetails" wx:for='{{dataList}}' wx:key='pro'
-      style="margin-right:{{index%2==0?25 :0}}rpx">
-      <image class="logo" src="{{item.G_IMG}}" mode="aspectFill"></image>
+    <view class="proItem" data-id="{{item.GOODS_ID}}" bindtap="proDetails" wx:for='{{dataList}}' wx:key='pro'
+      style="margin-right:{{(index+1)%3==0?0 :20}}rpx">
+      <image class="logo" src="{{item.GOODS_IMG}}" mode="aspectFill"></image>
+      <view style="height: 0;">
+        <view class="menban goodmen" bindtap="toDel">
+          <image src="/img/de.png"></image>
+        </view>
+      </view>
       <view class="proInfo">
-        <view class="name">{{item.G_NAME}}</view>
-        <view class="price">￥{{item.G_MONEY}}</view>
+        <view class="name">{{item.GOODS_NAME}}</view>
+        <view class="price">￥{{item.GOODS_PRICE}}</view>
       </view>
     </view>
-    <view class="upimg" bindtap="uploadImage">+</view>
+    <view class="upimg" bindtap="setHotgood">+</view>
   </view>
 
   <view class="cont-bott">
     <view>
       <label for="">
         <text>展示常点商品？</text>
-        <text>示例</text>
+        <text bindtap="showState" id="2">示例</text>
       </label>
       <view>老顾客点餐时展示他点过的商品</view>
     </view>
-    <switch checked="{{switch1Checked}}" bindchange="switch1Change" />
+    <!-- <switch color="var(--themecolor)" checked="{{switch1Checked}}" bindchange="switch1Change" /> -->
+    <image src="/img/switch0.png" mode="widthFix" hidden="{{switch1Checked}}" bindtap="switch1Change"></image>
+    <image src="/img/switch1.png" mode="widthFix" hidden="{{!switch1Checked}}" bindtap="setMyGoods"></image>
   </view>
 </view>
 
 <view class="menban" hidden="{{hiddState}}">
   <view class="menban-cont">
-    <image src="/img/mach.png"></image>
+    <image src="{{imgUrl}}/img/set1.png" mode="widthFix" hidden="{{idx!=1}}"></image>
+    <image src="{{imgUrl}}/img/set2.png" mode="widthFix" hidden="{{idx!=2}}"></image>
   </view>
-  <image src="/img/del.jpg" class="del-img" bindtap="quxiao"></image>
+  <image src="/img/close.png" class="del-img" bindtap="quxiao"></image>
 </view>

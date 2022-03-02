@@ -2,11 +2,11 @@
   <view class="mod1">
     <view class="box2">
       <view class="bd1">
-        <view class="group1">
+        <!-- <view class="group1">
           <view class="layer1 {{currTab==index?'active':''}}" wx:for="{{datenav}}" wx:key="datenav" id="{{index}}" bindtap="chooseDate">
             <text lines="1" class="word2">{{item}}</text>
           </view>
-        </view>
+        </view> -->
         <view class="bg-cont" style="display: flex;justify-content: space-between;">
           <view class="group3">
             <view class="block1">

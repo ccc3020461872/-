@@ -12,11 +12,10 @@
 }
 
 .itemContent {
-  width: 90%;
-  padding: 20rpx 5%;
+  padding: 20rpx 7%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20rpx;
 }
 
@@ -26,6 +25,7 @@
   font-size: 30rpx;
   font-family: PingFang SC;
   font-weight: 500;
+  margin-right: 50rpx;
 }
 
 

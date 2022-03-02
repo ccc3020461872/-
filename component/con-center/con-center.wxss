@@ -1,43 +1,90 @@
 /* component/con-center/con-center.wxss */
-.item{
+.cont {
+  /* width: 90%; */
+  padding: 0rpx 0 50rpx;
+  background-color: #fff;
+  min-height: 1000rpx;
+  max-height: 9999999999999999999999999999999;
+}
+
+.item {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 20rpx 30rpx;
+  padding: 25rpx 30rpx;
   box-sizing: border-box;
   justify-content: space-between;
   border-bottom: 1rpx solid #eee;
+  font-size: 32rpx;
 }
-.item image{
-  width: 80rpx;
-  height: 80rpx;
+
+.item image {
+  width: 70rpx;
+  height: 70rpx;
   border-radius: 100%;
 }
+
 /* 右箭头 */
-.item .right-img{          
+.item .right-img {
   width: 16rpx;
   height: 26rpx;
   margin-left: 20rpx;
 }
 
-.item view:first-child{
-  font-size: 28rpx;
+.item view:first-child {
   color: #333;
 }
-.item view:last-child{
-  font-size: 28rpx;
+
+.item view:last-child {
   color: #666;
 }
-.loginOut{
+
+.loginOut {
   position: fixed;
   bottom: 200rpx;
   width: 690rpx;
   background-color: var(--themecolor);
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   text-align: center;
   color: #fff;
-  font-size: 28rpx;
+  font-size: 36rpx;
   left: 30rpx;
   border-radius: 10rpx;
+}
+
+.share {
+  width: 750rpx !important;
+  height: 100rpx;
+  position: relative;
+  top: -315rpx;
+  margin: 0;
+  opacity: 0;
+  /* background-color: var(--themecolor); */
+}
+
+.setting {
+  text-align: center;
+  font-size: 25rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+
+
+.remark {
+  height: 28rpx;
+  font-size: 24rpx;
+  color: var(--themecolor);
+  /* position: fixed;
+  bottom: 160rpx; */
+  /* width: 100%; */
+  text-align: center;
+  /* text-decoration: underline; */
+  border-bottom: 1rpx solid var(--themecolor);
+  margin-top: 40rpx;
+}
+
+.remark text {
+  font-size: 20rpx;
 }

@@ -15,7 +15,7 @@
       <view class="choose-list" >
         <block wx:for="{{chooseList}}">
           <view class="item cc-center" data-index="{{index}}" bindtap="chooseTag" style="{{index === currentIndex && isSelected ? selected : ''}}">
-            {{item.name}}
+            {{item.LABEL_NAME}}
           </view>
         </block>
       </view>

@@ -7,20 +7,20 @@
   <!-- 内容区域 -->
   <view class="content">
     <view class="box">
-      <form>
+      <form bindsubmit="formSubmit">
         <!-- 名称 -->
         <view class="item">
           <view class="left">
             <view class="title">
-              <view class="request-enter">小程序名称</view>
+              <view class="request-enter">小程序名称<text class="red-text">*</text></view>
               <view class="example">示例</view>
             </view>
-            <input type="text" placeholder="请输入小程序名称" placeholder-class="placeholder" />
+            <input type="text" name="name" placeholder="请输入小程序名称" placeholder-class="placeholder"
+              value="{{shop.SHOP_NAME}}" />
           </view>
           <view class="right">
-            <view class="upload">
-              <image src="/images/updateImg.png" mode="widthFix"></image>
-              <text style="color: {{color}};">上传logo</text>
+            <view class="upload" bindtap="uploadImage" data-idx="0">
+              <image src="{{logoimg}}" mode="widthFix"></image>
             </view>
           </view>
         </view>
@@ -28,10 +28,11 @@
         <view class="item">
           <view class="left">
             <view class="title">
-              <view class="request-enter">小程序简介</view>
+              <view class="request-enter">小程序简介<text class="red-text">*</text></view>
               <text class="limit">(40字以内)</text>
             </view>
-            <input type="text" placeholder="请输入简介" placeholder-class="placeholder" maxlength="{{40}}" />
+            <textarea class="textarea" type="text" name="note" placeholder="请输入简介" placeholder-class="placeholder"
+              value="{{shop.SHOP_DESC}}" maxlength="40" auto-height="true"></textarea>
           </view>
           <view class="right">
             <view class="example">示例</view>
@@ -41,9 +42,14 @@
         <view class="item">
           <view class="left">
             <view class="title">
-              <view class="request-enter">门店具体地址</view>
+              <view class="request-enter">门店具体地址<text class="red-text">*</text></view>
             </view>
-            <input type="text" placeholder="请输入门店具体地址" placeholder-class="placeholder" />
+            <view class="section" bindtap="tochooseMap">
+              <view>{{addName}}</view>
+              <image src="/img/right.png" class="right-img"></image>
+            </view>
+            <!-- <textarea class="textarea" type="text" name="add" placeholder="请输入简介" placeholder-class="placeholder"
+              maxlength="{{40}}" value="{{shop.SHOP_ADD}}"></textarea> -->
           </view>
           <view class="right">
             <view class="example">示例</view>
@@ -53,20 +59,21 @@
         <view class="item">
           <view class="left">
             <view class="title">
-              <view class="request-enter">门店电话</view>
+              <view class="request-enter">门店电话<text class="red-text">*</text></view>
             </view>
-            <input type="text" placeholder="请输入门店电话" placeholder-class="placeholder" maxlength="{{40}}" />
+            <input type="number" name="phone" placeholder="请输入门店电话" placeholder-class="placeholder" maxlength="11"
+              value="{{shop.SHOP_TEL}}" />
           </view>
-          <view class="right">
+          <!-- <view class="right">
             <view class="example">示例</view>
-          </view>
+          </view> -->
         </view>
         <!-- 店铺风格 -->
         <view class="item1">
           <view class="top">
             <view class="left">
               <view class="title">
-                <view class="request-enter">店铺风格</view>
+                <view class="request-enter">店铺风格<text class="red-text">*</text></view>
               </view>
             </view>
             <view class="right">
@@ -75,9 +82,11 @@
           </view>
           <radio-group>
             <view class="colorList">
-              <view class="colorItem" bindtap="colorItemTap" data-color="{{item}}" style="background-color: {{item}};" wx:for="{{colorList}}">
+              <view class="colorItem" bindtap="colorItemTap" data-color="{{index}}" style="background-color: {{item}};"
+                wx:for="{{colorList}}">
                 <view class="radius">
-                  <radio wx:if="{{item === currentColor}}" checked="{{item === currentColor}}" color="{{item}}"></radio>
+                  <radio wx:if="{{chooseColor === item}}" checked="{{chooseColor === item}}" color="{{item}}">
+                  </radio>
                 </view>
               </view>
             </view>
@@ -87,44 +96,48 @@
         <view class="indexSwiper">
           <view class="title">
             <view class=" request-enter">
-              店铺首页轮播图
+              店铺首页背景图<text class="red-text">*</text>
               <text class="limit">(尺寸：750pxX594px)</text>
             </view>
             <view class="example">示例</view>
           </view>
           <view class="limit">设置后,将会在小程序首页展示</view>
           <!-- 轮播图片 -->
-          <image src="/images/test.png" class="swiperImg"></image>
+          <image src="{{backimg}}" class="swiperImg" mode="widthFix"></image>
           <!-- 选择模板 自己上传 -->
           <view class="subtitle">
-           <text style="color: {{color}}; border-color: {{color}};" bindtap="showPop" data-type="{{1}}">选择模板</text>
-           <text style="color: {{color}}; border-color: {{color}};">自己上传</text>
+            <text style="color: {{color}}; border-color: {{color}};" bindtap="showPop" data-type="{{2}}">选择模板</text>
+            <text style="color: {{color}}; border-color: {{color}};" bindtap="uploadImage" data-idx="1">自己上传</text>
           </view>
         </view>
         <!-- 店铺营销轮播图 -->
         <view class="indexSwiper">
           <view class="title">
             <view class=" request-enter">
-              店铺营销轮播图
-              <text class="limit">(尺寸：689pxX227px)</text>
+              店铺营销图<text class="red-text">*</text>
+              <text class="limit">(尺寸：690pxX230px)</text>
             </view>
           </view>
           <view class="limit">设置后,将会在小程序首页展示</view>
           <!-- 轮播图片 -->
-          <image src="/images/test.png" class="swiperImg1"></image>
+          <image src="{{swiperimg}}" class="swiperImg1" mode="widthFix"></image>
           <!-- 选择模板 自己上传 -->
           <view class="subtitle">
-           <text style="color: {{color}}; border-color: {{color}};" bindtap="showPop" data-type="{{2}}">选择模板</text>
-           <text style="color: {{color}}; border-color: {{color}};">自己上传</text>
+            <text style="color: {{color}}; border-color: {{color}};" bindtap="showPop" data-type="{{1}}">选择模板</text>
+            <text style="color: {{color}}; border-color: {{color}};" bindtap="uploadImage" data-idx="2">自己上传</text>
           </view>
         </view>
-         <!-- 预览 提交 -->
-         <view class="buttons">
-            <view class="pre cc-center" style="border-color: {{color}}; color: {{color}};">预览</view>
-            <view class="submit cc-center" style="background-color: {{color}};">提交</view>
-          </view>
+        <!-- 预览 提交 -->
+        <view class="buttons">
+          <button class="pre cc-center" style="border-color: {{color}}; color: {{color}};"
+            bindtap="toshowShop">预览</button>
+          <button form-type="submit" class="submit cc-center" style="background-color: {{color}};">提交</button>
+        </view>
       </form>
     </view>
   </view>
-  <popup show="{{swiperPopShow}}" type="{{popType}}"></popup>
+  <popup show="{{swiperPopShow}}" type="{{popType}}" backList="{{backList}}" swiperList="{{swiperList}}"
+    bind:chooseswiper="chooseswiper" bind:chooseback="chooseback"></popup>
 </view>
+
+<view style="height:200rpx"></view>

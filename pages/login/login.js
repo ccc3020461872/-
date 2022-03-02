@@ -2,12 +2,13 @@
 import {
   checkCode,
   sendMassage,
-  bossLogin
+  bossLogin,
 } from '../../utils/api';
 const app = getApp();
 let openid
 let telNum = ''
 let ccode
+let password = ''
 Page({
 
   /**
@@ -17,9 +18,13 @@ Page({
     account: '',
     pwd: '',
     nav: ['账号登录', '手机号登录'],
-    currentIndex: 1,
+    currentIndex: 0,
     btnvalue: "获取验证码",
     telNumder: '', //存手机号
+    isSelect: true,
+    formcolor: true,
+    titleType: true,
+    currentName:'登录'
   },
 
   /**
@@ -38,6 +43,7 @@ Page({
 
       }
     })
+
     wx.getStorage({
       key: 'user',
       success: function (res) {
@@ -47,15 +53,7 @@ Page({
         console.log(that.data.account)
       }
     })
-    wx.getStorage({
-      key: 'pass',
-      success: function (res) {
-        that.setData({
-          pwd: res.data
-        })
-        console.log(that.data.pwd)
-      }
-    })
+
   },
   //手机号输入框事件
   telInput: function (e) {
@@ -119,6 +117,12 @@ Page({
       });
     }
   },
+  selectAll() {
+    this.setData({
+      isSelect: !this.data.isSelect
+    })
+
+  },
   choose(e) {
     console.log(e)
     // 1.设置最新的index
@@ -136,7 +140,7 @@ Page({
     console.log(e.detail.value)
     if (that.data.currentIndex == 0) {
       const userName = e.detail.value.account;
-      const password = e.detail.value.pwd;
+      password = e.detail.value.pwd;
       if (userName == '' || userName == 'undefined') {
         wx.showToast({
           title: '账户为空',
@@ -174,7 +178,7 @@ Page({
           icon: 'none'
         })
         return false
-      }  else {
+      } else {
         that.setData({
           disform: true
         })
@@ -210,33 +214,30 @@ Page({
     const data = await bossLogin({
       userName: userName,
       password: password,
-      CUSTOMER_ID: openid
     });
     console.log(data, "登录")
     if (data.result == "success") {
-      let arry = [];
-      data.data.forEach(item => {
-        arry.push({
-          SHOP_ID: item.SHOP_ID,
-          SHOP_NAME: item.SHOP_NAME,
-        })
+      wx.setStorage({
+        key: 'shopid',
+        data: data.bossUser.SHOP_ID
       })
-      app.globalData.StoreArry = arry; //店铺列表
-      app.globalData.bossUser = data.bossUser,
-        app.globalData.Storeinfo = data.data
+      if (this.data.isSelect) {
+        wx.setStorage({
+          key: 'password',
+          data: password
+        })
+      } else {
+        wx.setStorage({
+          key: 'password',
+          data: ''
+        })
+      }
+
       wx.showToast({
         title: '登录成功',
         success: function () {
           wx.navigateTo({
-            url: '/agentpages/pages/bossGuide/bossGuide',
-          })
-          // wx.setStorage({
-          //   data: data.bossUser.SHOP_ID,
-          //   key: 'chocieshopid',
-          // })
-          wx.setStorage({
-            data: data,
-            key: 'key',
+            url: '/pages/index/index',
           })
         },
       })
@@ -259,10 +260,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.setData({
-    //   account: '',
-    //   pwd: ''
-    // })
+    this.setData({
+      account: '',
+      pwd: ''
+    })
+    var that = this
+    wx.getStorage({
+      key: 'password',
+      success: function (res) {
+        that.setData({
+          password: res.data
+        })
+        console.log(that.data.pwd)
+      }
+    })
   },
 
   /**

@@ -1,10 +1,36 @@
 <!--pages/index/shopSet/oneNotice/oneNotice.wxml-->
+<view class="headebg">
+  <common-title formcolor="false" commnote='{{commnote}}' backSate="no">
+    <image src="/img/backWhite.png" slot="commimg"></image>
+    <view slot="commtitle">门店公告设置</view>
+  </common-title>
+</view>
 <view class="cont">
   <form action="" bindsubmit="toSubmit">
     <view class="cont-item cont-top">
-      <image src="/img/s1.png"></image>
+      <text lines="1" class="info4">顾客点餐时将看到</text>
+      <view class="box4">
+        <view class="layer1">
+          <view class="outer3">
+            <view class="layer2"></view>
+          </view>
+          <view class="outer4">
+            <view class="mod1"></view>
+            <view class="mod2"></view>
+          </view>
+        </view>
+        <text lines="1" decode="true" class="word3" >{{title}}</text>
+        <view class="layer3">
+          <view class="wrap1">
+            <view class="block1"></view>
+            <view class="block1"></view>
+            <view class="block1"></view>
+          </view>
+        </view>
+      </view>
     </view>
-    <textarea name="" id="" cols="30" rows="10" placeholder="请输入公告" name="title" value="{{title}}"></textarea>
+    <textarea name="" id="" cols="30" rows="10" placeholder="请输入公告" name="title"
+      value="{{title}}" bindinput="getTitle"></textarea>
     <view>
       <text class="cont-text">为您推荐，一键选择</text>
       <view class="cont-list">
@@ -12,6 +38,7 @@
           {{item.text}}</view>
       </view>
     </view>
+    <view style="height:400rpx"></view>
     <button class="formBtn" form-type="submit"> 保存</button>
   </form>
 </view>

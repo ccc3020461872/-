@@ -1,8 +1,9 @@
 // pages/index/shopSet/setNumber/setNumber.js
 import {
-  setTableNumber
+  setTableNumber,
+  imgUrl
 } from '../../../../utils/api';
-let shopid='300000024'
+let shopid = ''
 
 Page({
 
@@ -10,7 +11,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:imgUrl,
+    commnote: '直接返回后，此次操作将不会保存。',
+    minNum: 1,
+    maxNum: 100
   },
 
   /**
@@ -18,6 +22,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    console.log(options)
+    if (options.minNum != 'undefined' && options.minNum != undefined) {
+      that.setData({
+        minNum: options.minnum,
+        maxNum: options.maxnum
+      })
+    }
     wx.getStorage({
       key: 'shopid',
       success: function (res) {
@@ -30,6 +41,16 @@ Page({
 
     })
   },
+  getmin(e) {
+    this.setData({
+      minNum: e.detail.value,
+    })
+  },
+  getmax(e) {
+    this.setData({
+      maxNum: e.detail.value,
+    })
+  },
   tochoose(e) {
     this.setData({
       title: e.currentTarget.dataset.title
@@ -38,7 +59,7 @@ Page({
   toSubmit(e) {
     console.log(e.detail.value)
     let minNum = e.detail.value.minNum
-    let maxNum=e.detail.value.maxNum
+    let maxNum = e.detail.value.maxNum
     if (minNum == '') {
       wx.showToast({
         title: '填写最小取餐号',
@@ -57,7 +78,7 @@ Page({
     }
     setTableNumber({
       PICK_UP_NUMBER_START: minNum,
-      PICK_UP_NUMBER_END:maxNum,
+      PICK_UP_NUMBER_END: maxNum,
       SHOP_ID: shopid
     }).then(res => {
       console.log('保存', res);

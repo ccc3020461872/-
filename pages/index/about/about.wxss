@@ -1,0 +1,73 @@
+/* pages/index/about/about.wxss */
+.cont {
+  padding-top: 0;
+}
+
+.cont-title {
+  font-size: 35rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: var(--themecolor);
+  line-height: 59rpx;
+  margin: 30rpx 0 30rpx 20rpx;
+}
+
+.cont-title:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12rpx;
+  height: 35rpx;
+  background: var(--themecolor);
+  border-radius: 6rpx;
+  left: 30rpx;
+  margin-top: 12rpx;
+
+}
+
+.cont-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-img {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.cont-center {
+  width: 55%;
+  color: var(--themecolor);
+}
+
+.section-cent {
+  height: 55rpx;
+  line-height: 55rpx;
+  font-weight: bold;
+
+}
+.section-cent image{
+  width: 29rpx;
+  height: 31rpx;
+  margin-left: 35rpx;
+}
+.cont-note {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #1E5051;
+  line-height: 53rpx;
+  color: var(--themecolor);
+  margin-top: 30rpx;
+}
+.video-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.video-list video{
+  width: 320rpx;
+  height: 260rpx;
+  border-radius: 20rpx;
+}

@@ -1,12 +1,19 @@
 // pages/index/stateMent/stateMent.js
+import {
+  currentData,
+  morrDate
+} from '../../../utils/util';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     navlist: ['营业数据', '菜品销量', '营销效果', '营业指标同环比'],
     currentIndex: 0,
+    sdate: currentData(),
+    edate: morrDate(),
+    startDate: currentData(),
+    endDate: morrDate(),
   },
 
   /**
@@ -15,11 +22,28 @@ Page({
   onLoad: function (options) {
 
   },
+  bindDateChangeStart: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      sdate: e.detail.value
+    })
+    
+  },
+  bindDateChangeEnd: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      edate: e.detail.value
+    })
+  },
   choose(e) {
     console.log(e)
+    var idx=e.currentTarget.dataset.idx
     // 1.设置最新的index
     this.setData({
-      currentIndex: e.currentTarget.dataset.idx
+      currentIndex: idx
+    })
+    wx.setNavigationBarTitle({
+      title: this.data.navlist[idx],
     })
   },
   /**

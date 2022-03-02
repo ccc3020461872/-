@@ -1,3 +1,5 @@
 <view class="cont">
-  <image src="/img/mach.png" ></image>
+  <image src="{{imgUrl}}shop/shop/mode1.png" hidden="{{idx!=0}}"></image>
+  <image src="{{imgUrl}}shop/shop/mode2.png" hidden="{{idx!=1}}"></image>
+  <image src="{{imgUrl}}shop/shop/mode3.png" hidden="{{idx!=2}}"></image>
 </view>

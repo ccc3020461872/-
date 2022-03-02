@@ -6,7 +6,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding-top: 7rpx;
+  /* padding-top: 7rpx; */
 }
 
 .bg-cont {
@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  margin-top: 40rpx;
+  /* margin-top: 40rpx; */
 
 }
 
@@ -88,12 +88,12 @@
   border-radius: 80rpx;
   z-index: 2;
   height: 1498rpx;
-  margin-top: 7rpx;
+  /* margin-top: 7rpx; */
   display: flex;
   flex-direction: column;
   width: 750rpx;
   position: relative;
-  padding: 16rpx 0 0 29rpx;
+  padding: 0 0 0 29rpx;
 }
 
 .bd1 {
@@ -135,10 +135,12 @@
   line-height: 30rpx;
   display: block;
 }
-.active{
+
+.active {
   background-color: var(--themecolor);
   color: #fff;
 }
+
 .info2 {
   width: 84rpx;
   height: 28rpx;
@@ -429,7 +431,3 @@
   height: 1rpx;
   margin-top: 33rpx;
 }
-
-
-
-

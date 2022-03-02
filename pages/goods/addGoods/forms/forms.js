@@ -7,6 +7,7 @@ import {
 import {
   uploadFileCOS, //上传文件
   addGoods, //添加商品
+  updateGoods, //修改商品
   accessoriesList, //查询辅料
   goodsCategory, //分类查询
 } from '../../../../utils/api'
@@ -27,6 +28,9 @@ Page({
     classify: null, //分类
     SPECIFICATIONS: '', //规格集合
     isCopy: false,
+    goodsDetail : null, //商品详情，从有商品的地方跳转过来的，修改商品
+    create: true, //ture 为创建商品 false 为修改商品
+    GOODS_ID: '', //商品id 修改的时候需要
   },
   showPop() {
     this.setData({
@@ -52,9 +56,17 @@ Page({
             }]
           } = res;
           uploadFileCOS(tempFilePath)
-            .then(res => this.setData({
-              goodsImgPath: res
-            }))
+            .then(res => {
+              this.setData({
+                goodsImgPath: res,
+                popShow: false,
+              })
+              try{
+                wx.removeStorageSync('imgPath')
+              }catch(err) {
+                console.log(err);
+              }
+            })
         }
       })
     }
@@ -63,7 +75,8 @@ Page({
     currentTarget: {
       dataset: {
         url,
-        type
+        type,
+        info,
       }
     }
   }) {
@@ -72,9 +85,11 @@ Page({
       const res = await accessoriesList({
         SHOP_ID
       })
+      const { access = [] } = this.data 
       if (res.accessories.length !== 0) {
         toPage('/pages/goods/excipients/choose/choose', {
-          list: JSON.stringify(res.accessories)
+          list: JSON.stringify(res.accessories),
+          access: JSON.stringify(access)
         })
       } else {
         toPage('/pages/goods/excipients/excipients', )
@@ -91,19 +106,24 @@ Page({
       } else {
         toPage('/pages/goods/classify/choose/choose', {
           list: JSON.stringify(res.goodsCategoryData),
-          classify: JSON.stringify(this.data.classify)
+          classify: this.data.classify && JSON.stringify(this.data.classify) || ''
         })
       }
       return
     }else if(type === '口味'){
       const {SPECIFICATIONS: chooseTaste} = this.data
-      const param = {chooseTaste: JSON.stringify(chooseTaste)}
+      const param = {chooseTaste: typeof chooseTaste == 'object' ? JSON.stringify(chooseTaste) : chooseTaste }
       console.log(param);
       toPage(url,param)
     }else if(type === '喜好标签'){
-      const { tag } = this.data
-      const param = {tag: JSON.stringify(tag)}
+      const { tag='' } = this.data
+      const param = { tag: JSON.stringify(tag)}
       toPage(url, param)
+    }else if(type === '打印档口'){
+      const { print='' } = this.data
+      toPage(url,{print: print}) 
+    }else if(type === '示例'){
+       toPage(url,{info})
     }else {
       toPage(url)
     }
@@ -132,6 +152,10 @@ Page({
         }
       }
     } = e;
+    PROMOTION_PRICE = (PROMOTION_PRICE * 1).toFixed(2)
+    GOODS_VIP_PRICE= (GOODS_VIP_PRICE * 1).toFixed(2)
+    PACKING_CHARGE = (PACKING_CHARGE * 1).toFixed(2)
+    GOODS_PRICE = (GOODS_PRICE * 1).toFixed(2)
     VALID = VALID === false ? 0 : 1;
     const {
       goodsImgPath: GOODS_IMG,
@@ -139,7 +163,8 @@ Page({
       classify,
       access,
       SPECIFICATIONS, //口味
-      isCopy
+      isCopy,
+      tag
     } = this.data;
     const GOODS_CATEGORY_ID = this.data.classify?.GOODS_CATEGORY_ID || ''//分类id
     let TICKET_TYPE
@@ -148,7 +173,7 @@ Page({
     }else {
        TICKET_TYPE = null
     }
-    const SPECIAL_LABEL = classify?.GOODS_CATEGORY_ID||''; //喜好id
+    const SPECIAL_LABEL = tag?.GOODS_LABEL_ID||''; //喜好id
     const ACCESSORIES_ID = []
     if(access){
       access.map(({
@@ -219,7 +244,7 @@ Page({
       const content = isCopy ? '是否保存，并继续添加' : '是否保存'
       const showToast = ()=>{
         wx.showToast({
-          title: '添加成功',
+          title: '保存成功',
           icon: 'none',
           // 如果点击的是复制并继续添加就继续添加，否则返回上一个页面
           success:()=> {
@@ -228,7 +253,9 @@ Page({
                 isCopy: false
               })
             }else {
-              toPage()
+              setTimeout(() => {
+                toPage()
+              }, 1000);
             }
           }
         })
@@ -237,7 +264,12 @@ Page({
         content,
         success: async (res) => {
           if(res.confirm){
-            await addGoods(params)
+           if(this.data.create){
+            await addGoods(params)   //创建商品
+           }else { 
+             const { GOODS_ID } = this.data
+              await updateGoods({...params,GOODS_ID}) //修改商品
+           }
             showToast()
           }
         }
@@ -255,7 +287,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    const goods = options?.goods && JSON.parse(options?.goods) || false;
+    if(goods){
+      console.log(goods);
+      const {
+        GOODS_IMG: goodsImgPath = "",
+        CATEGORY: classify,
+        TICKET_TYPE,
+        SPECIFICATIONS,
+        SPECIFICATIONS: taste,
+        ACCESSORIES: access,
+        GOODS_LABEL: tag,
+        GOODS_ID,
+        VALID,
+      }= goods
+      const print = TICKET_TYPE == 1 ? '前台' : '后厨'
+      this.setData({
+        goodsDetail: goods,
+        goodsImgPath,
+        classify,
+        print,
+        taste,
+        access,
+        SPECIFICATIONS: JSON.parse(JSON.stringify(SPECIFICATIONS)),
+        tag,
+        create: false,
+        GOODS_ID,
+      })
+     
+    }
   },
 
   /**
@@ -276,27 +337,41 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const {
+      print: print1,
+       taste: taste1,
+       tag: tag1,
+       access: acs,
+       classify: classify1,
+       goodsImgPath: goodsImgPath1
+      } = this.data
     try {
-      const print = wx.getStorageSync('print') //打印档口：
-      const taste = wx.getStorageSync('taste') //口味：
-      const tag = wx.getStorageSync('tag') //商品喜好标签：
-      const accessoriesList = wx.getStorageSync('accessories') //辅料
-      const classify = wx.getStorageSync('classify') //分类
-      let access = accessoriesList&&[] || null;
+      const print = wx.getStorageSync('print')|| print1 //打印档口：
+      let taste = wx.getStorageSync('taste') || taste1 || '' //口味：
+      const tag = wx.getStorageSync('tag') || tag1 //商品喜好标签：
+      const accessoriesList = wx.getStorageSync('accessories') || acs || false //辅料
+      const classify = wx.getStorageSync('classify')|| classify1//分类
+      const goodsImgPath = wx.getStorageSync('imgPath') || goodsImgPath1 || '' //商品图片
+      let access = [];
+      let SPECIFICATIONS = JSON.parse(JSON.stringify(taste))
+      if(taste){
+        taste = typeof taste == 'object' ? JSON.stringify(taste) : typeof taste == 'string' ? taste : null
+      }
       accessoriesList&&accessoriesList.forEach(v => {
         access.push({
-          name: v.ACCESSORIES_NAME,
-          id: v.ACCESSORIES_ID
+          name: v?.ACCESSORIES_NAME || v?.name || '',
+          id: v?.ACCESSORIES_ID || v?.id || '',
         })
       })
-
       this.setData({
         print,
-        taste: taste&&tasteStringify(taste),
-        SPECIFICATIONS: taste,
+        taste: tasteStringify(taste),
+        SPECIFICATIONS,
         tag,
         access,
         classify,
+        goodsImgPath,
+        popShow: false
       })
       console.log(`打印档口：${print},口味：${taste},商品喜好标签：${JSON.stringify(tag)},辅料${access},分类：${JSON.stringify(classify)}`, );
     } catch (e) {
@@ -321,6 +396,7 @@ Page({
       wx.getStorageSync('tag')&&wx.removeStorageSync('tag');
       wx.getStorageSync('accessories')&&wx.removeStorageSync('accessories');
       wx.getStorageSync('classify')&&wx.removeStorageSync('classify');
+      wx.getStorageSync('imgPath')&&wx.removeStorageSync('imgPath')
     }catch(e){
       console.log('移除失败',err);
     }

@@ -32,12 +32,12 @@ page{
 .VerticalNav.nav .cu-item.cur::before {
   content: "";
   width: 8rpx;
-  height: 30rpx;
-  border-radius: 10rpx 0 0 10rpx;
+  height: 35rpx;
+  border-radius: 10rpx;
   position: absolute;
   background-color: currentColor;
   top: 0;
-  right: 0rpx;
+  right: 135rpx;
   bottom: 0;
   margin: auto;
 }

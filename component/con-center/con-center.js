@@ -1,5 +1,5 @@
 // component/con-center/con-center.js
-const app=getApp();
+const app = getApp();
 let userName;
 Component({
   /**
@@ -15,17 +15,20 @@ Component({
   data: {
 
   },
-  lifetimes:{
-    attached(){
-      const _this=this;
-      let bossUser=app.globalData.bossUser;
-      let Storeinfo=app.globalData.Storeinfo;
-      userName=app.globalData.bossUser.USERNAME
-      console.log(bossUser,Storeinfo)
-      _this.setData({
-        Storeinfo:Storeinfo
+  lifetimes: {
+    attached() {
+      const _this = this;
+      wx.getStorage({
+        key: 'shop',
+        success(res) {
+          console.log('店铺信息', res.data)
+          _this.setData({
+            shop: res.data
+          })
+        }
       })
-      
+
+
     }
   },
 
@@ -33,19 +36,41 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    updatePwd(){
+    toOut() {
+      wx.navigateTo({
+        url: '/pages/index/out/out',
+      })
+    },
+    updatePwd() {
       wx.navigateTo({
         url: '/pages/index/mine/updatePwd/updatePwd',
       })
     },
-    toweb(){
+    tosetting() {
+      wx.navigateTo({
+        url: '../../pages/index/setting/setting',
+      })
+    },
+    // 分享
+    // toshare(){
+    //   wx.showShareMenu({
+    //     withShareTicket: true,
+    //     menus: ['shareAppMessage']
+    //   })
+    // },
+    toweb() {
       wx.navigateTo({
         url: '/pages/index/mine/web-view/web-view',
       })
     },
-    loginOut(){
+    toabout() {
+      wx.navigateTo({
+        url: '/pages/index/about/about',
+      })
+    },
+    loginOut() {
       wx.navigateBack({
-        delta:2 //返回上一级页面
+        delta: 2 //返回上一级页面
       })
     }
   }

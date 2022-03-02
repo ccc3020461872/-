@@ -1,7 +1,8 @@
 // pages/index/machina/machina.js
 import {
   setOrderRemarks,
-  getOrderRemarks
+  getOrderRemarks,
+  imgUrl
 } from '../../../utils/api';
 let shopid
 Page({
@@ -10,25 +11,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typelist: ['芯烨', '飞鹅', '易联云'],
+    typelist: ['芯烨云', '飞鹅',],
     goodlist: [{
-        text: '芯烨-小票打票机',
-        img: 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg',
+        text: '芯烨云小票打票机',
+        img:imgUrl+'shop/shop/xin.jpg',
         note: '支持全部型号4G/WIFI小 票打票机',
         type: 'XINYEYUN'
       },
       {
         text: '飞鹅-小票打票机',
-        img: 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg',
+        img:imgUrl+'shop/shop/fly.png',
         note: '支持全部型号4G/WIFI小 票打票机',
         type: 'FEIEYUN'
       },
-      {
-        text: '易联云-小票打票机',
-        img: 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.jpg',
-        note: '支持全部型号4G/WIFI小 票打票机',
-        type: 'YILIANYUN'
-      },
+      // {
+      //   text: '易联云-小票打票机',
+      //   img: 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/img/good.png',
+      //   note: '支持全部型号4G/WIFI小 票打票机',
+      //   type: 'YILIANYUN'
+      // },
     ],
     TabCur: 0
   },

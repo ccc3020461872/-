@@ -25,7 +25,7 @@
   box-sizing: border-box;
   background: linear-gradient(179deg, var(--themecolor) 0%, #FFFFFF 100%);
   opacity: 1;
-  height: 300rpx;
+  height: 450rpx;
 }
 
 .titleItem {

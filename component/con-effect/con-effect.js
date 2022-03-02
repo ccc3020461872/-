@@ -1,6 +1,8 @@
 // component/con-effect/con-effect.js
 import * as echarts from '../ec-canvas/echarts';
-import { currentData } from '../../utils/util';
+import {
+  currentData
+} from '../../utils/util';
 import {
   getOrderEffect,
   getNewOrderEffect
@@ -11,16 +13,23 @@ let barChart = null;
 let scatterChart = null;
 let shopid;
 let finallArry = []; //最终数组
-let activityArry = ['活动参数']; //活动参数
+let activityArry = ['活动参与人数']; //活动参与人数
 let dateArry = ['product']; //日期
-let checkArry = ['核销数量']; //核销
-let couponsArry = ['领券数量']; //领券
+let checkArry = ['领券数量']; //核销
+let couponsArry = ['核销数量']; //领券
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    sdate: {
+      type: String,
+      value: ''
+    },
+    edate: {
+      type: String,
+      value: ''
+    },
   },
 
   /**
@@ -55,11 +64,12 @@ Component({
       }
     },
   },
-  lifetimes: {
-    ready() {
+  observers: {
+    'sdate, edate': function (sdate, edate) {
+      // 在 sdate 或者 edate 被设置时，执行这个函数
       const _this = this;
       wx.getStorage({
-        key: 'chocieshopid',
+        key: 'shopid',
         success(res) {
           shopid = res.data;
           treeXarray = [];
@@ -72,6 +82,25 @@ Component({
         }
       })
     }
+
+  },
+  lifetimes: {
+    // ready() {
+    //   const _this = this;
+    //   wx.getStorage({
+    //     key: 'shopid',
+    //     success(res) {
+    //       shopid = res.data;
+    //       treeXarray = [];
+    //       treeXarrayData = [];
+    //       finallArry = [];
+    //       setTimeout(() => {
+    //         _this.computedData();
+    //       }, 300)
+
+    //     }
+    //   })
+    // }
   },
   /**
    * 组件的方法列表
@@ -82,18 +111,6 @@ Component({
       this.setData({
         index: e.detail.value,
       })
-    },
-    bindDateChange: function (e) {
-      const _this = this;
-      console.log('picker发送选择改变，携带值为', e.detail.value)
-      _this.setData({
-        date: e.detail.value
-      })
-      treeXarray = [];
-      treeXarrayData = [];
-      finallArry = [];
-
-      _this.computedData();
     },
     computedData() {
       const _this = this;
@@ -111,16 +128,16 @@ Component({
             treeXarray.push(item.selectDate)
             treeXarrayData.push(item.allNumber);
           })
-          activityArry = ['活动参数']; //活动参数
+          activityArry = ['活动参与人数']; //活动参与人数
           dateArry = ['product']; //日期
-          checkArry = ['核销数量']; //核销
-          couponsArry = ['领券数量']; //领券
+          checkArry = ['领券数量']; //核销
+          couponsArry = ['核销数量']; //领券
           //营销参与人数
           data.activity.forEach(item => {
             dateArry.push(item.date)
             activityArry.push(item.activityNumber)
-            checkArry.push(item.checkNumber)
-            couponsArry.push(item.couponsNumber)
+            checkArry.push(item.couponsNumber)
+            couponsArry.push(item.checkNumber)
 
           })
           // 活动列表
@@ -138,7 +155,7 @@ Component({
           })
           _this.setData({
             region: _this.data.region,
-            couponList:data.couponList
+            couponList: data.couponList
           })
           finallArry.push(dateArry, activityArry, checkArry, couponsArry);
           // console.log(dateArry, activityArry, checkArry, couponsArry, finallArry)
@@ -334,7 +351,7 @@ Component({
                 },
                 //线条的样式
                 itemStyle: {
-                  color: "#f57904",
+                  color: "#1E5051",
                   opacity: 0 //为0不会绘制图形拐点消失 小圆点消失
                 }
               },
@@ -347,7 +364,7 @@ Component({
                 },
                 //线条的样式
                 itemStyle: {
-                  color: "#21ed8a",
+                  color: "#21ED8A",
                   opacity: 0 //为0不会绘制图形拐点消失 小圆点消失
                 }
               },
@@ -360,7 +377,7 @@ Component({
                 },
                 //线条的样式
                 itemStyle: {
-                  color: "#80a8f1",
+                  color: "#80A8F1",
                   opacity: 0 //为0不会绘制图形拐点消失 小圆点消失
                 }
               },

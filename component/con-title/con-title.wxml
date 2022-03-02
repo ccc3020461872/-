@@ -2,9 +2,9 @@
 <!-- //使用插槽来自定义顶部导航栏 -->
 <!-- //返回按钮 -->
 <view
-  style="height:{{statusBarHeight+statusTop}}rpx;padding-bottom: 20rpx;{{titleType?'background-color:var(--themecolor);position:fixed;z-index:1000':'background-color:initial;position:relative;z-index:initial'}}"
+  style="height:{{statusBarHeight+statusTop}}rpx;{{titleType?'background-color:var(--themecolor);position:fixed;z-index:1000':'background-color:initial;position:relative;z-index:initial'}}"
   class="slotContent">
-  <view class="commimgCon" OnTap="back">
+  <view class="commimgCon" bindtap="back">
     <view class="commimg">
       <slot name="commimg"></slot>
     </view>

@@ -1,9 +1,8 @@
 <!--component/con-effect/con-effect.wxml-->
 <view class="summary">
-  <view class="titleItem">
+  <!--<view class="titleItem">
     <view class="storeInfo">
       <image src="/images/ke.png" class="storeImg" mode="aspectFill"></image>
-      <!-- <view class="storeName">客爱点</view> -->
     </view>
     <view style="width:30%">
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2033-09-01" bindchange="bindDateChange">
@@ -13,7 +12,7 @@
         </view>
       </picker>
     </view>
-  </view>
+  </view> -->
 
   <!-- //柱线图 -->
   <view class="eacher">
@@ -23,12 +22,12 @@
     </view>
 
   </view>
-
+<view class="line-text">·营销效果只包括（小程序内会员数量/与商家自运营活动) 分析</view>
   <!-- //折线图 -->
   <view class="eacher eacher1">
     <view class="weui-cells weui-cells_after-title ">
       <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">活动列表</view>
+        <view class="weui-cell__bd">商家自运营活动</view>
         <picker class="weui-cell__ft weui-cell__ft_in-access" bindchange="bindRegionChange" value="{{index}}"
           range="{{region}}">
           <view class="picker">

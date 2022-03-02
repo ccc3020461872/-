@@ -14,7 +14,8 @@ Page({
     shortcutList: ['辣度：不辣/微辣/中辣/重辣', "甜度：无糖/少糖/多糖/全糖", "温度：热饮/常温/少冰/多冰"],
     info: [],
     sameItem: null,  //找到重复的，颜色红色警示\
-    sameStyle: "color: red;"
+    sameStyle: "color: red;",
+    create: true, //判断是创建还是修改, true是创建 false是修改
   },
   toOtherPage(e) {
     const {
@@ -246,7 +247,12 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
-    const info = options?.chooseTaste&&JSON.parse(options.chooseTaste)
+    let info
+    if(options?.chooseTaste){
+      info = typeof options.chooseTaste == 'string' ?  JSON.parse(options.chooseTaste) : info
+    }else {
+      info = ''
+    }
     if(info){
       this.setData({
         info

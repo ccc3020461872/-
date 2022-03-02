@@ -8,14 +8,14 @@
       </label>
       <view class="page-text-2 text-2">老顾客点餐时展示他点过的商品</view>
     </view>
-    <switch color="var(--themecolor)"checked="{{switch1Checked}}" bindchange="switch1Change" />
+    <switch color="var(--themecolor)" checked="{{switch1Checked}}" bindchange="switch1Change" />
   </view>
 
   <!-- 选择时间段 -->
-  <view class="cont-bott">
+  <view class="cont-bott" hidden="{{!switch1Checked}}">
     <view class="cont-display" bindtap="toset">
       <view>客户预点餐时间</view>
-      <text>{{time}}</text>
+      <text>{{orderBefore.ORDER_BEFORE_TIME==0?'仅当天':'提前一天'}}</text>
     </view>
     <view class="right-img">
       <image src="/img/right.png"></image>

@@ -1,0 +1,6 @@
+/* pages/setting/setting.wxss */
+page{
+  padding: 0 3%;
+  font-size: 32rpx;
+  color: #333;
+}

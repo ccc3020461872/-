@@ -16,13 +16,13 @@
             <image class="checkImg" src=" {{currentType === 'shop' ? '/images/selected1.png' : '/images/selecte1.png'}}" mode="widthFix" ></image>
             <!-- 选择商品 -->
           </view>
-          <view class="chooseGoods" wx:if="{{currentType === 'shop'}}">
+          <!-- <view class="chooseGoods" wx:if="{{currentType === 'shop'}}">
              <view class="ps">选择商品</view>
              <view class="shopName">
                <text>酸汤面</text>
                <image src="/images/chooseWhite.png" mode="widthFix" class="chooseImg"></image>
              </view>
-            </view>
+            </view> -->
         </view>
         <view class="type {{currentType === 'order' ? 'selected' : ''}}" bindtap="typeChoose" data-type="order" style="{{currentType === 'order' ? selectedClass : ''}}">
           <view class="title">按订单收费</view>
@@ -34,14 +34,14 @@
           <view class="price" wx:if="{{currentType === 'order'}}">
            <text>打包费金额</text>
            <view class="set-price">
-           <input type="number" placeholder="请输入金额" focus="{{currentType === 'order'}}" placeholder-class="placeholder"/>
+           <input type="number" placeholder="请输入金额"  focus="{{currentType === 'order'}}" bindinput="inputPrice" placeholder-class="placeholder"/>
            元
            </view>
           </view>
         </view>
       </view>
       <!-- 保存 -->
-      <view class="built cc-center" style="background-color: {{color}};">保存</view>
+      <view class="built cc-center" bindtap="save" style="background-color: {{color}};">保存</view>
     </view>
 
   </view>

@@ -1,15 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/goods/addGoods/forms/forms",
-    "pages/goods/addGoods/index",
-    "pages/goods/taste/taste",
-    "pages/goods/classify/manage/manage",
-    "pages/goods/classify/sort/sort",
-    "pages/goods/classify/choose/choose",
-    "pages/goods/excipients/manage/manage",
-    "pages/deskCode/deskCode",
-    "pages/login/login",
+    "pages/index/about/about",
+    "pages/index/out/out",
     "pages/index/shopSet/shopSet",
     "pages/index/shopSet/setProduct/setProduct",
     "pages/index/shopSet/setTime/setTime",
@@ -17,7 +10,6 @@
     "pages/index/shopSet/setNumber/setNumber",
     "pages/index/shopSet/setOrder/setOrder",
     "pages/index/shopSet/oneNotice/oneNotice",
-    "pages/logs/logs",
     "pages/index/machina/machpage/machpage",
     "pages/index/machina/machadd/machadd",
     "pages/index/machina/machmodel/machmodel",
@@ -27,7 +19,21 @@
     "pages/index/stateMent/stateMent",
     "pages/index/mine/updatePwd/updatePwd",
     "pages/index/mine/web-view/web-view",
+    "pages/index/pay-daydetail/pay-daydetail",
+    "pages/index/shopSet/showShop/showShop",
+    "pages/index/setting/setting",
 
+    "pages/goods/addGoods/forms/forms",
+    "pages/goods/addGoods/index",
+    "pages/goods/taste/taste",
+    "pages/goods/classify/manage/manage",
+    "pages/goods/classify/sort/sort",
+    "pages/goods/classify/choose/choose",
+    "pages/goods/excipients/manage/manage",
+    "pages/deskCode/deskCode",
+    "pages/login/login",
+    "pages/logs/logs",
+    
     "pages/fitment/fitment",
     "pages/enroll/enroll",
     "pages/goods/setPacking/setPacking",
@@ -38,7 +44,8 @@
     "pages/goods/print/print",
     "pages/goods/addGoods/photes/photes",
     "pages/goods/addGoods/imgPreview/imgPreview",
-    "pages/goods/classify/add/add"
+    "pages/goods/classify/add/add",
+    "pages/goods/addGoods/forms/note/note"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,7 +58,6 @@
       "desc": "你的位置信息将判断您所在位置与店铺的距离"
     }
   },
-
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

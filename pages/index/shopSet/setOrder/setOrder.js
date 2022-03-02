@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    commnote: '直接返回后，刚对订单备注的修改将不会保存。',
     list: [],
     isShow: true,
   },

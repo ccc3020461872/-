@@ -30,7 +30,7 @@
         </view>
       </block>
       <!-- 保存 -->
-      <view class="built cc-center" style="background-color: {{color}};" bindtap="commit">保存</view>
+      <!-- <view class="built cc-center" style="background-color: {{color}};" bindtap="commit">保存</view> -->
     </view>
 
   </view>

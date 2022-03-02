@@ -1,4 +1,9 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "订单备注设置"
+  "usingComponents": {
+    "common-title": "/component/con-title/con-title"
+  },
+  "navigationBarTitleText": "订单备注设置",
+  "navigationBarBackgroundColor": "#1E5051",
+  "navigationBarTextStyle": "white",
+  "navigationStyle":"custom"
 }

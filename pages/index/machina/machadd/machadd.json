@@ -3,5 +3,6 @@
     "machmask": "../cpnsChilds/machmask/machmask"
   },
   "navigationBarBackgroundColor": "#1E5051",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "手动添加打票机"
 }

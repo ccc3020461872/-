@@ -1,0 +1,15 @@
+<view class='info' wx:for='{{dataList}}' wx:key='list'>
+  <view class='account'>
+    <view class="account-type">
+      <image src="/img/index/wechat.png" class="img" wx:if='{{item.INT_TYPE == 1}}'></image>
+      <image src="/img/index/alipay.png" wx:else></image>
+      <view> {{item.PAYMENT_TIME}}</view>
+    </view>
+    <view class='time'>{{item.SHOP_NAME}}</view>
+  </view>
+  <view class="addnum"> <text>+{{item.PAYMENT_AMOUNT}}</text></view>
+</view>
+
+<block wx:if="{{dataList.length==0}}">
+  <v-info fromimages="{{images}}" frominfoWord="{{infoWord}}" formheight="{{height}}"></v-info>
+</block>

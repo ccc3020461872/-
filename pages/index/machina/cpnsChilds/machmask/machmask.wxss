@@ -35,7 +35,7 @@
 }
 
 .menban-cont {
-  width: 450rpx;
+  width: 510rpx;
   height: 610rpx;
   background: #FFFFFF;
   border-radius: 20rpx;
@@ -64,10 +64,11 @@
 .bottom {
   display: flex;
   justify-content: space-between;
+  margin-top: 35rpx;
 }
 
 .bottom .btnn {
-  width: 190rpx;
+  width: 170rpx;
   height: 65rpx;
   text-align: center;
   line-height: 65rpx;

@@ -5,14 +5,15 @@
       <view class="page-text">请输入打票机底部的编号（SN）以及密 钥（KEY）</view>
       <view class="info">
         <view>编号（SN）</view>
-        <input placeholder="请输入SN码" placeholder-class="ipt" name='name'></input>
+        <input placeholder="请输入SN码" placeholder-class="ipt" name='name' bindinput="getsn"></input>
       </view>
       <view class="info">
         <view>密钥（KEY）</view>
-        <input placeholder="请输入密钥KEY，区分大小写" placeholder-class="ipt" type="number" maxlength="11" name='passw'></input>
+        <input placeholder="请输入密钥KEY，区分大小写" placeholder-class="ipt" type="number" maxlength="11" name='passw'
+          bindinput="getkey"></input>
       </view>
     </view>
-    <button form-type="submit" class="append ">下一步</button>
+    <button form-type="submit" disabled="{{(sn1==''|| key1=='')?true:false}}" class="append ">下一步</button>
   </form>
   <machmask P_TYPE="{{P_TYPE}}" P_SN="{{P_SN}}" P_NOTE="{{P_NOTE}}" isHidd="{{isHidd}}" bind:cancel="cancel" />
 </view>

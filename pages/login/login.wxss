@@ -37,17 +37,17 @@
 }
 
 .bg {
-  background-image: url('https://kad-1254002404.cos.ap-chengdu.myqcloud.com/keaidian/WEG/denglu.png');
+  background-image: url('https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/shop/shop/login.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 451rpx;
   width: 100%;
   position: relative;
-  top: -100rpx;
+  top: -30rpx;
 }
 
 .title {
-  font-size: 36rpx;
+  font-size: 43rpx;
   color: #fff;
   width: 100%;
   text-align: center;

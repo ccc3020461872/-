@@ -12,24 +12,24 @@ export const phone = '18902262551' //个人中心客服电话
 
 //用户登陆
 export const userLogin = data => getRequest(`/applets/appGetOpenid`, data);
-
+export const imgUrl = 'https://keaidiansaas-1254002404.cos.ap-chengdu.myqcloud.com/'
 //商家端新接口////////////////////////////////////////////////////////////
 // 发送验证码
-export const sendMassage = data => getRequest(`/business/API_2011_sendMassage`, data);
-// 验证验证码及登录
-export const checkCode = data => getRequest(`/business/API_2012_checkCode`, data);
-// 设置公告
-export const setShopNotice = data => getRequest(`/business/API_2002_setShopNotice`, data);
-// 设置订单默认备
-export const setOrderRemarks = data => getRequest(`/business/API_2003_setOrderRemarks`, data);
-// 查看订单默认备注
-export const getOrderRemarks = data => getRequest(`/business/API_2004_getOrderRemarks`, data);
-// 设置取餐号
-export const setTableNumber = data => getRequest(`/business/API_2001_setTableNumber`, data);
-// 打票机视频
-export const getOneConfig = data => getRequest(`applets/getOneConfig`, data);
-// 设置打票机
-export const setPrinter = data => getRequest(`/business/API_2013_setPrinter`, data);
+// export const sendMassage = data => getRequest(`/business/API_2011_sendMassage`, data);
+// // 验证验证码及登录
+// export const checkCode = data => getRequest(`/business/API_2012_checkCode`, data);
+// // 设置公告
+// export const setShopNotice = data => getRequest(`/business/API_2002_setShopNotice`, data);
+// // 设置订单默认备
+// export const setOrderRemarks = data => getRequest(`/business/API_2003_setOrderRemarks`, data);
+// // 查看订单默认备注
+// export const getOrderRemarks = data => getRequest(`/business/API_2004_getOrderRemarks`, data);
+// // 设置取餐号
+// export const setTableNumber = data => getRequest(`/business/API_2001_setTableNumber`, data);
+// // 打票机视频
+// export const getOneConfig = data => getRequest(`applets/getOneConfig`, data);
+// // 设置打票机
+// export const setPrinter = data => getRequest(`/business/API_2013_setPrinter`, data);
 
 
 // 添加桌贴码
@@ -66,34 +66,21 @@ export const  goodsLike = data => getRequest(`/business/Api_2022_goodsLike`,data
 export const  goodsSort = data => getRequest(`/business/Api_2023_goodsSort`,data)
 // 商品上下架
 export const  updateGoodsNew = data => getRequest(`/business/Api_9002_updateGoodsNew`,data)
+// 商品搜索
+export const  goodsSearch = data => getRequest(`/business/Api_9001_goodsSearch`,data)
+// 打包费设置
+export const  amountOfPackaging = data => getRequest(`/business/Api_2045_amountOfPackaging`,data)
+// 修改商品 
+export const  updateGoods = data => getRequest(`/business/Api_2061_updateGoods`,data)
+// vip图库列表
+export const  vipImage = data => getRequest(`/business/Api_2026_vipImage`,data)
+// vip图库搜索
+export const  vipImageSearch = data => getRequest(`/business/Api_2027_vipImageSearch`,data)
 // 上传文件 
 export const uploadFileCOS = data => upLoadImg(`/applets/uploadFileCOS`, data)
-
-
-
-
-
-
-
-
-
-
-
-
-// 商家端旧接口///////////////////////////////////////////////////////////////////
-
-// 登录
-export const bossLogin = data => getRequest(`/boss/bossLogin`, data);
-//营业汇总
-export const orderStatistics = data => getRequest(`/boss/orderStatistics`, data);
-//营销效果
-export const getOrderEffect = data => getRequest(`/boss/getOrderEffect`, data);
-//营业明细
-export const salesStatistics = data => getRequest(`/boss/salesStatistics`, data);
-
 // 已交互===========================================================
 // 搜索商品
-export const goodsSearch = data => getRequest(`/boss/Api_1001_goodsSearch`, data);
+// export const goodsSearch = data => getRequest(`/boss/Api_1001_goodsSearch`, data);
 //商品上下架列表
 // export const goodsList = data => getRequest(`/boss/goodsList`, data);
 //商品分类查询
@@ -105,7 +92,7 @@ export const addGoodsCate = data => getRequest(`/boss/Api_1006_addGoodsCategory`
 // 删除类目
 // export const deteleCategory = data => getRequest(`/boss/Api_1034_deteleCategory`, data);
 //单商品上下架
-export const updateGoods = data => getRequest(`/boss/updateGoods`, data);
+// export const updateGoods = data => getRequest(`/boss/updateGoods`, data);
 //批量商品上下架
 // export const updateGoodsNew = data => getRequest(`/boss/Api_1002_updateGoodsNew`, data);
 //商品置顶
@@ -160,11 +147,6 @@ export const updateGoodsSpecifications = data => getRequest(`/boss/Api_1036_upda
 export const updateGoodsAccessories = data => getRequest(`/boss/Api_1039_updateGoodsAccessories`, data);
 
 
-
-//修改密码
-export const updatePassword = data => getRequest(`/boss/updatePassword`, data);
-
-
 //删除商品
 export const delectGoods = data => getRequest(`/boss/Api_1008_deleteGoods`, data);
 
@@ -185,11 +167,60 @@ export const goodLab = data => getRequest(`/boss/Api_1027_goodsNewLabel`, data);
 
 
 
-// 优惠券创建
-export const addCoupon = data => getRequest('/boss/Api_1022_addCoupon', data)
+//商家端新接口////////////////////////////////////////////////////////////
+// 店铺信息
+export const aboutStore = data => getRequest(`/applets/aboutStore`, data);
+// 发送验证码
+export const sendMassage = data => getRequest(`/business/API_2011_sendMassage`, data);
+// 验证验证码及登录
+export const checkCode = data => getRequest(`/business/API_2012_checkCode`, data);
+// 账号密码登录
+export const bossLogin = data => getRequest(`/business/API_2007_bossLogin`, data);
+// 设置公告
+export const setShopNotice = data => getRequest(`/business/API_2002_setShopNotice`, data);
+// 设置订单默认备
+export const setOrderRemarks = data => getRequest(`/business/API_2003_setOrderRemarks`, data);
+// 查看订单默认备注
+export const getOrderRemarks = data => getRequest(`/business/API_2004_getOrderRemarks`, data);
+// 设置常点商品展示
+export const setMyGoods = data => getRequest(`/business/API_2010_setMyGoods`, data);
+// 查看热销产品
+export const getHotGoods = data => getRequest(`/business/API_2006_getHotGoods`, data);
+// 设置商品为热销
+export const setHot = data => getRequest(`/business/API_2005_setHot`, data);
+// 设置取餐号
+export const setTableNumber = data => getRequest(`/business/API_2001_setTableNumber`, data);
+// 打票机视频
+export const getOneConfig = data => getRequest(`applets/getOneConfig`, data);
+// 设置打票机
+export const setPrinter = data => getRequest(`/business/API_2013_setPrinter`, data);
+//修改密码
+export const updatePassword = data => getRequest(`/business/API_2008_updatePassword`, data);
 // 新营业汇总
-export const newOrderStatistics = data => getRequest('/boss/Api_1021_newOrderStatistics', data)
+export const newOrderStatistics = data => getRequest('/business/Api_9021_newOrderStatistics', data)
 // 收支明细
-export const orderDataStatistics = data => getRequest('/boss/Api_1023_orderDataStatistics', data)
+export const orderDataStatistics = data => getRequest('/business/Api_9023_orderDataStatistics', data)
 // 新营销效果
-export const getNewOrderEffect = data => getRequest('/boss/Api_1024_getNewOrderEffect', data)
+export const getNewOrderEffect = data => getRequest('/business/Api_9024_getNewOrderEffect', data)
+//营销效果
+export const getOrderEffect = data => getRequest(`/business/Api_9050_getOrderEffect`, data);
+//营业明细
+export const salesStatistics = data => getRequest(`/business/Api_9051_salesStatistics`, data);
+//营业汇总
+export const orderStatistics = data => getRequest(`/business/Api_9052_orderStatistics`, data);
+// 用户反馈
+export const feedback = data => getRequest(`/business/API_2020_feedback`, data);
+// 店铺装修
+export const setShop = data => getRequest(`/business/Api_2062_setShop`, data);
+// 图片模板
+export const storeDemo = data => getRequest(`/business/Api_2064_storeDemo`, data);
+// 联系我们 
+export const linkMe = data => getRequest(`/business/Api_2024_linkMe`, data);
+// 用户协议
+export const agreement = data => getRequest(`/business/Api_2025_agreement`, data);
+// 预点单设置
+export const orderBefore = data => getRequest(`/business/API_2016_orderBefore`, data);
+// 预点单修改
+export const updateOrderBefore = data => getRequest(`/business/API_2017_updateOrderBefore`, data);
+// 查询预点单
+export const selectOrderBefore = data => getRequest(`/business/API_2018_selectOrderBefore`, data);

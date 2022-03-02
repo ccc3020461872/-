@@ -1,6 +1,9 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "common-title": "/component/con-title/con-title"
+  },
   "navigationBarTitleText": "门店公告设置",
   "navigationBarBackgroundColor": "#1E5051",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "navigationStyle":"custom"
 }

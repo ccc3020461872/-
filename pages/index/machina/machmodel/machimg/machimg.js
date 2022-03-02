@@ -1,11 +1,14 @@
 // pages/index/machina/machmodel/machimg/machimg.js
+import {
+  imgUrl
+} from '../../../../../utils/api';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:imgUrl
   },
 
   /**

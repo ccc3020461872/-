@@ -1,43 +1,39 @@
 <!--component/con-summary/con-summary.wxml-->
 <view class="summary">
-  <view
-    style="height:{{statusBarHeight+statusTop}}rpx;padding-bottom: 20rpx;position:fixed;z-index:1000"
-    class="slotContent">
+  <view style="height:{{statusBarHeight+statusTop}}rpx;position:fixed;z-index:1000" class="slotContent">
     <view class="commtitle">
-      <view>格格家</view>
+      <view>{{shopName}}</view>
     </view>
   </view>
   <view style="height:{{statusBarHeight+statusTop}}rpx;"></view>
   <view class="todayMoney">
-    <picker value="{{index1}}" range="{{array1}}" bindchange="bindChange">
-      <view class="picker">
-        <view>{{array1[index1]}}营收(元) </view>
-        <image src="/img/index/more.png" mode="widthFix" class="dateImg"></image>
-      </view>
-    </picker>
+    <view class="picker">
+      <view>今日营收(元) </view>
+      <image src="/img/index/more.png" mode="widthFix" class="dateImg" bindtap="toDetail"></image>
+    </view>
     <view class="money"><text>￥</text>{{selectDay.allMoney}}</view>
   </view>
   <view class="todayMoneyContent" bindtap="toDetail">
     <view class="todayMoneyItem">
       <view class="todayMoneyItemTitle">
         <image src="/img/index/t1.png" style="width:25rpx;height:21rpx;"></image>
-        <view>用餐人数(人)</view>
+        <view>访客人数(人)</view>
       </view>
-      <view class="todayMoneyItemNum">99</view>
+      <view class="todayMoneyItemNum">{{selectDay.allOrder}}</view>
     </view>
     <view class="todayMoneyItem">
       <view class="todayMoneyItemTitle">
         <image src="/img/index/t2.png" style="width:19rpx;height:23rpx;"></image>
         <view>订单数(单)</view>
       </view>
-      <view class="todayMoneyItemNum">999</view>
+      <view class="todayMoneyItemNum">{{selectDay.allOrder}}</view>
     </view>
     <view class="todayMoneyItem">
       <view class="todayMoneyItemTitle">
         <image src="/img/index/t3.png" style="width:21rpx;height:19rpx;"></image>
         <view>营业实收(元)</view>
       </view>
-      <view class="todayMoneyItemNum">88888</view>
+      <view class="todayMoneyItemNum">{{selectDay.allMoney}}</view>
     </view>
   </view>
   <view class="type-cont">
@@ -52,14 +48,14 @@
   <view class="type-cont">
     <text>营销功能</text>
     <view class="getTypeList w">
-      <view class="item shadow" wx:for="{{typeList1}}" bindtap="toPage" data-url="{{item.url}}" wx:key="list">
+      <view class="item shadow" wx:for="{{typeList1}}" bindtap="toPage1" data-url="{{item.url}}" wx:key="list">
         <image class="item-image" src="{{item.image}}" mode="heightFix"></image>
         <view class="item-title">{{item.title}}</view>
       </view>
     </view>
   </view>
-  <view class="type-cont">
+  <!-- <view class="type-cont">
     <text>为你推荐</text>
-
-  </view>
+  </view> -->
+  <view style="height:140rpx"></view>
 </view>

@@ -1,9 +1,6 @@
 
 // app.js
-import {
-  appid,
-  userLogin
-} from 'utils/api'
+
 App({
   onLaunch() {
     let that = this;

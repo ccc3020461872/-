@@ -1,0 +1,61 @@
+
+.info {
+  padding: 20rpx 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  border: 1rpx solid #f4f4f4;
+}
+
+.account {
+  width: 70%;
+  color: #666;
+
+}
+
+.account image {
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.account-type {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+.addnum {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.miusenum {
+  color: #f45060;
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30rpx;
+  color: #8a8a8a;
+  margin-top: 50rpx;
+}
+
+.tips image {
+  width: 40%;
+}
+
+.addnum image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}

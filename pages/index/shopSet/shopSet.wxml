@@ -1,5 +1,5 @@
 <view class="cont">
-  <view class="cont-item" wx:for="{{setList}}" wx:key="list" bindtap="toPage" data-url="{{item.url}}">
+  <view class="cont-item" wx:for="{{setList}}" wx:key="list" bindtap="toPage" data-idx="{{index}}">
     <view class="cont-left">
       <text class="title">{{item.title}}</text>
       <view>
