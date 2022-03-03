@@ -34,7 +34,7 @@
           <view class="price" wx:if="{{currentType === 'order'}}">
            <text>打包费金额</text>
            <view class="set-price">
-           <input type="number" placeholder="请输入金额"  focus="{{currentType === 'order'}}" bindinput="inputPrice" placeholder-class="placeholder"/>
+           <input type="number" placeholder="请输入金额"  value="{{price}}" focus="{{currentType === 'order'}}" bindinput="inputPrice" placeholder-class="placeholder"/>
            元
            </view>
           </view>

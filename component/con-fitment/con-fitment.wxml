@@ -82,7 +82,7 @@
           </view>
           <radio-group>
             <view class="colorList">
-              <view class="colorItem" bindtap="colorItemTap" data-color="{{index}}" style="background-color: {{item}};"
+              <view class="colorItem" bindtap="colorItemTap" data-color="{{item}}" data-index="{{index}}"  style="background-color: {{item}};"
                 wx:for="{{colorList}}">
                 <view class="radius">
                   <radio wx:if="{{chooseColor === item}}" checked="{{chooseColor === item}}" color="{{item}}">

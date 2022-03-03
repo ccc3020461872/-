@@ -184,7 +184,7 @@
       <!-- 保存 -->
       <view class="btns">
         <button class="copy" formType="submit" bindtap="copyTap" data-type="copy" style="color: {{color}}; border-color: {{color}};">复制并继续添加</button>
-        <button class="save" formType="submit" style="background-color: {{color}}; color: #fff;">保存</button>
+        <button class="save" formType="submit" bindtap="copyTap" data-type="noCopy" style="background-color: {{color}}; color: #fff;">保存</button>
       </view>
       <!-- 上传图片弹窗 -->
       <popup choose="{{['上传','客爱点VIP图库']}}" bind:chooseType="updateImg" show="{{popShow}}"></popup>

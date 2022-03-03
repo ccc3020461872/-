@@ -158,7 +158,7 @@ page {
   font-weight: 700;
   color: #fff;
   position: fixed;
-  bottom: 140rpx;
+  bottom: 110rpx;
   left: 50%;
   transform: translateX(-50%);
   width: 360rpx;

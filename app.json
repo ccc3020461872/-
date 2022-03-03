@@ -38,6 +38,8 @@
     "pages/enroll/enroll",
     "pages/goods/setPacking/setPacking",
     "pages/goods/addGoods/search/srarch",
+    
+    
     "pages/goods/tag/tag",
     "pages/goods/excipients/choose/choose",
     "pages/goods/excipients/excipients",

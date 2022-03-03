@@ -10,7 +10,7 @@
       style="margin-right:{{(index+1)%3==0?0 :20}}rpx">
       <image class="logo" src="{{item.GOODS_IMG}}" mode="aspectFill"></image>
       <view style="height: 0;">
-        <view class="menban goodmen" bindtap="toDel">
+        <view class="menban goodmen" bindtap="toDel" data-id="{{item.GOODS_ID}}">
           <image src="/img/de.png"></image>
         </view>
       </view>

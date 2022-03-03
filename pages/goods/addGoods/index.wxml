@@ -8,34 +8,35 @@
   <view class="content">
     <view class="box">
       <!-- 搜索框 -->
-      <view class="search">
-        <view class="input" bindtap="toOtherPage" data-url="/pages/goods/addGoods/search/srarch">
+      <view class="search" wx:if="{{!isChoose}}">
+        <view class="input" catchtap="toOtherPage" data-url="/pages/goods/addGoods/search/srarch">
           <image src="/images/search.png" mode="heightFix"></image>
           <input type="text" disabled placeholder-class="placeholder" placeholder="请输入商品名称" />
         </view>
-        <view class="search-text" style="color: {{color}};" bindtap="toOtherPage" data-url="/pages/goods/setPacking/setPacking">打包费设置</view>
+        <view class="search-text" style="color: {{color}};" catchtap="toOtherPage" data-url="/pages/goods/setPacking/setPacking">打包费设置</view>
       </view>
       <!-- 分类管理 -->
       <view class="classify">
-        <view class="left" style="color: {{color}}; border-color: {{color}};" bindtap="toOtherPage" data-type="分类管理">分类管理</view>
+        <view class="left" wx:if="{{!isChoose}}" style="color: {{color}}; border-color: {{color}};" catchtap="toOtherPage" data-type="分类管理">分类管理</view>
+        <view class="left" wx:else style="color: {{color}}; border-color: {{color}}; opacity: 0.5;">分类管理</view>
         <!-- 当前点击的类目 和其中的商品数量 -->
-        <view class="current-categary" wx:if="{{goodsList[currentIndex].goods.length !== 0}}" style="color: {{color}};">{{goodsList[currentIndex].CATEGORY_NAME}}({{goodsList[currentIndex].goods.length}})</view>
-        <view class="right" style="{{goodsList[currentIndex].goods.length !==0 ? selectedStylle : ''}}" bindtap="sortTap">商品排序</view>
+        <view class="current-categary" wx:if="{{goodsList&&goodsList.length !== 0 &&goodsList[currentIndex].goods.length !== 0}}" style="color: {{color}};">{{goodsList[currentIndex].CATEGORY_NAME}}({{goodsList[currentIndex].goods.length}})</view>
+        <view class="right" style="{{goodsList[currentIndex].goods.length !==0 && !isChoose ? selectedStylle : ''}}" catchtap="sortTap">商品排序</view>
       </view>
       <!-- 商品列表 -->
       <block wx:if="{{goodsList}}">
         <view class="detail">
           <!-- 左边名字 -->
           <view class="className">
-            <view class="goodsName" style="{{currentIndex===index ? selected : ''}}" wx:for="{{goodsList}}" bindtap="chooseClass" data-index="{{index}}" data-info="{{item}}">{{item.CATEGORY_NAME}}</view>
+            <view class="goodsName" style="{{currentIndex===index ? selected : ''}}" wx:for="{{goodsList}}" catchtap="chooseClass" data-index="{{index}}" data-info="{{item}}">{{item.CATEGORY_NAME}}</view>
           </view>
           <!-- 右边详情 -->
           <view class="goodsInfo">
             <block wx:if="{{goodsList[currentIndex].goods.length !== 0}}">
-              <view class="goodsItem" wx:for-item="item2"  wx:for-index="index2" wx:for="{{goodsList[currentIndex].goods}}">
+              <view class="goodsItem" wx:for-item="item2" bindtap="{{isChoose ? 'chooseGoods' : ''}}" data-info='{"id":{{item2.GOODS_ID}},"index":{{index2}}}' wx:for-index="index2" wx:for="{{goodsList[currentIndex].goods}}">
                 <!-- 商品图片 -->
                 <view>
-                  <image src="{{item2.GOODS_IMG}}" catchtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms" data-type="itemtap" data-goods="{{item2}}" class="goodsImg" style="border-color: {{color}};">
+                  <image src="{{item2.GOODS_IMG}}"  catchtap="{{!isChoose ? 'toOtherPage' : ''}}" data-url="/pages/goods/addGoods/forms/forms" data-type="itemtap" data-goods="{{item2}}" class="goodsImg" style="border-color: {{color}};">
                   </image>
                 </view>
                 <!-- 商品信息 -->
@@ -43,13 +44,17 @@
                   <view class="goods-name">{{item2.GOODS_NAME}}</view>
                   <view class="goods-price">￥{{item2.GOODS_PRICE}}</view>
                   <!-- 上下架 -->
-                  <view class="up-img" wx:if="{{!isSort}}">
-                    <image src="/images/{{item2.VALID === 1 ? 'up1' : 'down1'}}.png" bindtap="upDowm" data-item="{{item2}}"  mode="widthFix"></image>
+                  <!-- 商品选择 -->
+                  <view class="up-img"  wx:if="{{isChoose}}">
+                    <image src="/images/{{item2.selected ? 'selected' : 'select'}}.png" style="width: 40rpx;" mode="widthFix"></image>
                   </view>
                   <!-- 排序 -->
+                  <view class="up-img" wx:elif="{{!isSort}}">
+                    <image src="/images/{{item2.VALID === 1 ? 'up1' : 'down1'}}.png" catchtap="upDowm" data-item="{{item2}}"  mode="widthFix"></image>
+                  </view>
                   <view class="upDown" wx:else>
-                    <image class="up"  src="/images/up.png" mode="widthFix" bindtap="sortGoods" data-id="{{item2.GOODS_ID}}" data-type="up"></image>
-                    <image class="down"  src="/images/down.png" data-id="{{item2.GOODS_ID}}" mode="widthFix" bindtap="sortGoods" data-type="down"></image>
+                    <image class="up"  src="/images/up.png" mode="widthFix" catchtap="sortGoods" data-id="{{item2.GOODS_ID}}" data-type="up"></image>
+                    <image class="down"  src="/images/down.png" data-id="{{item2.GOODS_ID}}" mode="widthFix" catchtap="sortGoods" data-type="down"></image>
                   </view>
                 </view>
 
@@ -68,7 +73,9 @@
         </view>
       </block>
       <!-- 新建商品 -->
-      <view class="built cc-center" style="background-color: {{color}};" bindtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms">新建商品</view>
+      <view class="built cc-center" wx:if="{{!isChoose}}" style="background-color: {{color}};" catchtap="toOtherPage" data-url="/pages/goods/addGoods/forms/forms">新建商品</view>
+      <!-- 保存 -->
+      <view class="built cc-center" wx:else style="background-color: {{color}};" bindtap="save">保存</view>
     </view>
 
   </view>

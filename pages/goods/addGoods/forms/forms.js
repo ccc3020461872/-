@@ -130,9 +130,16 @@ Page({
    
   },
   // 点击复制添加
-  copyTap(){
+  copyTap(e){
+    const {currentTarget: {dataset: {type}}} = e;
+    let isCopy;
+    if(type === 'copy'){
+      isCopy = true
+    }else {
+      isCopy = false
+    }
     this.setData({
-      isCopy: true
+      isCopy
     })
   },
   // 保存
@@ -250,7 +257,8 @@ Page({
           success:()=> {
             if(isCopy){
               this.setData({
-                isCopy: false
+                isCopy: false,
+                create: true
               })
             }else {
               setTimeout(() => {
@@ -261,6 +269,7 @@ Page({
         })
       }
       wx.showModal({
+        title: '提示',
         content,
         success: async (res) => {
           if(res.confirm){

@@ -39,19 +39,19 @@ Page({
     var that = this
     wx.setStorage({
       key: 'shopid',
-      data: '300000027'
-    })
-    wx.getStorage({
-      key: 'shopid',
-      success(res) {
-        console.log('缓存中的shopid', res.data)
-        shopid = res.data
-        that.getShop()
-
+      data: '300000027',
+      success:()=>{
+        wx.getStorage({
+          key: 'shopid',
+          success(res) {
+            console.log('缓存中的shopid', res.data)
+            shopid = res.data
+            that.getShop()
+          }
+        })
       }
     })
   },
-
   getShop() {
     aboutStore({
       SHOP_ID: shopid

@@ -1,5 +1,5 @@
 // pages/goods/classify/manage/manage.js
-import {toPage, getShopId} from '../../../utils/common/index'
+import {toPage, getShopId, flushedShopInfo} from '../../../utils/common/index'
 import {
   amountOfPackaging //打包费设置
 } from '../../../utils/api'
@@ -49,15 +49,28 @@ Page({
     }
     const content = PACKTYPE === 1 ? '是否按订单收费' : '是否按商品收费'
     wx.showModal({
+      title: '提示',
       content,
       success: async res => {
         if(res.confirm){
-         await amountOfPackaging({
+         try{
+          await amountOfPackaging({
             SHOP_ID,
             PACKING_CHARGE,
             PACKTYPE,
           })
-         toPage()
+          flushedShopInfo()
+          wx.showToast({
+            title: '保存成功',
+            icon:'none',
+            duration: 1000
+          })
+          setTimeout(() => {
+            toPage()
+          }, 1000);
+         }catch(err){
+           console.log(err);
+         }
         }
       }
     })
@@ -65,11 +78,29 @@ Page({
    
     
   },
+  //查询设置的打包金额和打包费类型
+  getType(){
+   let { currentType, price } = this.data
+   const {
+      PACKING_CHARGE='', //打包费
+      PACKTYPE='' //打包类型 0是商品 1是订单
+    } = wx.getStorageSync('shop')
+    if(parseInt(PACKTYPE) === 0){
+      currentType = 'shop';
+    }else if(parseInt(PACKTYPE) === 1){
+      currentType = 'order';
+      price = PACKING_CHARGE;
+    }
+    this.setData({
+      currentType,
+      price,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     this.getType()
   },
 
   /**

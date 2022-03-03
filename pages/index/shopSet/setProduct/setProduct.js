@@ -6,6 +6,10 @@ import {
   setHot,
   goodsList
 } from '../../../../utils/api'
+import {
+  toPage,
+  getShopId,
+} from '../../../../utils/common/index'
 let PREFERENTIAL_ACTIVITIES, shopid, TYPE = 1
 Page({
 
@@ -41,8 +45,7 @@ Page({
   },
   // 移除热销产品
   toDel(e) {
-    var that=this
-    var goodid = e.currentTarget.id
+    var that = this
     TYPE = 0
     wx.showModal({
       title: '提示',
@@ -50,7 +53,8 @@ Page({
       success(res) {
         if (res.confirm) {
           console.log('用户点击确定')
-          that.setHot()
+          const { currentTarget: {dataset: {id}} } = e
+          that.setHot(id)
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
@@ -60,16 +64,24 @@ Page({
   // 添加推荐商品
   setHotgood() {
     TYPE = 1
+    const url = '/pages/goods/addGoods/index';
+    const { dataList } = this.data;
+    const list = []
+    dataList.forEach(v => {
+      list.push(v.GOODS_ID)
+    })
+    toPage(url,{from: 'setProduct',list:JSON.stringify(list)})
     this.setHot()
   },
   // 设置产品
-  setHot() {
+  async setHot(id) {
+    const SHOP_ID = await getShopId() 
     setHot({
-      GOODS_ID: '200000843',
-      TYPE: TYPE,
-      HOTSORT: 0
+      GOODS_ID: id,
+      TYPE: 0,
+      SHOP_ID,
     }).then(res => {
-      console.log('设置产品', res)
+      console.log('移除', res)
       this.getHotGoods()
     })
   },
@@ -86,9 +98,9 @@ Page({
   },
   switch1Change() {
     this.setData({
-      switch1Checked:true
+      switch1Checked: true
     })
-    PREFERENTIAL_ACTIVITIES =1 
+    PREFERENTIAL_ACTIVITIES = 1
     this.setMyGoodss()
   },
   setMyGoods() {
@@ -100,9 +112,9 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           that.setData({
-            switch1Checked:false
+            switch1Checked: false
           })
-          PREFERENTIAL_ACTIVITIES =2
+          PREFERENTIAL_ACTIVITIES = 2
           that.setMyGoodss()
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -112,7 +124,7 @@ Page({
 
 
   },
-  setMyGoodss(){
+  setMyGoodss() {
     setMyGoods({
       SHOP_ID: shopid,
       PREFERENTIAL_ACTIVITIES: PREFERENTIAL_ACTIVITIES
@@ -127,7 +139,7 @@ Page({
     }).then(res => {
       console.log('热销产品', res)
       this.setData({
-        dataList:res.hotGoods
+        dataList: res.hotGoods
       })
     })
     // goodsList({
@@ -138,20 +150,19 @@ Page({
     //     dataList:res.hotGoods
     //   })
     // })
-    
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getHotGoods()
   },
 
   /**

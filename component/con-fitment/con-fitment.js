@@ -149,13 +149,15 @@ Component({
       const {
         currentTarget: {
           dataset: {
-            color
+            color,
+            index
           }
         }
       } = e;
       console.log(color);
       this.setData({
-        currentColor: color
+        currentColor: index,
+        chooseColor: color,
       })
     },
     showPop(e) {
