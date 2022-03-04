@@ -10,7 +10,7 @@
       <!-- 分类排序 添加分类 -->
       <view class="btns" style="{{showBtns ? '' : 'display: none'}}">
         <view class="add cc-center" style="{{selectedStyle}}" bindtap="addDetail">添加分类</view>
-        <view class="sort add cc-center" style="{{selectedStyle}}" bindtap="doSort" data-url="/pages/goods/classify/sort/sort">分类排序</view>
+        <view class="sort add cc-center" style="{{selectedStyle}}" bindtap="doSort" data-url="/pages/goods/classify/sort/sort">分类{{isSort ? '删除' : '排序'}}</view>
       </view>
       <!-- 输入分类名称 -->
       <block wx:if="{{!showBtns}}">

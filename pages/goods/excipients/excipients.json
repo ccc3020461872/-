@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "empyt": "/component/cl-empty/cl-empty"
+  },
   "navigationBarTitleText": "添加辅料"
 
 }

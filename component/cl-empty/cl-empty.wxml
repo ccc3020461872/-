@@ -1,0 +1,11 @@
+ <!-- 内容区域 -->
+ <view class="content">
+    <view class="box">
+     <!-- 暂无分类 -->
+     <view class="empty">
+       {{emptyText}}
+     </view>
+     <!-- 新建商品 -->
+     <view class="built" style="background-color: {{color}};" bindtap="saveTap">{{btnText}}</view>
+    </view>
+  </view>

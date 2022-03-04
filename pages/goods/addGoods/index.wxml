@@ -21,7 +21,7 @@
         <view class="left" wx:else style="color: {{color}}; border-color: {{color}}; opacity: 0.5;">分类管理</view>
         <!-- 当前点击的类目 和其中的商品数量 -->
         <view class="current-categary" wx:if="{{goodsList&&goodsList.length !== 0 &&goodsList[currentIndex].goods.length !== 0}}" style="color: {{color}};">{{goodsList[currentIndex].CATEGORY_NAME}}({{goodsList[currentIndex].goods.length}})</view>
-        <view class="right" style="{{goodsList[currentIndex].goods.length !==0 && !isChoose ? selectedStylle : ''}}" catchtap="sortTap">商品排序</view>
+        <view class="right" style="{{goodsList&&goodsList[currentIndex].goods.length !==0 && !isChoose ? selectedStylle : ''}}" catchtap="sortTap">商品排序</view>
       </view>
       <!-- 商品列表 -->
       <block wx:if="{{goodsList}}">

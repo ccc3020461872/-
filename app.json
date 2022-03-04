@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/goods/excipients/manage/manage",
     "pages/index/about/about",
     "pages/index/out/out",
     "pages/index/shopSet/shopSet",
@@ -22,27 +23,21 @@
     "pages/index/pay-daydetail/pay-daydetail",
     "pages/index/shopSet/showShop/showShop",
     "pages/index/setting/setting",
-
     "pages/goods/addGoods/forms/forms",
     "pages/goods/addGoods/index",
     "pages/goods/taste/taste",
     "pages/goods/classify/manage/manage",
     "pages/goods/classify/sort/sort",
     "pages/goods/classify/choose/choose",
-    "pages/goods/excipients/manage/manage",
     "pages/deskCode/deskCode",
     "pages/login/login",
     "pages/logs/logs",
-    
     "pages/fitment/fitment",
     "pages/enroll/enroll",
     "pages/goods/setPacking/setPacking",
     "pages/goods/addGoods/search/srarch",
-    
-    
     "pages/goods/tag/tag",
     "pages/goods/excipients/choose/choose",
-    "pages/goods/excipients/excipients",
     "pages/goods/print/print",
     "pages/goods/addGoods/photes/photes",
     "pages/goods/addGoods/imgPreview/imgPreview",

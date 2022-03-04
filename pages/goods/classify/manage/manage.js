@@ -34,9 +34,8 @@ Page({
   },
   // 点击排序
   doSort(){
-    console.log(1111);
   this.setData({
-    isSort: true
+    isSort: !this.data.isSort
   })
   },
   //上 下 置顶排序点击

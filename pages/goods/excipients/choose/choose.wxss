@@ -26,16 +26,33 @@ page {
 .all {
   font-size: 36rpx;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  
+  width: 100%;
   padding: 60rpx 34rpx 0 20rpx;
   position: absolute;
   left: 0;
   top: 0;
 }
+.all .left {
+  display: flex;
+  align-items: center;
+}
 .all image{
   width: 40rpx;
   margin-right: 20rpx;
+}
+.all .right {
+    box-sizing: border-box;
+    border-radius: 74rpx;
+    width: 150rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border: 1px solid;
+    font-size: 26rpx;
 }
 .listBox {
   margin-top: 110rpx;

@@ -1,6 +1,6 @@
 // pages/goods/classify/add/add.js
-import toPage from '../../../../utils/common/toPage'
-
+import {toPage, getShopId} from '../../../../utils/common/index'
+import { accessoriesList } from '../../../../utils/api'
 const app = getApp()
 Page({
   /**
@@ -10,21 +10,23 @@ Page({
     color: null,
     list: null,
     allChoose: false,
+    isForms: false, 
   },
   toOtherPage(e){
     const {currentTarget: {dataset: {url}}} = e
     toPage(url)
   },
-  choose({currentTarget: {dataset: {index, type}}}){
+  choose({currentTarget: {dataset: {index}}}){
     const { list } = this.data
     // 如果没有index,是全选
     if(index === undefined){
-      list.forEach(v => {
-        v.select = type
-      })
       this.setData({
         allChoose: !this.data.allChoose
       })
+      list.forEach(v => {
+        v.select = this.data.allChoose
+      })
+     
     }else {
       list[index].select = !list[index].select
       const noChoose = list.find(v => v.select === false);
@@ -42,6 +44,15 @@ Page({
       list
     })
   },
+  // 辅料列表查询
+  async queryList(){
+    const SHOP_ID = await getShopId()
+    const {accessories = null} = await accessoriesList({
+      SHOP_ID
+    });
+    accessories && accessories.map(v => v.select = false)
+    this.setData({list: accessories});
+  },
   // 保存
   commit(){
     const { list } = this.data;
@@ -55,47 +66,27 @@ Page({
       })
       return
     }
-    toPage()
-  
+    if(!this.data.isForms){
+      toPage()
+    }else {
+      wx.redirectTo({
+        url: '/pages/goods/addGoods/forms/forms',
+      })
+    }
+     
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let { list,access } = this.options
-    access = JSON.parse(access)
-    console.log(access);
-    list = JSON.parse(list)
-    list.map(v => {
-      v.select = false
-    })
-    function filterIndex(sourceArr,target){
-      const newArr = sourceArr.filter(v =>{
-        const item = target.find((v2) => {
-          return v2.id === v.ACCESSORIES_ID
-        });
-        return v.ACCESSORIES_ID === item?.id 
+     const {from = null} = options;
+     if(from){
+      this.setData({
+        isForms: true
       })
-      const indexArr = [];
-      newArr.forEach(v => {
-        let index = sourceArr.findIndex(v1 => v1.ACCESSORIES_ID + '' === v.ACCESSORIES_ID + '');
-        index !== -1&&indexArr.push(index)
-      })
-      indexArr.forEach(v => {
-        sourceArr[v].select = true
-      });
-      return sourceArr
-    }
-    if(access) {
-     const newArr =  filterIndex(list ,access);
-     console.log(newArr);
-    }
-    this.setData({
-      list: list
-    })
-    console.log(this.data.list);
+     }
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -109,26 +100,28 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: async function () {
    const selectArr = wx.getStorageSync('accessories');
    console.log(selectArr);
+   await this.queryList()
    const { list } = this.data;
-   selectArr&&list.map((v,i,a) => {
-     selectArr.forEach(v2 =>{
-       if(v2.ACCESSORIES_NAME === v.ACCESSORIES_NAME){
-        v.select = true
-       }
-     })
-   })
+   if(selectArr){
+     list.map((v) => {
+      selectArr.forEach(v2 =>{
+        if(v2.ACCESSORIES_ID + '' === v.ACCESSORIES_ID + ''){
+          v.select = true
+        }
+      })
+    })
+   }
    this.setData({
     list
    })
    const noChoose = this.data.list.find(v => v.select === false)
-   if(!noChoose){
-     this.setData({
-      allChoose: true
-     })
-   }
+   const allChoose = noChoose ? false : true
+   this.setData({
+    allChoose
+   })
   },
 
   /**
@@ -143,11 +136,9 @@ Page({
    */
   onUnload: function () {
     const { list } = this.data;
-    const selectArr = list.filter(v => {
-      return v.select
-    });
+    const selectArr = list&&list.filter(v =>  v.select);
     console.log(selectArr);
-    if(selectArr.length !== 0){
+    if(selectArr&&selectArr.length !== 0){
       wx.setStorageSync('accessories', selectArr)
     }
   },

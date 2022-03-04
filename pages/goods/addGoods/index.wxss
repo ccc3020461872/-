@@ -38,7 +38,7 @@ page {
   font-size: 28rpx;
   width: 80%;
 }
-.box image {
+.box .goodsImg {
   height: 28rpx;
   margin-right: 20rpx;
 }
@@ -136,17 +136,22 @@ page {
   flex-direction: column;
   justify-content: space-between;
   font-size: 40rpx;
-  width: calc(100% - 200rpx);
+  width: calc(100% - 226rpx);
+
 }
 .goodsItem .info  .up-img{
   align-self: flex-end;
   text-align: right;
+ 
 }
 .goodsItem .info image{
   width: 160rpx;
 }
 .goodsItem .info .goods-name {
   color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
 }
 .goodsItem .info .goods-price {
   color: #FF2929 ;

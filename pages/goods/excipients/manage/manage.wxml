@@ -7,8 +7,9 @@
 <view>
   <!-- 背景颜色 -->
    <view class="backBox" style="background-color: {{color}};"></view>
-  <!-- 内容区域 -->
-  <view class="content">
+   <!-- 内容区域 点击添加辅料-->
+   <block wx:if="{{!isEmpty}}">
+    <view class="content">
     <view class="box">
       <!-- 编辑辅料 -->
        <view class="edit">
@@ -40,5 +41,11 @@
     </form>
     </view>
 
-  </view>
+   </view>
+   </block>
+   <!-- 没有辅料 -->
+   <block wx:else>
+    <empyt emptyText="店铺暂无可选择的辅料" btnText="添加辅料" color="{{color}}" bind:addinfo="changeEmpyt"></empyt>
+   </block>
+  
 </view>

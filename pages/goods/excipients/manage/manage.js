@@ -22,7 +22,9 @@ Page({
       price: null,
       id: Date.now()
     }],
-    disabled: false
+    disabled: false,
+    isEmpty: null,
+    isForms: false, //是否是从表单注册页面跳过来的
   },
   // 添加辅料
   add() {
@@ -58,15 +60,15 @@ Page({
       }
     }
   }) {
-    console.log(index);
     if(item.ACCESSORIES_ID){
      this.changeAccessories('remove',{ACCESSORIES_ID: item.ACCESSORIES_ID})
+    }else {
+      const { list } = this.data;
+      list.splice(index,1);
+      this.setData({
+        list,
+      })
     }
-    const list = JSON.parse(JSON.stringify(this.data.list))
-    console.log(list.splice(index,1));
-    this.setData({
-      list
-    })
   },
   // 输入价格或辅料改变数据
   doInput(e){
@@ -93,9 +95,11 @@ Page({
           ACCESSORIES_ID: item.ACCESSORIES_ID,
           price: item.PRICE,
         })
-       })
+       });
+       const isEmpty = list&&list[0]?.name ? false : true 
        this.setData({
          list,
+         isEmpty
        })
        if(this.data.list.length === 0){
         const item = {name: null, price: null, id: Date.now()}
@@ -106,21 +110,30 @@ Page({
         })
       }
       }else if (type === 'add') {
-        const res = await addAccessories({
-          SHOP_ID,
-          ACCESSORIES_NAME: {params}
-        })
-        wx.showToast({
-          title: '保存成功',
-          icon: 'none'
-        })
+        try{
+          await addAccessories({
+            SHOP_ID,
+            ACCESSORIES_NAME: {params}
+          })
+          return true
+        }catch(err){
+          console.log(err);
+          return false
+        }
+        
       }else if(type === 'remove'){
-       const res = await deleteAccessories(params)
+       const res = await deleteAccessories(params);
+       this.changeAccessories('query')
        console.log('删除',res);
       }
     }catch(err){
       console.log(err);
     }
+  },
+  changeEmpyt(){
+   this.setData({
+     isEmpty: false,
+   })
   },
   // 提交
   commit() {
@@ -165,6 +178,25 @@ Page({
     return
   }
   this.changeAccessories('add',list)
+  .then(() => {
+    wx.showModal({
+     title: '提示',
+     content: '保存成功',
+     showCancel: false,
+     success:(res)=>{
+       if(res.confirm){
+         const {isForms} = this.data;
+         if(!isForms){
+           toPage()
+         }else {
+           const url = '/pages/goods/excipients/choose/choose';
+           const params = {from:'forms'};
+           toPage(url, params)
+         }
+       }
+     }
+    })
+  })
   
   },
  
@@ -172,8 +204,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.changeAccessories('query')
-  
+    console.log(options);
+    if(options?.from === 'forms'){
+       this.setData({
+        isForms: true
+       })
+    }
   },
 
   /**
@@ -194,7 +230,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.changeAccessories('query')
   },
 
   /**

@@ -88,11 +88,10 @@ Page({
       const { access = [] } = this.data 
       if (res.accessories.length !== 0) {
         toPage('/pages/goods/excipients/choose/choose', {
-          list: JSON.stringify(res.accessories),
           access: JSON.stringify(access)
         })
       } else {
-        toPage('/pages/goods/excipients/excipients', )
+        toPage('/pages/goods/excipients/manage/manage',{from: 'forms'} )
       }
       console.log(res);
       return

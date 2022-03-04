@@ -12,9 +12,9 @@
     <view class="box">
       <!-- 商品列表 -->
       <view class="goodsList">
-         <view class="item" wx:for="{{list}}">
+         <view class="item" wx:for="{{list}}" bindtap="doChoose"  data-index="{{index}}" data-item="{{item}}">
           <view class="goodsName">{{item.CATEGORY_NAME}}</view>
-          <view class="upDown" bindtap="doChoose"  data-index="{{index}}" data-item="{{item}}">
+          <view class="upDown" >
             <image wx:if="{{choose && currentIndex === index }}" class="up" src="/images/selected.png" mode="widthFix"></image>
             <image wx:else class="down" src="/images/select.png" mode="widthFix"></image>
           </view>

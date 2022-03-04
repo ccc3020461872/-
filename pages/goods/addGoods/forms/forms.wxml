@@ -124,7 +124,7 @@
           </view>
           <view class="tips" bindtap="toOtherPage" data-type="辅料">
             <view class="littleTip">
-              <block wx:if="{{access && access.length !== 0}}">
+              <block wx:if="{{access && access.length !== 0 &&access[0].name}}">
                 <view>
                <text wx:for="{{access}}">{{item.name}} </text>
               </view>
